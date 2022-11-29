@@ -1,0 +1,105 @@
+---
+title: "Quarto Word Example"
+format: docx
+editor: visual
+---
+
+```{r setup, include=F}
+
+# this line specifies options for default options for all R Chunks
+knitr::opts_chunk$set(echo=F)
+
+# suppress scientific notation
+options(scipen=100,
+        getSymbols.warning4.0 = FALSE)
+
+# install helper package (pacman), if needed
+if (!require("pacman")) install.packages("pacman", repos = "http://lib.stat.cmu.edu/R/CRAN/")
+
+# install and load required packages
+# pacman should be first package in parentheses and then list others
+pacman::p_load(pacman,tidyverse, knitr)
+
+# verify packages (comment out in finished documents)
+p_loaded()
+
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+<br>
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+<br>
+
+## Code and Output in Word Document
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+<br>
+
+## In-line code Example
+
+The following text includes in-line code. A linear model is created and saved in the R chunk. and then components of that model output used in the sentence that follows.
+
+```{r cars model, echo = T}
+cmod <- lm(dist ~ speed, data = cars)
+scmod <- summary(cmod)
+```
+
+Based on the available data in the base R software (R Core team, 2022), stopping distance in feet for cars in the 1920s was estimated as `r  round(cmod$coefficients[1],2)` + `r round(cmod$coefficients[2],2)` x speed (mpg). and the R^2^ for this linear model is `r round(scmod$r.squared,2)`.
+
+<br>
+
+## Basic Plot
+
+```{r cars plot}
+plot(cars)
+```
+
+## Star Wars Plot from Week 1
+
+```{r formatted starwars plot, fig.align='center'}
+
+my_starwars_plt <- starwars |>
+  select(species, sex, height, mass) |>
+  filter(species %in% c("Human", "Droid")) |>
+  mutate(bmi = mass/((height/100))^2) |>
+  filter(!is.na(bmi)) |>
+  mutate(sexF = factor(sex, 
+                       levels = c("male", "female", "none"),
+                       labels =c("Male", "Female", "None")))
+
+# formatted plot with factor variable, text formatted, and borders
+(sw_box4 <- my_starwars_plt |>
+  ggplot() +
+  geom_boxplot(aes(x=species, y=bmi, fill=sexF)) + 
+  theme_classic() + 
+  labs(title="Comparison of Human and Droid BMI",
+       subtitle="22 Humans and 4 Droids from Star Wars Universe",
+       caption="Data Source: dplyr package in R",
+       x="",y="BMI", fill="Sex") + 
+  theme(panel.border = element_rect(colour = "lightgrey", fill=NA, linewidth=2)))
+```
+
+## Citations
+
+Note that the citations below were copied without editing from part of the R console output. If you are are creating your memos in RStudio (not required), these citations are already formatted for you.
+
+R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+Rinker, T. W. & Kurkiewicz, D. (2017). pacman: Package Management for R. version 0.5.0. Buffalo, New York. http://github.com/trinker/pacman
+
+RStudio Team (2022). RStudio: Integrated Development Environment for R. RStudio, PBC, Boston, MA URL http://www.rstudio.com/.
+
+Wickham H, Averick M, Bryan J, Chang W, McGowan LD, Françoi R, Grolemun G, Haye A, Henr L, Heste J, Kuh M, Pederse TL, Mille E, Bach SM, Müll K, Oo ,J, Robins ,D, Seid ,DP, Spi ,V, Takahas ,K, Vaugh ,D, Wil ,C, W ,K, Yutani ,H (2019). "Welcome to the tidyverse." *Journal of Open Source Software*, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.

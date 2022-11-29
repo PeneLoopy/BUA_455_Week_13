@@ -1,0 +1,272 @@
+---
+title: "BUA 455 - Week 13"
+author: "Penelope Pooler Eisenbies"
+date: "2022-11-29"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+
+---
+
+```{r setup, include=TRUE}
+
+# this line specifies options for default options for all R Chunks
+knitr::opts_chunk$set(echo=T, 
+                      highlight=T)
+
+# suppress scientific notation
+options(scipen=100,
+        getSymbols.warning4.0 = FALSE)
+
+# install helper package (pacman), if needed
+if (!require("pacman")) install.packages("pacman", repos = "http://lib.stat.cmu.edu/R/CRAN/")
+
+# install and load required packages
+# pacman should be first package in parentheses and then list others
+pacman::p_load(pacman,tidyverse, knitr)
+
+# verify packages (comment out in finished documents)
+p_loaded()
+
+```
+
+---
+
+### Final Projects
+
+#### **Presentations are next week, Tue. 12/6 and Thu. 12/8**
+
+- If your group wants to present on Tue. 12/6, let me know by Thursday.  
+
+  - Otherwise, random order will be posted on Friday.
+
+- Attendance required by all
+  
+- Dress: Business casual with emphasis on casual
+  
+- Suits, Ties, Dresses, and Jackets are **NOT** required
+  
+- No sweats t-shirts or pjs
+    
+- You will present better if you dress the part (at least a little)
+  
+- All students should be prepared to answer questions about the work presented.
+    
+- Each student will evaluate other groups and their own group members
+
+* **All project components must be submitted by Tuesday, December 13th at 5:00 PM**
+
+---
+
+### Project Memos
+
+- [Project Description - Memos are described on Page 5](https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing)
+
+- [Template for Memo to Supervisor](https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing)
+
+   - Supervisor Memo's Goal: 
+  
+      - Provide your supervisor with what they need 
+      - They will want to be knowledgeable about the data and dashboard, but have very limited time.
+      - Predict questions they (supervisor) might have and questions a client might ask.
+
+- [Template for memo to Colleague](https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing)
+
+   - Colleague Memo's Goal: 
+    
+      - Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.
+      
+      - I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.
+  
+#### Questions about Project and Templates?
+
+---
+
+### R Markdown (.Rmd) and Quarto (.qmd) formats
+
+- RStudio is currently in transition 
+
+- Documents can be rendered from R Markdown (.Rmd) or [Quarto (.qmd)](https://quarto.org/)
+
+  - HTML, Word documents, PDf
+
+  - R Markdown will be available for forseeable future
+
+  - flexdashboard not available in Quarto format yet
+    - [Options Currently Available in Quarto](https://quarto.org/docs/faq/rmarkdown.html)
+
+- Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)
+
+  - Powerpoint 
+  
+     - better for non-technical talks
+  
+  - Quarto Presentations (RevealJS) will replace Xaringan
+  
+     - These slides are Xaringan
+  
+     - Updated options will make better slides with more options
+  
+     - Xaringan and RevealJS are preferred for including code and output
+    
+---
+  
+### Best way to learn Quarto
+
+- Examine Examples provided in R
+
+- Examine Examples in [Quarto Gallery](https://quarto.org/docs/gallery/)
+  
+  - click on code symbol `</>` to see the code used to create the documents or presentations 
+  
+  - Examine and modify code for your document
+  
+  - Also use Google, website documentation, and stack overflow for questions
+
+
+---
+  
+### Resources - Where to go next 
+
+#### **For all aspects of analytics and R and RStudio**
+
+- Discovered last semester: [Big Book of R - A Curated Website of R Resources](https://www.bigbookofr.com/index.html)
+  - Updated November 2022
+  
+- Doesn't include [text reference for this class](https://rafalab.GitHub.io/dsbook/) which is good.
+  
+- Best resource I have found is Google which often leads to [stack overflow](https://stackoverflow.com/)
+  
+  - Stack Overflow is helpful but you have to know enough code to be able to understand answers.
+
+
+---
+    
+### Tutorials
+    
+- As SU Students you also have free access to [Linkedin Learning](https://linkedinlearning.syr.edu/) 
+  
+  - Great tutorials in R, Python, SQL
+  
+  - Employers are likely to expect some familiarity with each.
+    
+  - R is most versatile and powerful
+    
+  - Employers may prefer Python, SQL, or another language/environment because that is what they know.
+    
+  - NOTE: Python, SQL, others can all be utilized through RStudio.
+    
+  - Different languages can be combined in one RMarkdown document in separate chunks.
+    
+- [DataCamp](https://www.datacamp.com/) - Not Free, but Excellent.
+  
+  - Provides certificates of completion
+    
+  - Published this excellent [document about data fluency](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view?usp=sharing)
+     - **Download this document and save it for when you have to apply for jobs and answer questions about your skillset.**  
+ 
+- Other companies are quickly developing tutorial training too (some are good)
+
+---
+
+### Sharing and Collaborating - GitHub vs. RPubs
+
+- Last week I introduced you to Rpubs which is ideal from sharing a dashboard.
+
+- Alternatively, you may have already come across `GitHub` in searching for files or a package.
+
+  - Slides for this course are stored on GitHub
+  
+  - Required for files where data, code and text are maintained together as a project, referred to as a **repository** or **repo**.
+  
+  - Not required for finished dashboard.
+
+- GitHub is an online code sharing and code development platform.  
+
+- Many R packages start as development code on GitHub and over time they are refined and published.
+
+---
+
+### More about GitHub
+
+- Once you create free account, you can learn more about how it works in this [tutorial](https://docs.GitHub.com/en/get-started/quickstart/hello-world).
+
+- Collaborative coding is common on GitHub but is a little more complex than working on a shared drive.
+
+  - Developers of games, R packages, other software, etc., have huge code files and need to protect them.
+
+  - There is a system in place (version control) where people can create a project with multiple code versions and edits.
+    Over time a project develops more and more branches, like a tree, but the trunk.
+  
+  - Original code is preserved and changes can be incorporated as they are verified and approved.
+  
+
+### Some GitHub links
+  
+  - Some tutorial links for collaborative coding on GitHub:
+  
+    - [What is Git and GitHub? And how to use GitHub?](https://medium.com/@ravirajsubramanian/what-is-git-and-GitHub-and-how-to-use-GitHub-f49d6be08b25)
+      
+    - [How to use Git and GitHub for collaborative programming?](https://medium.com/@ravirajsubramanian/how-to-use-git-and-GitHub-for-collaborative-programming-955da6876aa9)
+          
+    - [Using Git and Github on Group Projects](https://medium.com/@androidmatheny/using-git-and-GitHub-on-group-projects-d636be2cdd4d)
+      
+    - [Section 33 of Big Book of R](https://www.bigbookofr.com/version-control.html)
+
+---
+
+### Evaluations
+
+* Course Evaluations are very important.
+
+* Please take the time to fill out evaluations.
+
+  - [You can login to the Course Evaluations website here](coursefeedback.syr.edu)
+  
+    - netID and password are required
+  
+  - I will step out for 5 minutes. 
+  
+<br>
+
+![Course Evaluation QR Code](QR-Code_Course-Feedback.png){fig-width=50%}
+  
+<br>
+  
+### Project Questions
+
+ - The rest of class time can be used for group projects.
+
+
+
+
+
+
+  
+---
+
+### **Key Points from Week 13**
+  
+- **Project Info**
+
+  - Two Memos - Information, Templates, & Examples provided
+    
+- **Taking advantage of RStudio **
+
+   - R Markdown and Quarto 
+     - Data management and reporting are seamless.
+     - Can combine R chunks with PYthon, SQL etc.
+
+- **Github and Rpubs**
+
+   - For large projects, Github is essential
+   - For BUA 455, Rpubs is ideal
+   
+- **Links for Learning More**
+- **Data Camp White Paper about Skillset**
+    
+
+**You may submit an 'Engagement Question or Comment' about Week 13 lectures until Thursday, 12/1, at midnight on Blackboard.**
+

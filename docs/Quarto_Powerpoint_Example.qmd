@@ -1,0 +1,88 @@
+---
+title: "Quarto PowerPoint Example"
+format: pptx
+editor: visual
+---
+
+
+```{r setup, include=F}
+
+# this line specifies options for default options for all R Chunks
+knitr::opts_chunk$set(echo=F)
+
+# suppress scientific notation
+options(scipen=100,
+        getSymbols.warning4.0 = FALSE)
+
+# install helper package (pacman), if needed
+if (!require("pacman")) install.packages("pacman", repos = "http://lib.stat.cmu.edu/R/CRAN/")
+
+# install and load required packages
+# pacman should be first package in parentheses and then list others
+pacman::p_load(pacman,tidyverse, ggthemes, magrittr, knitr, lubridate, gridExtra, RColorBrewer)
+
+# verify packages (comment out in finished documents)
+p_loaded()
+
+```
+
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Slide with Code and Output
+
+```{r cars, echo = TRUE}
+summary(cars)
+```
+
+## Slide with Plot
+
+```{r cars scatterplot}
+plot(cars)
+```
+
+## Star Wars Plot from Week 1
+
+```{r formatted starwars plot, fig.align='center'}
+
+my_starwars_plt <- starwars |>
+  select(species, sex, height, mass) |>
+  filter(species %in% c("Human", "Droid")) |>
+  mutate(bmi = mass/((height/100))^2) |>
+  filter(!is.na(bmi)) |>
+  mutate(sexF = factor(sex, 
+                       levels = c("male", "female", "none"),
+                       labels =c("Male", "Female", "None")))
+
+# formatted plot with factor variable, text formatted, and borders
+(sw_box4 <- my_starwars_plt |>
+  ggplot() +
+  geom_boxplot(aes(x=species, y=bmi, fill=sexF)) + 
+  theme_classic() + 
+  labs(title="Comparison of Human and Droid BMI",
+       subtitle="22 Humans and 4 Droids from Star Wars Universe",
+       caption="Data Source: dplyr package in R",
+       x="",y="BMI", fill="Sex") + 
+  theme(plot.title = element_text(size = 30),
+        plot.subtitle = element_text(size = 20),
+        axis.title = element_text(size=25),
+        axis.text = element_text(size=25),
+        plot.caption = element_text(size = 20),
+        legend.text = element_text(size = 20),
+        legend.title = element_text(size = 20),
+    panel.border = element_rect(colour = "lightgrey", fill=NA, linewidth=2),
+    plot.background = element_rect(colour = "darkgrey", fill=NA, linewidth=2)))
+
+```
+
+
+

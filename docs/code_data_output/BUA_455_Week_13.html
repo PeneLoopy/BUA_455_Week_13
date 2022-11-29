@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Penelope Pooler Eisenbies">
+<meta name="dcterms.date" content="2022-11-29">
+
+<title>BUA 455 - Week 13</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="BUA_455_Week_13_files/libs/clipboard/clipboard.min.js"></script>
+<script src="BUA_455_Week_13_files/libs/quarto-html/quarto.js"></script>
+<script src="BUA_455_Week_13_files/libs/quarto-html/popper.min.js"></script>
+<script src="BUA_455_Week_13_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="BUA_455_Week_13_files/libs/quarto-html/anchor.min.js"></script>
+<link href="BUA_455_Week_13_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="BUA_455_Week_13_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="BUA_455_Week_13_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="BUA_455_Week_13_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="BUA_455_Week_13_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#final-projects" id="toc-final-projects" class="nav-link active" data-scroll-target="#final-projects">Final Projects</a></li>
+  <li><a href="#project-memos" id="toc-project-memos" class="nav-link" data-scroll-target="#project-memos">Project Memos</a></li>
+  <li><a href="#r-markdown-.rmd-and-quarto-.qmd-formats" id="toc-r-markdown-.rmd-and-quarto-.qmd-formats" class="nav-link" data-scroll-target="#r-markdown-.rmd-and-quarto-.qmd-formats">R Markdown (.Rmd) and Quarto (.qmd) formats</a></li>
+  <li><a href="#best-way-to-learn-quarto" id="toc-best-way-to-learn-quarto" class="nav-link" data-scroll-target="#best-way-to-learn-quarto">Best way to learn Quarto</a></li>
+  <li><a href="#resources---where-to-go-next" id="toc-resources---where-to-go-next" class="nav-link" data-scroll-target="#resources---where-to-go-next">Resources - Where to go next</a></li>
+  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials">Tutorials</a></li>
+  <li><a href="#sharing-and-collaborating---github-vs.-rpubs" id="toc-sharing-and-collaborating---github-vs.-rpubs" class="nav-link" data-scroll-target="#sharing-and-collaborating---github-vs.-rpubs">Sharing and Collaborating - GitHub vs.&nbsp;RPubs</a></li>
+  <li><a href="#more-about-github" id="toc-more-about-github" class="nav-link" data-scroll-target="#more-about-github">More about GitHub</a></li>
+  <li><a href="#some-github-links" id="toc-some-github-links" class="nav-link" data-scroll-target="#some-github-links">Some GitHub links</a></li>
+  <li><a href="#evaluations" id="toc-evaluations" class="nav-link" data-scroll-target="#evaluations">Evaluations</a></li>
+  <li><a href="#project-questions" id="toc-project-questions" class="nav-link" data-scroll-target="#project-questions">Project Questions</a></li>
+  <li><a href="#key-points-from-week-13" id="toc-key-points-from-week-13" class="nav-link" data-scroll-target="#key-points-from-week-13"><strong>Key Points from Week 13</strong></a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">BUA 455 - Week 13</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Penelope Pooler Eisenbies </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 29, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this line specifies options for default options for all R Chunks</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span>T, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">highlight=</span>T)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># suppress scientific notation</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">100</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">getSymbols.warning4.0 =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># install helper package (pacman), if needed</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>, <span class="at">repos =</span> <span class="st">"http://lib.stat.cmu.edu/R/CRAN/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: pacman</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and load required packages</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pacman should be first package in parentheses and then list others</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(pacman,tidyverse, knitr)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># verify packages (comment out in finished documents)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p_loaded</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "knitr"     "forcats"   "stringr"   "dplyr"     "purrr"     "readr"    
+ [7] "tidyr"     "tibble"    "ggplot2"   "tidyverse" "pacman"   </code></pre>
+</div>
+</div>
+<hr>
+<section id="final-projects" class="level3">
+<h3 class="anchored" data-anchor-id="final-projects">Final Projects</h3>
+<section id="presentations-are-next-week-tue.-126-and-thu.-128" class="level4">
+<h4 class="anchored" data-anchor-id="presentations-are-next-week-tue.-126-and-thu.-128"><strong>Presentations are next week, Tue. 12/6 and Thu. 12/8</strong></h4>
+<ul>
+<li><p>If your group wants to present on Tue. 12/6, let me know by Thursday.</p>
+<ul>
+<li>Otherwise, random order will be posted on Friday.</li>
+</ul></li>
+<li><p>Attendance required by all</p></li>
+<li><p>Dress: Business casual with emphasis on casual</p></li>
+<li><p>Suits, Ties, Dresses, and Jackets are <strong>NOT</strong> required</p></li>
+<li><p>No sweats t-shirts or pjs</p></li>
+<li><p>You will present better if you dress the part (at least a little)</p></li>
+<li><p>All students should be prepared to answer questions about the work presented.</p></li>
+<li><p>Each student will evaluate other groups and their own group members</p></li>
+<li><p><strong>All project components must be submitted by Tuesday, December 13th at 5:00 PM</strong></p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="project-memos" class="level3">
+<h3 class="anchored" data-anchor-id="project-memos">Project Memos</h3>
+<ul>
+<li><p><a href="https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing">Project Description - Memos are described on Page 5</a></p></li>
+<li><p><a href="https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing">Template for Memo to Supervisor</a></p>
+<ul>
+<li><p>Supervisor Memo’s Goal:</p>
+<ul>
+<li>Provide your supervisor with what they need</li>
+<li>They will want to be knowledgeable about the data and dashboard, but have very limited time.</li>
+<li>Predict questions they (supervisor) might have and questions a client might ask.</li>
+</ul></li>
+</ul></li>
+<li><p><a href="https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing">Template for memo to Colleague</a></p>
+<ul>
+<li><p>Colleague Memo’s Goal:</p>
+<ul>
+<li><p>Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.</p></li>
+<li><p>I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="questions-about-project-and-templates" class="level4">
+<h4 class="anchored" data-anchor-id="questions-about-project-and-templates">Questions about Project and Templates?</h4>
+<hr>
+</section>
+</section>
+<section id="r-markdown-.rmd-and-quarto-.qmd-formats" class="level3">
+<h3 class="anchored" data-anchor-id="r-markdown-.rmd-and-quarto-.qmd-formats">R Markdown (.Rmd) and Quarto (.qmd) formats</h3>
+<ul>
+<li><p>RStudio is currently in transition</p></li>
+<li><p>Documents can be rendered from R Markdown (.Rmd) or <a href="https://quarto.org/">Quarto (.qmd)</a></p>
+<ul>
+<li><p>HTML, Word documents, PDf</p></li>
+<li><p>R Markdown will be available for forseeable future</p></li>
+<li><p>flexdashboard not available in Quarto format yet</p>
+<ul>
+<li><a href="https://quarto.org/docs/faq/rmarkdown.html">Options Currently Available in Quarto</a></li>
+</ul></li>
+</ul></li>
+<li><p>Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)</p>
+<ul>
+<li><p>Powerpoint</p>
+<ul>
+<li>better for non-technical talks</li>
+</ul></li>
+<li><p>Quarto Presentations (RevealJS) will replace Xaringan</p>
+<ul>
+<li><p>These slides are Xaringan</p></li>
+<li><p>Updated options will make better slides with more options</p></li>
+<li><p>Xaringan and RevealJS are preferred for including code and output</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="best-way-to-learn-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="best-way-to-learn-quarto">Best way to learn Quarto</h3>
+<ul>
+<li><p>Examine Examples provided in R</p></li>
+<li><p>Examine Examples in <a href="https://quarto.org/docs/gallery/">Quarto Gallery</a></p>
+<ul>
+<li><p>click on code symbol <code>&lt;/&gt;</code> to see the code used to create the documents or presentations</p></li>
+<li><p>Examine and modify code for your document</p></li>
+<li><p>Also use Google, website documentation, and stack overflow for questions</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="resources---where-to-go-next" class="level3">
+<h3 class="anchored" data-anchor-id="resources---where-to-go-next">Resources - Where to go next</h3>
+<section id="for-all-aspects-of-analytics-and-r-and-rstudio" class="level4">
+<h4 class="anchored" data-anchor-id="for-all-aspects-of-analytics-and-r-and-rstudio"><strong>For all aspects of analytics and R and RStudio</strong></h4>
+<ul>
+<li><p>Discovered last semester: <a href="https://www.bigbookofr.com/index.html">Big Book of R - A Curated Website of R Resources</a></p>
+<ul>
+<li>Updated November 2022</li>
+</ul></li>
+<li><p>Doesn’t include <a href="https://rafalab.GitHub.io/dsbook/">text reference for this class</a> which is good.</p></li>
+<li><p>Best resource I have found is Google which often leads to <a href="https://stackoverflow.com/">stack overflow</a></p>
+<ul>
+<li>Stack Overflow is helpful but you have to know enough code to be able to understand answers.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="tutorials">Tutorials</h3>
+<ul>
+<li><p>As SU Students you also have free access to <a href="https://linkedinlearning.syr.edu/">Linkedin Learning</a></p>
+<ul>
+<li><p>Great tutorials in R, Python, SQL</p></li>
+<li><p>Employers are likely to expect some familiarity with each.</p></li>
+<li><p>R is most versatile and powerful</p></li>
+<li><p>Employers may prefer Python, SQL, or another language/environment because that is what they know.</p></li>
+<li><p>NOTE: Python, SQL, others can all be utilized through RStudio.</p></li>
+<li><p>Different languages can be combined in one RMarkdown document in separate chunks.</p></li>
+</ul></li>
+<li><p><a href="https://www.datacamp.com/">DataCamp</a> - Not Free, but Excellent.</p>
+<ul>
+<li><p>Provides certificates of completion</p></li>
+<li><p>Published this excellent <a href="https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view?usp=sharing">document about data fluency</a></p>
+<ul>
+<li><strong>Download this document and save it for when you have to apply for jobs and answer questions about your skillset.</strong></li>
+</ul></li>
+</ul></li>
+<li><p>Other companies are quickly developing tutorial training too (some are good)</p></li>
+</ul>
+<hr>
+</section>
+<section id="sharing-and-collaborating---github-vs.-rpubs" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-and-collaborating---github-vs.-rpubs">Sharing and Collaborating - GitHub vs.&nbsp;RPubs</h3>
+<ul>
+<li><p>Last week I introduced you to Rpubs which is ideal from sharing a dashboard.</p></li>
+<li><p>Alternatively, you may have already come across <code>GitHub</code> in searching for files or a package.</p>
+<ul>
+<li><p>Slides for this course are stored on GitHub</p></li>
+<li><p>Required for files where data, code and text are maintained together as a project, referred to as a <strong>repository</strong> or <strong>repo</strong>.</p></li>
+<li><p>Not required for finished dashboard.</p></li>
+</ul></li>
+<li><p>GitHub is an online code sharing and code development platform.</p></li>
+<li><p>Many R packages start as development code on GitHub and over time they are refined and published.</p></li>
+</ul>
+<hr>
+</section>
+<section id="more-about-github" class="level3">
+<h3 class="anchored" data-anchor-id="more-about-github">More about GitHub</h3>
+<ul>
+<li><p>Once you create free account, you can learn more about how it works in this <a href="https://docs.GitHub.com/en/get-started/quickstart/hello-world">tutorial</a>.</p></li>
+<li><p>Collaborative coding is common on GitHub but is a little more complex than working on a shared drive.</p>
+<ul>
+<li><p>Developers of games, R packages, other software, etc., have huge code files and need to protect them.</p></li>
+<li><p>There is a system in place (version control) where people can create a project with multiple code versions and edits. Over time a project develops more and more branches, like a tree, but the trunk.</p></li>
+<li><p>Original code is preserved and changes can be incorporated as they are verified and approved.</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="some-github-links" class="level3">
+<h3 class="anchored" data-anchor-id="some-github-links">Some GitHub links</h3>
+<ul>
+<li><p>Some tutorial links for collaborative coding on GitHub:</p>
+<ul>
+<li><p><a href="https://medium.com/@ravirajsubramanian/what-is-git-and-GitHub-and-how-to-use-GitHub-f49d6be08b25">What is Git and GitHub? And how to use GitHub?</a></p></li>
+<li><p><a href="https://medium.com/@ravirajsubramanian/how-to-use-git-and-GitHub-for-collaborative-programming-955da6876aa9">How to use Git and GitHub for collaborative programming?</a></p></li>
+<li><p><a href="https://medium.com/@androidmatheny/using-git-and-GitHub-on-group-projects-d636be2cdd4d">Using Git and Github on Group Projects</a></p></li>
+<li><p><a href="https://www.bigbookofr.com/version-control.html">Section 33 of Big Book of R</a></p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="evaluations" class="level3">
+<h3 class="anchored" data-anchor-id="evaluations">Evaluations</h3>
+<ul>
+<li><p>Course Evaluations are very important.</p></li>
+<li><p>Please take the time to fill out evaluations.</p>
+<ul>
+<li><p><a href="coursefeedback.syr.edu">You can login to the Course Evaluations website here</a></p>
+<ul>
+<li>netID and password are required</li>
+</ul></li>
+<li><p>I will step out for 5 minutes.</p></li>
+</ul></li>
+</ul>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="QR-Code_Course-Feedback.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Course Evaluation QR Code</figcaption><p></p>
+</figure>
+</div>
+<p><br></p>
+</section>
+<section id="project-questions" class="level3">
+<h3 class="anchored" data-anchor-id="project-questions">Project Questions</h3>
+<ul>
+<li>The rest of class time can be used for group projects.</li>
+</ul>
+<hr>
+</section>
+<section id="key-points-from-week-13" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-from-week-13"><strong>Key Points from Week 13</strong></h3>
+<ul>
+<li><p><strong>Project Info</strong></p>
+<ul>
+<li>Two Memos - Information, Templates, &amp; Examples provided</li>
+</ul></li>
+<li><p><strong>Taking advantage of RStudio </strong></p>
+<ul>
+<li>R Markdown and Quarto
+<ul>
+<li>Data management and reporting are seamless.</li>
+<li>Can combine R chunks with PYthon, SQL etc.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>Github and Rpubs</strong></p>
+<ul>
+<li>For large projects, Github is essential</li>
+<li>For BUA 455, Rpubs is ideal</li>
+</ul></li>
+<li><p><strong>Links for Learning More</strong></p></li>
+<li><p><strong>Data Camp White Paper about Skillset</strong></p></li>
+</ul>
+<p><strong>You may submit an ‘Engagement Question or Comment’ about Week 13 lectures until Thursday, 12/1, at midnight on Blackboard.</strong></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
