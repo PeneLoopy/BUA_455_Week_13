@@ -401,7 +401,7 @@ class: bottom, right
 
 ### Plan for today
 
-- Address some submitted questions about Quarto
+- Address some submitted questions about Quarto and R Markdown
 
 - Tips for a Better Dashboard
 

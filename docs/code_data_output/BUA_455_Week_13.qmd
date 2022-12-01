@@ -236,6 +236,23 @@ p_loaded()
   
 ---
 
+## Material Added on Wednesday 11/30
+
+### Plan for today
+
+- Address some submitted questions about Quarto and R Markdown
+
+- Tips for a Better Dashboard
+
+- Tables with GT
+
+- Five (more) minutes for evaluations
+
+- In-class work time
+
+
+---
+
 ### Tips for a Better Dashboard
 
 A good rule for this project (every project):
