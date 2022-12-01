@@ -1,6 +1,8 @@
 ---
 title: "Quarto Word Example"
-format: docx
+format: 
+  docx:
+    toc: true
 editor: visual
 ---
 
@@ -18,7 +20,7 @@ if (!require("pacman")) install.packages("pacman", repos = "http://lib.stat.cmu.
 
 # install and load required packages
 # pacman should be first package in parentheses and then list others
-pacman::p_load(pacman,tidyverse, knitr)
+pacman::p_load(pacman,tidyverse, knitr, gt, tidyquant)
 
 # verify packages (comment out in finished documents)
 p_loaded()
@@ -42,7 +44,7 @@ When you click the **Render** button a document will be generated that includes:
 
 ## Code and Output in Word Document
 
-```{r cars, echo = TRUE}
+```{r cars_summary, echo = TRUE}
 summary(cars)
 ```
 
@@ -52,7 +54,7 @@ summary(cars)
 
 The following text includes in-line code. A linear model is created and saved in the R chunk. and then components of that model output used in the sentence that follows.
 
-```{r cars model, echo = T}
+```{r cars_model, echo = T}
 cmod <- lm(dist ~ speed, data = cars)
 scmod <- summary(cmod)
 ```
@@ -63,13 +65,15 @@ Based on the available data in the base R software (R Core team, 2022), stopping
 
 ## Basic Plot
 
-```{r cars plot}
+```{r cars_plot}
 plot(cars)
 ```
 
+<br>
+
 ## Star Wars Plot from Week 1
 
-```{r formatted starwars plot, fig.align='center'}
+```{r formatted_sw_plot, fig.align='center'}
 
 my_starwars_plt <- starwars |>
   select(species, sex, height, mass) |>
@@ -92,9 +96,76 @@ my_starwars_plt <- starwars |>
   theme(panel.border = element_rect(colour = "lightgrey", fill=NA, linewidth=2)))
 ```
 
+## gt Tables
+
+-   Tables created from the exact same code will appear differently in different output formats.
+
+-   Note that these are the large and small `gt` tables of stock data shown in the Week 13 slides.
+
+First we present the full table and note that the Quarto automatically numbers the tables.
+
+```{r import_data, include=F, message=FALSE}
+getSymbols("^GSPC", from="2022-01-01", to="2022-11-01") 
+```
+
+```{r full_table, echo=FALSE, message=F}
+snp22 <- GSPC |>
+  fortify.zoo() |> as_tibble(.name_repair = "minimal") |>
+  rename("date" = "Index") |>
+  mutate(mnth=month(date))|>
+  group_by(mnth) |>
+  filter(date==max(date)) |>  # filtered data to last day of each month
+  ungroup() |>
+  select(-c(6,8))    # remove volume and month variables
+names(snp22)[2:6] <- c("Open", "High", "Low", "Close", "Adjusted")
+
+(snp_fmt <- snp22 |>
+  gt(rowname_col = "date") |>
+  tab_header(title = "S&P 500",
+             subtitle = "Last Day of Each Month in 2022") |>
+  tab_stubhead(label = "Date") |>
+  fmt_date(columns=date, date_style=3) |>  
+  fmt_currency(columns=Open:Adjusted, currency = "USD")|> 
+  tab_footnote("Data Source: https://finance.yahoo.com") |>
+  tab_footnote("Symbol: ^GSPC"))
+
+```
+
+<br>
+
+There is does not appear to be page break feature yet, but we can use `<br>` to add spaces.
+
+As mentioned in the Week 13 slides, we can also show an edited version of this table.
+
+<br>
+
+```{r edited_smaller_table}
+
+(snp_sm <- snp22 |>
+select(1,3,6) |>
+  gt(rowname_col = "date") |>
+  tab_header(title = "S&P 500",
+             subtitle = "2022 - Last Day of Each Month") |>
+  tab_stubhead(label = "Date") |>
+  fmt_date(columns=date, date_style=6) |>                   
+  fmt_currency(columns=High:Adjusted, 
+               currency = "USD")|>     
+  tab_footnote("Source: https://finance.yahoo.com") |>
+  tab_footnote("Symbol: ^GSPC"))
+
+```
+
+<br>
+
+<br>
+
 ## Citations
 
 Note that the citations below were copied without editing from part of the R console output. If you are are creating your memos in RStudio (not required), these citations are already formatted for you.
+
+Dancho M, Vaughan D (2022). *tidyquant: Tidy Quantitative Financial Analysis*. R package version 1.0.5, <https://CRAN.R-project.org/package=tidyquant>.
+
+Iannone R, Cheng J, Schloerke B, Hughes E, Seo J (2022). *gt: Easily Create Presentation-Ready Display Tables*. R package version 0.8.0, <https://CRAN.R-project.org/package=gt>.
 
 R Core Team (2022). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 

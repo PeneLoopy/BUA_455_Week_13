@@ -7,7 +7,6 @@ editor: visual
 
 
 
-
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
@@ -47,7 +46,7 @@ summary(cars)
 
 ::: {.cell}
 ::: {.cell-output-display}
-![](Quarto_Powerpoint_Example_files/figure-pptx/pressure-1.png)
+![](Quarto_Powerpoint_Example_files/figure-pptx/cars scatterplot-1.png)
 :::
 :::
 

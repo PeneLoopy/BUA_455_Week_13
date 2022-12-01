@@ -4,7 +4,6 @@ format: pptx
 editor: visual
 ---
 
-
 ```{r setup, include=F}
 
 # this line specifies options for default options for all R Chunks
@@ -19,13 +18,12 @@ if (!require("pacman")) install.packages("pacman", repos = "http://lib.stat.cmu.
 
 # install and load required packages
 # pacman should be first package in parentheses and then list others
-pacman::p_load(pacman,tidyverse, ggthemes, magrittr, knitr, lubridate, gridExtra, RColorBrewer)
+pacman::p_load(pacman,tidyverse, knitr, gt, tidyquant)
 
 # verify packages (comment out in finished documents)
 p_loaded()
 
 ```
-
 
 ## Quarto
 
@@ -83,6 +81,4 @@ my_starwars_plt <- starwars |>
     plot.background = element_rect(colour = "darkgrey", fill=NA, linewidth=2)))
 
 ```
-
-
 

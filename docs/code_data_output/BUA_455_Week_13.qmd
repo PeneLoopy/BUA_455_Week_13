@@ -1,10 +1,11 @@
 ---
 title: "BUA 455 - Week 13"
 author: "Penelope Pooler Eisenbies"
-date: "2022-11-29"
+date: '`r Sys.Date()`'
 format:
   html:
     toc: true
+    toc-location: left
     html-math-method: katex
     css: styles.css
 
@@ -25,7 +26,7 @@ if (!require("pacman")) install.packages("pacman", repos = "http://lib.stat.cmu.
 
 # install and load required packages
 # pacman should be first package in parentheses and then list others
-pacman::p_load(pacman,tidyverse, knitr)
+pacman::p_load(pacman,tidyverse, knitr, gt, tidyquant)
 
 # verify packages (comment out in finished documents)
 p_loaded()
@@ -64,7 +65,7 @@ p_loaded()
 
 - [Project Description - Memos are described on Page 5](https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing)
 
-- [Template for Memo to Supervisor](https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing)
+- [Template for Memo to Supervisor](https://docs.google.com/document/d/1YG_tuwnx1TqUUDIyCT37dtMTi3cC7tbdjbus9zUEBqc/edit?usp=sharing)
 
    - Supervisor Memo's Goal: 
   
@@ -223,7 +224,7 @@ p_loaded()
 
 * Please take the time to fill out evaluations.
 
-  - [You can login to the Course Evaluations website here](coursefeedback.syr.edu)
+  - [You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)
   
     - netID and password are required
   
@@ -233,18 +234,179 @@ p_loaded()
 
 ![Course Evaluation QR Code](QR-Code_Course-Feedback.png){fig-width=50%}
   
-<br>
+---
+
+### Tips for a Better Dashboard
+
+A good rule for this project (every project):
+
+***Edit yourself***
+
+- You may have a lot to say and show, **BUT** always consider:
+
+  - **What can you present WELL in the space an time you have?**
+
+- An important skill to develop is the ability to filter the data to a representative subset, especially for a visualization.
+
+- Think about what data can be presented well and what the audience can digest.  
+
+- Don't try to show too much in any one plot or panel.
+
+- You can always show other parts of the data by
+
+  - creating more panels 
+  - creating multi-plot grids to show other part of the data
+
+---
+
+### Tips for a Better Dashboard
+
+At each stage of the process, take a step back and examine each dashboard panel as if you are seeing it with fresh eyes.
+
+- As you do that, as yourself these questions:
+
+- Does this panel achieve a specific goal?
+
+- Is the point of this panel clear?
+
+- If not, how can I edit or augment this panel to clarify what it is showing?
+
+- Are the text and symbols readable from any distance?
+
+- What can I simplify to make it more clear?
+
+  - Are there aspects I think are important that might not be obvious?
   
+  - If so, how can I modify the panel or dashboard to highlight the key aspects?
+  
+- When in doubt, ask someone like a roommate to look it and ask if they understand what you hope to convey.
+
+---
+
+### Tables in Dashboards and Documents
+
+- This course focuses mostly on data visualizations, with a few table summaries.
+
+- Creating a more complex table, may be useful to you and could be included as an additional main panel in your dashboard instead of side panel.
+
+  - Not required, but it may be helpful.  
+
+- Even if you don't use `gt` tables in your dashboard, they will definitely be helpful if you use R and RStudio to manage, analyze, and document data in the future.
+
+- If you have not already done so, please rerun the setup for this lecture, which now includes the `gt` package and the package.
+
+- The [`gt` website](https://gt.rstudio.com/index.html) has many examples with detailed step by step instructions.
+
+- Notes about examples on `gt` website:
+
+  - Examples use the older pipe notation `%>%` which is identical in function to `|>`.
+  
+  - Examples also use different commands to complete the same data management tasks covered in BUA 455.
+  
+  - If you are unsure about a command you come across ask me, or google it.  The R help index is also good.
+      - e.g. `?glue` or `?glue::glue` is the glue command in glue package
+
+---
+
+### Tables in Dashboards and Documents
+
+First let's look at what can be customized:
+
+![](gt_table.png)
+
+
+---
+
+### Example: Importing, Summarizing and Displaying Stock Data
+
+```{r stock import and summary}
+
+getSymbols("^GSPC", from="2022-01-01", to="2022-11-01") 
+
+snp22 <- GSPC |>
+  fortify.zoo() |> as_tibble(.name_repair = "minimal") |>
+  rename("date" = "Index") |>
+  mutate(mnth=month(date))|>
+  group_by(mnth) |>
+  filter(date==max(date)) |>  # filtered data to last day of each month
+  ungroup() |>
+  select(-c(6,8))    # remove volume and month variables
+names(snp22)[2:6] <- c("Open", "High", "Low", "Close", "Adjusted")
+head(snp22,3)
+
+```
+
+---
+
+### Example: Importing, Summarizing and Displaying Stock Data
+
+- The code below does not make a new tibble or data frame
+- Instead it create a formatted table object that can be output as a .png file like a plot.
+
+  - `kable` also creates a formatted table object, but `gt` has more features.
+
+- As with plots, I am saving this object and then displaying it afterwards.
+
+```{r create formatted gt table}
+snp_fmt <- snp22 |>
+  gt(rowname_col = "date") |>
+  tab_header(title = "S&P 500",
+             subtitle = "Last Day of Each Month in 2022") |>
+  tab_stubhead(label = "Date") |>
+  fmt_date(columns=date, date_style=3) |>  # formats date
+  fmt_currency(columns=Open:Adjusted, currency = "USD")|>     # formats values as US$
+  tab_footnote("Data Source: https://finance.yahoo.com") |>
+  tab_footnote("Symbol: ^GSPC")
+
+```
+
+---
+
+In a dashboard or document, the code would be hidden, but it is shown here:
+
+```{r display formatted table}
+snp_fmt         # code to display created table
+```
+
+---
+
+### Editing a Table for a Presentation
+
+
+- A table in dashboard side panel should be small.
+
+- Previous table would not fit, but we can select variables and shorten the date.
+
+- Limit the table to key variables that highlight important characteristics of your data.
+
+- Other variables, e.g. `Open`, `Low`, can be shown in plot
+
+```{r edited smaller table}
+(snp_sm <- snp22 |>
+select(1,3,6) |>
+  gt(rowname_col = "date") |>
+  tab_header(title = "S&P 500",
+             subtitle = "2022 - Last Day of Each Month") |>
+  tab_stubhead(label = "Date") |>
+  fmt_date(columns=date, date_style=6) |>                   
+  fmt_currency(columns=High:Adjusted, 
+               currency = "USD")|>     
+  tab_footnote("Source: https://finance.yahoo.com") |>
+  tab_footnote("Symbol: ^GSPC"))
+```
+
+
+---
+
 ### Project Questions
 
  - The rest of class time can be used for group projects.
+ 
+ - Let me know TODAY if you would prefer to present on Tuesday.
+ 
+ - Group presentation days and times will be random assigned and posted by Friday (12/1)
 
 
-
-
-
-
-  
 ---
 
 ### **Key Points from Week 13**

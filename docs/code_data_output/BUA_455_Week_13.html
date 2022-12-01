@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Penelope Pooler Eisenbies">
-<meta name="dcterms.date" content="2022-11-29">
+<meta name="dcterms.date" content="2022-12-01">
 
 <title>BUA 455 - Week 13</title>
 <style>
@@ -105,8 +105,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
@@ -121,10 +121,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#more-about-github" id="toc-more-about-github" class="nav-link" data-scroll-target="#more-about-github">More about GitHub</a></li>
   <li><a href="#some-github-links" id="toc-some-github-links" class="nav-link" data-scroll-target="#some-github-links">Some GitHub links</a></li>
   <li><a href="#evaluations" id="toc-evaluations" class="nav-link" data-scroll-target="#evaluations">Evaluations</a></li>
+  <li><a href="#tips-for-a-better-dashboard" id="toc-tips-for-a-better-dashboard" class="nav-link" data-scroll-target="#tips-for-a-better-dashboard">Tips for a Better Dashboard</a></li>
+  <li><a href="#tips-for-a-better-dashboard-1" id="toc-tips-for-a-better-dashboard-1" class="nav-link" data-scroll-target="#tips-for-a-better-dashboard-1">Tips for a Better Dashboard</a></li>
+  <li><a href="#tables-in-dashboards-and-documents" id="toc-tables-in-dashboards-and-documents" class="nav-link" data-scroll-target="#tables-in-dashboards-and-documents">Tables in Dashboards and Documents</a></li>
+  <li><a href="#tables-in-dashboards-and-documents-1" id="toc-tables-in-dashboards-and-documents-1" class="nav-link" data-scroll-target="#tables-in-dashboards-and-documents-1">Tables in Dashboards and Documents</a></li>
+  <li><a href="#example-importing-summarizing-and-displaying-stock-data" id="toc-example-importing-summarizing-and-displaying-stock-data" class="nav-link" data-scroll-target="#example-importing-summarizing-and-displaying-stock-data">Example: Importing, Summarizing and Displaying Stock Data</a></li>
+  <li><a href="#example-importing-summarizing-and-displaying-stock-data-1" id="toc-example-importing-summarizing-and-displaying-stock-data-1" class="nav-link" data-scroll-target="#example-importing-summarizing-and-displaying-stock-data-1">Example: Importing, Summarizing and Displaying Stock Data</a></li>
+  <li><a href="#editing-a-table-for-a-presentation" id="toc-editing-a-table-for-a-presentation" class="nav-link" data-scroll-target="#editing-a-table-for-a-presentation">Editing a Table for a Presentation</a></li>
   <li><a href="#project-questions" id="toc-project-questions" class="nav-link" data-scroll-target="#project-questions">Project Questions</a></li>
   <li><a href="#key-points-from-week-13" id="toc-key-points-from-week-13" class="nav-link" data-scroll-target="#key-points-from-week-13"><strong>Key Points from Week 13</strong></a></li>
   </ul>
 </nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -147,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 29, 2022</p>
+      <p class="date">December 1, 2022</p>
     </div>
   </div>
   
@@ -173,13 +182,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and load required packages</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pacman should be first package in parentheses and then list others</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(pacman,tidyverse, knitr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(pacman,tidyverse, knitr, gt, tidyquant)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># verify packages (comment out in finished documents)</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p_loaded</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "knitr"     "forcats"   "stringr"   "dplyr"     "purrr"     "readr"    
- [7] "tidyr"     "tibble"    "ggplot2"   "tidyverse" "pacman"   </code></pre>
+<pre><code> [1] "tidyquant"            "quantmod"             "TTR"                 
+ [4] "PerformanceAnalytics" "xts"                  "zoo"                 
+ [7] "lubridate"            "timechange"           "gt"                  
+[10] "knitr"                "forcats"              "stringr"             
+[13] "dplyr"                "purrr"                "readr"               
+[16] "tidyr"                "tibble"               "ggplot2"             
+[19] "tidyverse"            "pacman"              </code></pre>
 </div>
 </div>
 <hr>
@@ -208,7 +222,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="project-memos">Project Memos</h3>
 <ul>
 <li><p><a href="https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing">Project Description - Memos are described on Page 5</a></p></li>
-<li><p><a href="https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing">Template for Memo to Supervisor</a></p>
+<li><p><a href="https://docs.google.com/document/d/1YG_tuwnx1TqUUDIyCT37dtMTi3cC7tbdjbus9zUEBqc/edit?usp=sharing">Template for Memo to Supervisor</a></p>
 <ul>
 <li><p>Supervisor Memo’s Goal:</p>
 <ul>
@@ -361,7 +375,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Course Evaluations are very important.</p></li>
 <li><p>Please take the time to fill out evaluations.</p>
 <ul>
-<li><p><a href="coursefeedback.syr.edu">You can login to the Course Evaluations website here</a></p>
+<li><p><a href="http://coursefeedback.syr.edu/">You can login to the Course Evaluations website here</a></p>
 <ul>
 <li>netID and password are required</li>
 </ul></li>
@@ -375,12 +389,1139 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption class="figure-caption">Course Evaluation QR Code</figcaption><p></p>
 </figure>
 </div>
-<p><br></p>
+<hr>
+</section>
+<section id="tips-for-a-better-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="tips-for-a-better-dashboard">Tips for a Better Dashboard</h3>
+<p>A good rule for this project (every project):</p>
+<p><strong><em>Edit yourself</em></strong></p>
+<ul>
+<li><p>You may have a lot to say and show, <strong>BUT</strong> always consider:</p>
+<ul>
+<li><strong>What can you present WELL in the space an time you have?</strong></li>
+</ul></li>
+<li><p>An important skill to develop is the ability to filter the data to a representative subset, especially for a visualization.</p></li>
+<li><p>Think about what data can be presented well and what the audience can digest.</p></li>
+<li><p>Don’t try to show too much in any one plot or panel.</p></li>
+<li><p>You can always show other parts of the data by</p>
+<ul>
+<li>creating more panels</li>
+<li>creating multi-plot grids to show other part of the data</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="tips-for-a-better-dashboard-1" class="level3">
+<h3 class="anchored" data-anchor-id="tips-for-a-better-dashboard-1">Tips for a Better Dashboard</h3>
+<p>At each stage of the process, take a step back and examine each dashboard panel as if you are seeing it with fresh eyes.</p>
+<ul>
+<li><p>As you do that, as yourself these questions:</p></li>
+<li><p>Does this panel achieve a specific goal?</p></li>
+<li><p>Is the point of this panel clear?</p></li>
+<li><p>If not, how can I edit or augment this panel to clarify what it is showing?</p></li>
+<li><p>Are the text and symbols readable from any distance?</p></li>
+<li><p>What can I simplify to make it more clear?</p>
+<ul>
+<li><p>Are there aspects I think are important that might not be obvious?</p></li>
+<li><p>If so, how can I modify the panel or dashboard to highlight the key aspects?</p></li>
+</ul></li>
+<li><p>When in doubt, ask someone like a roommate to look it and ask if they understand what you hope to convey.</p></li>
+</ul>
+<hr>
+</section>
+<section id="tables-in-dashboards-and-documents" class="level3">
+<h3 class="anchored" data-anchor-id="tables-in-dashboards-and-documents">Tables in Dashboards and Documents</h3>
+<ul>
+<li><p>This course focuses mostly on data visualizations, with a few table summaries.</p></li>
+<li><p>Creating a more complex table, may be useful to you and could be included as an additional main panel in your dashboard instead of side panel.</p>
+<ul>
+<li>Not required, but it may be helpful.</li>
+</ul></li>
+<li><p>Even if you don’t use <code>gt</code> tables in your dashboard, they will definitely be helpful if you use R and RStudio to manage, analyze, and document data in the future.</p></li>
+<li><p>If you have not already done so, please rerun the setup for this lecture, which now includes the <code>gt</code> package and the package.</p></li>
+<li><p>The <a href="https://gt.rstudio.com/index.html"><code>gt</code> website</a> has many examples with detailed step by step instructions.</p></li>
+<li><p>Notes about examples on <code>gt</code> website:</p>
+<ul>
+<li><p>Examples use the older pipe notation <code>%&gt;%</code> which is identical in function to <code>|&gt;</code>.</p></li>
+<li><p>Examples also use different commands to complete the same data management tasks covered in BUA 455.</p></li>
+<li><p>If you are unsure about a command you come across ask me, or google it. The R help index is also good.</p>
+<ul>
+<li>e.g.&nbsp;<code>?glue</code> or <code>?glue::glue</code> is the glue command in glue package</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="tables-in-dashboards-and-documents-1" class="level3">
+<h3 class="anchored" data-anchor-id="tables-in-dashboards-and-documents-1">Tables in Dashboards and Documents</h3>
+<p>First let’s look at what can be customized:</p>
+<p><img src="gt_table.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="example-importing-summarizing-and-displaying-stock-data" class="level3">
+<h3 class="anchored" data-anchor-id="example-importing-summarizing-and-displaying-stock-data">Example: Importing, Summarizing and Displaying Stock Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">"^GSPC"</span>, <span class="at">from=</span><span class="st">"2022-01-01"</span>, <span class="at">to=</span><span class="st">"2022-11-01"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "^GSPC"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>snp22 <span class="ot">&lt;-</span> GSPC <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fortify.zoo</span>() <span class="sc">|&gt;</span> <span class="fu">as_tibble</span>(<span class="at">.name_repair =</span> <span class="st">"minimal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"date"</span> <span class="ot">=</span> <span class="st">"Index"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mnth=</span><span class="fu">month</span>(date))<span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(mnth) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date<span class="sc">==</span><span class="fu">max</span>(date)) <span class="sc">|&gt;</span>  <span class="co"># filtered data to last day of each month</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">8</span>))    <span class="co"># remove volume and month variables</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(snp22)[<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Open"</span>, <span class="st">"High"</span>, <span class="st">"Low"</span>, <span class="st">"Close"</span>, <span class="st">"Adjusted"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(snp22,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  date        Open  High   Low Close Adjusted
+  &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1 2022-01-31 4432. 4517. 4414. 4516.    4516.
+2 2022-02-28 4354. 4389. 4315. 4374.    4374.
+3 2022-03-31 4599. 4603. 4530. 4530.    4530.</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="example-importing-summarizing-and-displaying-stock-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-importing-summarizing-and-displaying-stock-data-1">Example: Importing, Summarizing and Displaying Stock Data</h3>
+<ul>
+<li><p>The code below does not make a new tibble or data frame</p></li>
+<li><p>Instead it create a formatted table object that can be output as a .png file like a plot.</p>
+<ul>
+<li><code>kable</code> also creates a formatted table object, but <code>gt</code> has more features.</li>
+</ul></li>
+<li><p>As with plots, I am saving this object and then displaying it afterwards.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>snp_fmt <span class="ot">&lt;-</span> snp22 <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"S&amp;P 500"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Last Day of Each Month in 2022"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="st">"Date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_date</span>(<span class="at">columns=</span>date, <span class="at">date_style=</span><span class="dv">3</span>) <span class="sc">|&gt;</span>  <span class="co"># formats date</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_currency</span>(<span class="at">columns=</span>Open<span class="sc">:</span>Adjusted, <span class="at">currency =</span> <span class="st">"USD"</span>)<span class="sc">|&gt;</span>     <span class="co"># formats values as US$</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Data Source: https://finance.yahoo.com"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Symbol: ^GSPC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p>In a dashboard or document, the code would be hidden, but it is shown here:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>snp_fmt         <span class="co"># code to display created table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="izstyhqrow" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#izstyhqrow) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#izstyhqrow) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#izstyhqrow) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#izstyhqrow) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#izstyhqrow) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#izstyhqrow) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#izstyhqrow) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#izstyhqrow) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#izstyhqrow) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#izstyhqrow) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#izstyhqrow) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#izstyhqrow) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#izstyhqrow) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#izstyhqrow) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#izstyhqrow) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#izstyhqrow) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#izstyhqrow) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#izstyhqrow) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#izstyhqrow) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#izstyhqrow) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#izstyhqrow) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#izstyhqrow) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#izstyhqrow) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#izstyhqrow) .gt_left {
+  text-align: left;
+}
+
+:where(#izstyhqrow) .gt_center {
+  text-align: center;
+}
+
+:where(#izstyhqrow) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#izstyhqrow) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#izstyhqrow) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#izstyhqrow) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#izstyhqrow) .gt_super {
+  font-size: 65%;
+}
+
+:where(#izstyhqrow) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#izstyhqrow) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#izstyhqrow) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#izstyhqrow) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#izstyhqrow) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#izstyhqrow) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#izstyhqrow) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="6" class="gt_heading gt_title gt_font_normal" style="">S&amp;P 500</td>
+    </tr>
+    <tr>
+      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Last Day of Each Month in 2022</td>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Date">Date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Open">Open</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="High">High</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Low">Low</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Close">Close</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Adjusted">Adjusted</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">Mon, Jan 31, 2022</th>
+<td headers="stub_1_1 Open" class="gt_row gt_right">$4,431.79</td>
+<td headers="stub_1_1 High" class="gt_row gt_right">$4,516.89</td>
+<td headers="stub_1_1 Low" class="gt_row gt_right">$4,414.02</td>
+<td headers="stub_1_1 Close" class="gt_row gt_right">$4,515.55</td>
+<td headers="stub_1_1 Adjusted" class="gt_row gt_right">$4,515.55</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">Mon, Feb 28, 2022</th>
+<td headers="stub_1_2 Open" class="gt_row gt_right">$4,354.17</td>
+<td headers="stub_1_2 High" class="gt_row gt_right">$4,388.84</td>
+<td headers="stub_1_2 Low" class="gt_row gt_right">$4,315.12</td>
+<td headers="stub_1_2 Close" class="gt_row gt_right">$4,373.94</td>
+<td headers="stub_1_2 Adjusted" class="gt_row gt_right">$4,373.94</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">Thu, Mar 31, 2022</th>
+<td headers="stub_1_3 Open" class="gt_row gt_right">$4,599.02</td>
+<td headers="stub_1_3 High" class="gt_row gt_right">$4,603.07</td>
+<td headers="stub_1_3 Low" class="gt_row gt_right">$4,530.41</td>
+<td headers="stub_1_3 Close" class="gt_row gt_right">$4,530.41</td>
+<td headers="stub_1_3 Adjusted" class="gt_row gt_right">$4,530.41</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub">Fri, Apr 29, 2022</th>
+<td headers="stub_1_4 Open" class="gt_row gt_right">$4,253.75</td>
+<td headers="stub_1_4 High" class="gt_row gt_right">$4,269.68</td>
+<td headers="stub_1_4 Low" class="gt_row gt_right">$4,124.28</td>
+<td headers="stub_1_4 Close" class="gt_row gt_right">$4,131.93</td>
+<td headers="stub_1_4 Adjusted" class="gt_row gt_right">$4,131.93</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub">Tue, May 31, 2022</th>
+<td headers="stub_1_5 Open" class="gt_row gt_right">$4,151.09</td>
+<td headers="stub_1_5 High" class="gt_row gt_right">$4,168.34</td>
+<td headers="stub_1_5 Low" class="gt_row gt_right">$4,104.88</td>
+<td headers="stub_1_5 Close" class="gt_row gt_right">$4,132.15</td>
+<td headers="stub_1_5 Adjusted" class="gt_row gt_right">$4,132.15</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub">Thu, Jun 30, 2022</th>
+<td headers="stub_1_6 Open" class="gt_row gt_right">$3,785.99</td>
+<td headers="stub_1_6 High" class="gt_row gt_right">$3,818.99</td>
+<td headers="stub_1_6 Low" class="gt_row gt_right">$3,738.67</td>
+<td headers="stub_1_6 Close" class="gt_row gt_right">$3,785.38</td>
+<td headers="stub_1_6 Adjusted" class="gt_row gt_right">$3,785.38</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub">Fri, Jul 29, 2022</th>
+<td headers="stub_1_7 Open" class="gt_row gt_right">$4,087.33</td>
+<td headers="stub_1_7 High" class="gt_row gt_right">$4,140.15</td>
+<td headers="stub_1_7 Low" class="gt_row gt_right">$4,079.22</td>
+<td headers="stub_1_7 Close" class="gt_row gt_right">$4,130.29</td>
+<td headers="stub_1_7 Adjusted" class="gt_row gt_right">$4,130.29</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_right gt_stub">Wed, Aug 31, 2022</th>
+<td headers="stub_1_8 Open" class="gt_row gt_right">$4,000.67</td>
+<td headers="stub_1_8 High" class="gt_row gt_right">$4,015.37</td>
+<td headers="stub_1_8 Low" class="gt_row gt_right">$3,954.53</td>
+<td headers="stub_1_8 Close" class="gt_row gt_right">$3,955.00</td>
+<td headers="stub_1_8 Adjusted" class="gt_row gt_right">$3,955.00</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_right gt_stub">Fri, Sep 30, 2022</th>
+<td headers="stub_1_9 Open" class="gt_row gt_right">$3,633.48</td>
+<td headers="stub_1_9 High" class="gt_row gt_right">$3,671.44</td>
+<td headers="stub_1_9 Low" class="gt_row gt_right">$3,584.13</td>
+<td headers="stub_1_9 Close" class="gt_row gt_right">$3,585.62</td>
+<td headers="stub_1_9 Adjusted" class="gt_row gt_right">$3,585.62</td></tr>
+    <tr><th id="stub_1_10" scope="row" class="gt_row gt_right gt_stub">Mon, Oct 31, 2022</th>
+<td headers="stub_1_10 Open" class="gt_row gt_right">$3,881.85</td>
+<td headers="stub_1_10 High" class="gt_row gt_right">$3,893.73</td>
+<td headers="stub_1_10 Low" class="gt_row gt_right">$3,863.18</td>
+<td headers="stub_1_10 Close" class="gt_row gt_right">$3,871.98</td>
+<td headers="stub_1_10 Adjusted" class="gt_row gt_right">$3,871.98</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="6"> Data Source: https://finance.yahoo.com</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="6"> Symbol: ^GSPC</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="editing-a-table-for-a-presentation" class="level3">
+<h3 class="anchored" data-anchor-id="editing-a-table-for-a-presentation">Editing a Table for a Presentation</h3>
+<ul>
+<li><p>A table in dashboard side panel should be small.</p></li>
+<li><p>Previous table would not fit, but we can select variables and shorten the date.</p></li>
+<li><p>Limit the table to key variables that highlight important characteristics of your data.</p></li>
+<li><p>Other variables, e.g.&nbsp;<code>Open</code>, <code>Low</code>, can be shown in plot</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(snp_sm <span class="ot">&lt;-</span> snp22 <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"S&amp;P 500"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"2022 - Last Day of Each Month"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="st">"Date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_date</span>(<span class="at">columns=</span>date, <span class="at">date_style=</span><span class="dv">6</span>) <span class="sc">|&gt;</span>                   </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_currency</span>(<span class="at">columns=</span>High<span class="sc">:</span>Adjusted, </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">currency =</span> <span class="st">"USD"</span>)<span class="sc">|&gt;</span>     </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Source: https://finance.yahoo.com"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Symbol: ^GSPC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<div id="mrrtmlpdna" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#mrrtmlpdna) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#mrrtmlpdna) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#mrrtmlpdna) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#mrrtmlpdna) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#mrrtmlpdna) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#mrrtmlpdna) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#mrrtmlpdna) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#mrrtmlpdna) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#mrrtmlpdna) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#mrrtmlpdna) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#mrrtmlpdna) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#mrrtmlpdna) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#mrrtmlpdna) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#mrrtmlpdna) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrrtmlpdna) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#mrrtmlpdna) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#mrrtmlpdna) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrrtmlpdna) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#mrrtmlpdna) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrrtmlpdna) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#mrrtmlpdna) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrrtmlpdna) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#mrrtmlpdna) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#mrrtmlpdna) .gt_left {
+  text-align: left;
+}
+
+:where(#mrrtmlpdna) .gt_center {
+  text-align: center;
+}
+
+:where(#mrrtmlpdna) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#mrrtmlpdna) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#mrrtmlpdna) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#mrrtmlpdna) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#mrrtmlpdna) .gt_super {
+  font-size: 65%;
+}
+
+:where(#mrrtmlpdna) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#mrrtmlpdna) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#mrrtmlpdna) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#mrrtmlpdna) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#mrrtmlpdna) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#mrrtmlpdna) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#mrrtmlpdna) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="3" class="gt_heading gt_title gt_font_normal" style="">S&amp;P 500</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">2022 - Last Day of Each Month</td>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Date">Date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="High">High</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Adjusted">Adjusted</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">Jan 31, 2022</th>
+<td headers="stub_1_1 High" class="gt_row gt_right">$4,516.89</td>
+<td headers="stub_1_1 Adjusted" class="gt_row gt_right">$4,515.55</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">Feb 28, 2022</th>
+<td headers="stub_1_2 High" class="gt_row gt_right">$4,388.84</td>
+<td headers="stub_1_2 Adjusted" class="gt_row gt_right">$4,373.94</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">Mar 31, 2022</th>
+<td headers="stub_1_3 High" class="gt_row gt_right">$4,603.07</td>
+<td headers="stub_1_3 Adjusted" class="gt_row gt_right">$4,530.41</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub">Apr 29, 2022</th>
+<td headers="stub_1_4 High" class="gt_row gt_right">$4,269.68</td>
+<td headers="stub_1_4 Adjusted" class="gt_row gt_right">$4,131.93</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub">May 31, 2022</th>
+<td headers="stub_1_5 High" class="gt_row gt_right">$4,168.34</td>
+<td headers="stub_1_5 Adjusted" class="gt_row gt_right">$4,132.15</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub">Jun 30, 2022</th>
+<td headers="stub_1_6 High" class="gt_row gt_right">$3,818.99</td>
+<td headers="stub_1_6 Adjusted" class="gt_row gt_right">$3,785.38</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub">Jul 29, 2022</th>
+<td headers="stub_1_7 High" class="gt_row gt_right">$4,140.15</td>
+<td headers="stub_1_7 Adjusted" class="gt_row gt_right">$4,130.29</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_right gt_stub">Aug 31, 2022</th>
+<td headers="stub_1_8 High" class="gt_row gt_right">$4,015.37</td>
+<td headers="stub_1_8 Adjusted" class="gt_row gt_right">$3,955.00</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_right gt_stub">Sep 30, 2022</th>
+<td headers="stub_1_9 High" class="gt_row gt_right">$3,671.44</td>
+<td headers="stub_1_9 Adjusted" class="gt_row gt_right">$3,585.62</td></tr>
+    <tr><th id="stub_1_10" scope="row" class="gt_row gt_right gt_stub">Oct 31, 2022</th>
+<td headers="stub_1_10 High" class="gt_row gt_right">$3,893.73</td>
+<td headers="stub_1_10 Adjusted" class="gt_row gt_right">$3,871.98</td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="3"> Source: https://finance.yahoo.com</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="3"> Symbol: ^GSPC</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+</div>
+</div>
+<hr>
 </section>
 <section id="project-questions" class="level3">
 <h3 class="anchored" data-anchor-id="project-questions">Project Questions</h3>
 <ul>
-<li>The rest of class time can be used for group projects.</li>
+<li><p>The rest of class time can be used for group projects.</p></li>
+<li><p>Let me know TODAY if you would prefer to present on Tuesday.</p></li>
+<li><p>Group presentation days and times will be random assigned and posted by Friday (12/1)</p></li>
 </ul>
 <hr>
 </section>
