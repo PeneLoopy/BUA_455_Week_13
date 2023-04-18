@@ -4,15 +4,15 @@
     <title>Week 13</title>
     <meta charset="utf-8" />
     <meta name="author" content="Penelope Pooler Eisenbies" />
-    <meta name="date" content="2022-12-01" />
-    <script src="docs_files/header-attrs/header-attrs.js"></script>
-    <link href="docs_files/panelset/panelset.css" rel="stylesheet" />
-    <script src="docs_files/panelset/panelset.js"></script>
-    <link href="docs_files/tile-view/tile-view.css" rel="stylesheet" />
-    <script src="docs_files/tile-view/tile-view.js"></script>
-    <script src="docs_files/xaringanExtra_fit-screen/fit-screen.js"></script>
-    <link href="docs_files/tachyons/tachyons.min.css" rel="stylesheet" />
-    <link href="docs_files/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <meta name="date" content="2023-04-18" />
+    <script src="docs_new_files/header-attrs/header-attrs.js"></script>
+    <link href="docs_new_files/panelset/panelset.css" rel="stylesheet" />
+    <script src="docs_new_files/panelset/panelset.js"></script>
+    <link href="docs_new_files/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="docs_new_files/tile-view/tile-view.js"></script>
+    <script src="docs_new_files/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="docs_new_files/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="docs_new_files/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -51,7 +51,7 @@ class: bottom, right
   
   #### Penelope Pooler Eisenbies
   
-  #### 2022-12-01
+  #### 2023-04-18
   
   [Wikipedia Sloth Page](https://en.wikipedia.org/wiki/Sloth)
   
@@ -59,11 +59,11 @@ class: bottom, right
 
 ### Final Projects
 
-#### **Presentations are next week, Tue. 12/6 and Thu. 12/8**
+#### **Presentations are next week, Tue. 4/25 and Thu. 4/27**
 
-- If your group wants to present on Tue. 12/6, let me know by Thursday.  
+- If your group wants to present on Tue. 4/25, let me know by Thursday.  
 
-  - Otherwise, random order will be posted on Friday.
+  - Otherwise, random order will be posted by Sunday (4/23).
 
 - Attendance required by all
   
@@ -79,7 +79,7 @@ class: bottom, right
     
 - Each student will evaluate other groups and their own group members
 
-* **All project components must be submitted by Tuesday, December 13th at 5:00 PM**
+* **All project components must be submitted by Tuesday, May 2nd at 5:00 PM**
 
 ---
 
@@ -102,6 +102,7 @@ class: bottom, right
       - Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.
       
       - I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.
+      
   
 #### Questions about Project and Templates?
 
@@ -177,9 +178,12 @@ class: bottom, right
   
 - Doesn't include [text reference for this class](https://rafalab.GitHub.io/dsbook/) which is good.
   
-- Best resource I have found is Google which often leads to [stack overflow](https://stackoverflow.com/)
+- Before this Spring, the best resource was Google which often leads to [stack overflow](https://stackoverflow.com/)
   
   - Stack Overflow is helpful but you have to know enough code to be able to understand answers.
+  
+- Now, I recommend using and learning with AI such as Chat GPT (not during a test)
+  The AI engine is very good at answering most code questions, but it is not perfect.
 
 ]
 
@@ -267,6 +271,28 @@ class: bottom, right
 
 ---
 
+### New Ways to Collaborate
+
+**[Posit Cloud]()** is not free but is fantastic for sharing work and collaborating in real time.
+
+- For your purposes, it is $5 per month which you can pause when not working.
+- I may teach using it in MAS 261 to share work with students.
+- You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
+- You can organize work into R Projects the same way we do in class and share them with others.
+
+**[Google Colab]()** is primarily used for Python but can be used with R.
+
+- I have only started exploring this option but it appears to be a free Google collaborative data science space.
+- Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
+  - TLDR: Google Colab is more well developed for Python but useable for R and will eveolve quickly.
+  
+**[Kaggle]()**
+- You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.
+- Here is a [detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report).
+- Here is a [tutorial for using R in Kaggle Notebook](https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/).
+
+---
+
 .pull-left[
 
 ### Evaluations
@@ -279,28 +305,29 @@ class: bottom, right
   
     - netID and password are required
   
-  - I will step out for 5 minutes. 
+  - I will step out for 5 minutes today and again on Thursday. 
   
 &lt;br&gt;
 
 
 ]
 
+
 .pull-right[
 
-![Eval QR Code](docs_files/images/QR-Code_Course-Feedback.png)
+![beaver](docs_files/images/beaver.png)
 
 ]
-  
----
 
-## Material Added on Wednesday 11/30
+---
 
 .pull-left[
 
-### Plan for today
+### Plan for Thursday (4/20)
 
-- Address some submitted questions about Quarto and R Markdown
+- Address submitted questions
+
+  - Quarto and R Markdown
 
 - Tips for a Better Dashboard
 
@@ -316,7 +343,6 @@ class: bottom, right
 
 ![](docs_files/images/owl.png)
 ]
-
 
 ---
 
@@ -407,15 +433,15 @@ First let's look at what can be customized:
 
 
 ```r
-getSymbols("^GSPC", from="2022-01-01", to="2022-11-01") 
+getSymbols("^GSPC", from="2022-07-01", to="2023-04-01") 
 ```
 
 ```
-## [1] "^GSPC"
+## [1] "GSPC"
 ```
 
 ```r
-snp22 &lt;- GSPC |&gt;
+snp9 &lt;- GSPC |&gt;
   fortify.zoo() |&gt; as_tibble(.name_repair = "minimal") |&gt;
   rename("date" = "Index") |&gt;
   mutate(mnth=month(date))|&gt;
@@ -423,17 +449,17 @@ snp22 &lt;- GSPC |&gt;
   filter(date==max(date)) |&gt;  # filtered data to last day of each month
   ungroup() |&gt;
   select(-c(6,8))    # remove volume and month variables
-names(snp22)[2:6] &lt;- c("Open", "High", "Low", "Close", "Adjusted")
-head(snp22,3)
+names(snp9)[2:6] &lt;- c("Open", "High", "Low", "Close", "Adjusted")
+head(snp9,3)
 ```
 
 ```
 ## # A tibble: 3 × 6
 ##   date        Open  High   Low Close Adjusted
 ##   &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-## 1 2022-01-31 4432. 4517. 4414. 4516.    4516.
-## 2 2022-02-28 4354. 4389. 4315. 4374.    4374.
-## 3 2022-03-31 4599. 4603. 4530. 4530.    4530.
+## 1 2022-07-29 4087. 4140. 4079. 4130.    4130.
+## 2 2022-08-31 4001. 4015. 3955. 3955     3955 
+## 3 2022-09-30 3633. 3671. 3584. 3586.    3586.
 ```
 
 ---
@@ -449,10 +475,10 @@ head(snp22,3)
 
 
 ```r
-snp_fmt &lt;- snp22 |&gt;
+snp_fmt &lt;- snp9 |&gt;
   gt(rowname_col = "date") |&gt;
   tab_header(title = "S&amp;P 500",
-             subtitle = "Last Day of Each Month in 2022") |&gt;
+             subtitle = "Last Trading Day of Previous Nine Months") |&gt;
   tab_stubhead(label = "Date") |&gt;
   fmt_date(columns=date, date_style=3) |&gt;  # formats date
   fmt_currency(columns=Open:Adjusted, currency = "USD")|&gt;     # formats values as US$
@@ -469,14 +495,26 @@ In a dashboard or document, the code would be hidden, but it is shown here:
 snp_fmt         # code to display created table
 ```
 
-<div id="dsqoshcfni" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="hxtajytqlt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hxtajytqlt table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#dsqoshcfni .gt_table {
+#hxtajytqlt thead, #hxtajytqlt tbody, #hxtajytqlt tfoot, #hxtajytqlt tr, #hxtajytqlt td, #hxtajytqlt th {
+  border-style: none;
+}
+
+#hxtajytqlt p {
+  margin: 0;
+  padding: 0;
+}
+
+#hxtajytqlt .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -499,24 +537,12 @@ snp_fmt         # code to display created table
   border-left-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#dsqoshcfni .gt_caption {
+#hxtajytqlt .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dsqoshcfni .gt_title {
+#hxtajytqlt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -528,25 +554,37 @@ snp_fmt         # code to display created table
   border-bottom-width: 0;
 }
 
-#dsqoshcfni .gt_subtitle {
+#hxtajytqlt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#dsqoshcfni .gt_bottom_border {
+#hxtajytqlt .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxtajytqlt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_col_headings {
+#hxtajytqlt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -561,7 +599,7 @@ snp_fmt         # code to display created table
   border-right-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_col_heading {
+#hxtajytqlt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -581,7 +619,7 @@ snp_fmt         # code to display created table
   overflow-x: hidden;
 }
 
-#dsqoshcfni .gt_column_spanner_outer {
+#hxtajytqlt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -593,15 +631,15 @@ snp_fmt         # code to display created table
   padding-right: 4px;
 }
 
-#dsqoshcfni .gt_column_spanner_outer:first-child {
+#hxtajytqlt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dsqoshcfni .gt_column_spanner_outer:last-child {
+#hxtajytqlt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dsqoshcfni .gt_column_spanner {
+#hxtajytqlt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -613,7 +651,11 @@ snp_fmt         # code to display created table
   width: 100%;
 }
 
-#dsqoshcfni .gt_group_heading {
+#hxtajytqlt .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hxtajytqlt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -639,7 +681,7 @@ snp_fmt         # code to display created table
   text-align: left;
 }
 
-#dsqoshcfni .gt_empty_group_heading {
+#hxtajytqlt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -654,15 +696,15 @@ snp_fmt         # code to display created table
   vertical-align: middle;
 }
 
-#dsqoshcfni .gt_from_md > :first-child {
+#hxtajytqlt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dsqoshcfni .gt_from_md > :last-child {
+#hxtajytqlt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dsqoshcfni .gt_row {
+#hxtajytqlt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -681,7 +723,7 @@ snp_fmt         # code to display created table
   overflow-x: hidden;
 }
 
-#dsqoshcfni .gt_stub {
+#hxtajytqlt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -694,7 +736,7 @@ snp_fmt         # code to display created table
   padding-right: 5px;
 }
 
-#dsqoshcfni .gt_stub_row_group {
+#hxtajytqlt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -708,11 +750,15 @@ snp_fmt         # code to display created table
   vertical-align: top;
 }
 
-#dsqoshcfni .gt_row_group_first td {
+#hxtajytqlt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dsqoshcfni .gt_summary_row {
+#hxtajytqlt .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hxtajytqlt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -722,16 +768,16 @@ snp_fmt         # code to display created table
   padding-right: 5px;
 }
 
-#dsqoshcfni .gt_first_summary_row {
+#hxtajytqlt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_first_summary_row.thick {
+#hxtajytqlt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dsqoshcfni .gt_last_summary_row {
+#hxtajytqlt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -741,7 +787,7 @@ snp_fmt         # code to display created table
   border-bottom-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_grand_summary_row {
+#hxtajytqlt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -751,7 +797,7 @@ snp_fmt         # code to display created table
   padding-right: 5px;
 }
 
-#dsqoshcfni .gt_first_grand_summary_row {
+#hxtajytqlt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -761,11 +807,21 @@ snp_fmt         # code to display created table
   border-top-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_striped {
+#hxtajytqlt .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxtajytqlt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dsqoshcfni .gt_table_body {
+#hxtajytqlt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -774,7 +830,7 @@ snp_fmt         # code to display created table
   border-bottom-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_footnotes {
+#hxtajytqlt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -788,30 +844,8 @@ snp_fmt         # code to display created table
   border-right-color: #D3D3D3;
 }
 
-#dsqoshcfni .gt_footnote {
+#hxtajytqlt .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#dsqoshcfni .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#dsqoshcfni .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -819,78 +853,97 @@ snp_fmt         # code to display created table
   padding-right: 5px;
 }
 
-#dsqoshcfni .gt_left {
+#hxtajytqlt .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxtajytqlt .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxtajytqlt .gt_left {
   text-align: left;
 }
 
-#dsqoshcfni .gt_center {
+#hxtajytqlt .gt_center {
   text-align: center;
 }
 
-#dsqoshcfni .gt_right {
+#hxtajytqlt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dsqoshcfni .gt_font_normal {
+#hxtajytqlt .gt_font_normal {
   font-weight: normal;
 }
 
-#dsqoshcfni .gt_font_bold {
+#hxtajytqlt .gt_font_bold {
   font-weight: bold;
 }
 
-#dsqoshcfni .gt_font_italic {
+#hxtajytqlt .gt_font_italic {
   font-style: italic;
 }
 
-#dsqoshcfni .gt_super {
+#hxtajytqlt .gt_super {
   font-size: 65%;
 }
 
-#dsqoshcfni .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#hxtajytqlt .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#dsqoshcfni .gt_asterisk {
+#hxtajytqlt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dsqoshcfni .gt_indent_1 {
+#hxtajytqlt .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dsqoshcfni .gt_indent_2 {
+#hxtajytqlt .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dsqoshcfni .gt_indent_3 {
+#hxtajytqlt .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dsqoshcfni .gt_indent_4 {
+#hxtajytqlt .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dsqoshcfni .gt_indent_5 {
+#hxtajytqlt .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  <thead class="gt_header">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
       <td colspan="6" class="gt_heading gt_title gt_font_normal" style>S&amp;P 500</td>
     </tr>
-    <tr>
-      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>Last Day of Each Month in 2022</td>
+    <tr class="gt_heading">
+      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>Last Trading Day of Previous Nine Months</td>
     </tr>
-  </thead>
-  <thead class="gt_col_headings">
-    <tr>
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Date">Date</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Open">Open</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="High">High</th>
@@ -900,66 +953,60 @@ snp_fmt         # code to display created table
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">Mon, Jan 31, 2022</th>
-<td headers="stub_1_1 Open" class="gt_row gt_right">$4,431.79</td>
-<td headers="stub_1_1 High" class="gt_row gt_right">$4,516.89</td>
-<td headers="stub_1_1 Low" class="gt_row gt_right">$4,414.02</td>
-<td headers="stub_1_1 Close" class="gt_row gt_right">$4,515.55</td>
-<td headers="stub_1_1 Adjusted" class="gt_row gt_right">$4,515.55</td></tr>
-    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">Mon, Feb 28, 2022</th>
-<td headers="stub_1_2 Open" class="gt_row gt_right">$4,354.17</td>
-<td headers="stub_1_2 High" class="gt_row gt_right">$4,388.84</td>
-<td headers="stub_1_2 Low" class="gt_row gt_right">$4,315.12</td>
-<td headers="stub_1_2 Close" class="gt_row gt_right">$4,373.94</td>
-<td headers="stub_1_2 Adjusted" class="gt_row gt_right">$4,373.94</td></tr>
-    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">Thu, Mar 31, 2022</th>
-<td headers="stub_1_3 Open" class="gt_row gt_right">$4,599.02</td>
-<td headers="stub_1_3 High" class="gt_row gt_right">$4,603.07</td>
-<td headers="stub_1_3 Low" class="gt_row gt_right">$4,530.41</td>
-<td headers="stub_1_3 Close" class="gt_row gt_right">$4,530.41</td>
-<td headers="stub_1_3 Adjusted" class="gt_row gt_right">$4,530.41</td></tr>
-    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub">Fri, Apr 29, 2022</th>
-<td headers="stub_1_4 Open" class="gt_row gt_right">$4,253.75</td>
-<td headers="stub_1_4 High" class="gt_row gt_right">$4,269.68</td>
-<td headers="stub_1_4 Low" class="gt_row gt_right">$4,124.28</td>
-<td headers="stub_1_4 Close" class="gt_row gt_right">$4,131.93</td>
-<td headers="stub_1_4 Adjusted" class="gt_row gt_right">$4,131.93</td></tr>
-    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub">Tue, May 31, 2022</th>
-<td headers="stub_1_5 Open" class="gt_row gt_right">$4,151.09</td>
-<td headers="stub_1_5 High" class="gt_row gt_right">$4,168.34</td>
-<td headers="stub_1_5 Low" class="gt_row gt_right">$4,104.88</td>
-<td headers="stub_1_5 Close" class="gt_row gt_right">$4,132.15</td>
-<td headers="stub_1_5 Adjusted" class="gt_row gt_right">$4,132.15</td></tr>
-    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub">Thu, Jun 30, 2022</th>
-<td headers="stub_1_6 Open" class="gt_row gt_right">$3,785.99</td>
-<td headers="stub_1_6 High" class="gt_row gt_right">$3,818.99</td>
-<td headers="stub_1_6 Low" class="gt_row gt_right">$3,738.67</td>
-<td headers="stub_1_6 Close" class="gt_row gt_right">$3,785.38</td>
-<td headers="stub_1_6 Adjusted" class="gt_row gt_right">$3,785.38</td></tr>
-    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub">Fri, Jul 29, 2022</th>
-<td headers="stub_1_7 Open" class="gt_row gt_right">$4,087.33</td>
-<td headers="stub_1_7 High" class="gt_row gt_right">$4,140.15</td>
-<td headers="stub_1_7 Low" class="gt_row gt_right">$4,079.22</td>
-<td headers="stub_1_7 Close" class="gt_row gt_right">$4,130.29</td>
-<td headers="stub_1_7 Adjusted" class="gt_row gt_right">$4,130.29</td></tr>
-    <tr><th id="stub_1_8" scope="row" class="gt_row gt_right gt_stub">Wed, Aug 31, 2022</th>
-<td headers="stub_1_8 Open" class="gt_row gt_right">$4,000.67</td>
-<td headers="stub_1_8 High" class="gt_row gt_right">$4,015.37</td>
-<td headers="stub_1_8 Low" class="gt_row gt_right">$3,954.53</td>
-<td headers="stub_1_8 Close" class="gt_row gt_right">$3,955.00</td>
-<td headers="stub_1_8 Adjusted" class="gt_row gt_right">$3,955.00</td></tr>
-    <tr><th id="stub_1_9" scope="row" class="gt_row gt_right gt_stub">Fri, Sep 30, 2022</th>
-<td headers="stub_1_9 Open" class="gt_row gt_right">$3,633.48</td>
-<td headers="stub_1_9 High" class="gt_row gt_right">$3,671.44</td>
-<td headers="stub_1_9 Low" class="gt_row gt_right">$3,584.13</td>
-<td headers="stub_1_9 Close" class="gt_row gt_right">$3,585.62</td>
-<td headers="stub_1_9 Adjusted" class="gt_row gt_right">$3,585.62</td></tr>
-    <tr><th id="stub_1_10" scope="row" class="gt_row gt_right gt_stub">Mon, Oct 31, 2022</th>
-<td headers="stub_1_10 Open" class="gt_row gt_right">$3,881.85</td>
-<td headers="stub_1_10 High" class="gt_row gt_right">$3,893.73</td>
-<td headers="stub_1_10 Low" class="gt_row gt_right">$3,863.18</td>
-<td headers="stub_1_10 Close" class="gt_row gt_right">$3,871.98</td>
-<td headers="stub_1_10 Adjusted" class="gt_row gt_right">$3,871.98</td></tr>
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">Fri, Jul 29, 2022</th>
+<td headers="stub_1_1 Open" class="gt_row gt_right">$4,087.33</td>
+<td headers="stub_1_1 High" class="gt_row gt_right">$4,140.15</td>
+<td headers="stub_1_1 Low" class="gt_row gt_right">$4,079.22</td>
+<td headers="stub_1_1 Close" class="gt_row gt_right">$4,130.29</td>
+<td headers="stub_1_1 Adjusted" class="gt_row gt_right">$4,130.29</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">Wed, Aug 31, 2022</th>
+<td headers="stub_1_2 Open" class="gt_row gt_right">$4,000.67</td>
+<td headers="stub_1_2 High" class="gt_row gt_right">$4,015.37</td>
+<td headers="stub_1_2 Low" class="gt_row gt_right">$3,954.53</td>
+<td headers="stub_1_2 Close" class="gt_row gt_right">$3,955.00</td>
+<td headers="stub_1_2 Adjusted" class="gt_row gt_right">$3,955.00</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">Fri, Sep 30, 2022</th>
+<td headers="stub_1_3 Open" class="gt_row gt_right">$3,633.48</td>
+<td headers="stub_1_3 High" class="gt_row gt_right">$3,671.44</td>
+<td headers="stub_1_3 Low" class="gt_row gt_right">$3,584.13</td>
+<td headers="stub_1_3 Close" class="gt_row gt_right">$3,585.62</td>
+<td headers="stub_1_3 Adjusted" class="gt_row gt_right">$3,585.62</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub">Mon, Oct 31, 2022</th>
+<td headers="stub_1_4 Open" class="gt_row gt_right">$3,881.85</td>
+<td headers="stub_1_4 High" class="gt_row gt_right">$3,893.73</td>
+<td headers="stub_1_4 Low" class="gt_row gt_right">$3,863.18</td>
+<td headers="stub_1_4 Close" class="gt_row gt_right">$3,871.98</td>
+<td headers="stub_1_4 Adjusted" class="gt_row gt_right">$3,871.98</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub">Wed, Nov 30, 2022</th>
+<td headers="stub_1_5 Open" class="gt_row gt_right">$3,957.18</td>
+<td headers="stub_1_5 High" class="gt_row gt_right">$4,080.11</td>
+<td headers="stub_1_5 Low" class="gt_row gt_right">$3,938.58</td>
+<td headers="stub_1_5 Close" class="gt_row gt_right">$4,080.11</td>
+<td headers="stub_1_5 Adjusted" class="gt_row gt_right">$4,080.11</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub">Fri, Dec 30, 2022</th>
+<td headers="stub_1_6 Open" class="gt_row gt_right">$3,829.06</td>
+<td headers="stub_1_6 High" class="gt_row gt_right">$3,839.85</td>
+<td headers="stub_1_6 Low" class="gt_row gt_right">$3,800.34</td>
+<td headers="stub_1_6 Close" class="gt_row gt_right">$3,839.50</td>
+<td headers="stub_1_6 Adjusted" class="gt_row gt_right">$3,839.50</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub">Tue, Jan 31, 2023</th>
+<td headers="stub_1_7 Open" class="gt_row gt_right">$4,020.85</td>
+<td headers="stub_1_7 High" class="gt_row gt_right">$4,077.16</td>
+<td headers="stub_1_7 Low" class="gt_row gt_right">$4,020.44</td>
+<td headers="stub_1_7 Close" class="gt_row gt_right">$4,076.60</td>
+<td headers="stub_1_7 Adjusted" class="gt_row gt_right">$4,076.60</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_right gt_stub">Tue, Feb 28, 2023</th>
+<td headers="stub_1_8 Open" class="gt_row gt_right">$3,977.19</td>
+<td headers="stub_1_8 High" class="gt_row gt_right">$3,997.50</td>
+<td headers="stub_1_8 Low" class="gt_row gt_right">$3,968.98</td>
+<td headers="stub_1_8 Close" class="gt_row gt_right">$3,970.15</td>
+<td headers="stub_1_8 Adjusted" class="gt_row gt_right">$3,970.15</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_right gt_stub">Fri, Mar 31, 2023</th>
+<td headers="stub_1_9 Open" class="gt_row gt_right">$4,056.18</td>
+<td headers="stub_1_9 High" class="gt_row gt_right">$4,110.75</td>
+<td headers="stub_1_9 Low" class="gt_row gt_right">$4,056.18</td>
+<td headers="stub_1_9 Close" class="gt_row gt_right">$4,109.31</td>
+<td headers="stub_1_9 Adjusted" class="gt_row gt_right">$4,109.31</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -989,11 +1036,11 @@ snp_fmt         # code to display created table
 
 
 ```r
-snp_sm &lt;- snp22 |&gt;
+snp_sm &lt;- snp9 |&gt;
 select(1,3,6) |&gt;
   gt(rowname_col = "date") |&gt;
   tab_header(title = "S&amp;P 500",
-             subtitle = "2022 - Last Day of Each Month") |&gt;
+             subtitle = "Last Trading Day of Previous Nine Months") |&gt;
   tab_stubhead(label = "Date") |&gt;
   fmt_date(columns=date, date_style=6) |&gt;                   
   fmt_currency(columns=High:Adjusted, 
@@ -1006,14 +1053,26 @@ select(1,3,6) |&gt;
 
 .pull-right[
 
-<div id="osmgdhucab" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="mnhvejtttl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mnhvejtttl table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#osmgdhucab .gt_table {
+#mnhvejtttl thead, #mnhvejtttl tbody, #mnhvejtttl tfoot, #mnhvejtttl tr, #mnhvejtttl td, #mnhvejtttl th {
+  border-style: none;
+}
+
+#mnhvejtttl p {
+  margin: 0;
+  padding: 0;
+}
+
+#mnhvejtttl .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1036,24 +1095,12 @@ select(1,3,6) |&gt;
   border-left-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#osmgdhucab .gt_caption {
+#mnhvejtttl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#osmgdhucab .gt_title {
+#mnhvejtttl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1065,25 +1112,37 @@ select(1,3,6) |&gt;
   border-bottom-width: 0;
 }
 
-#osmgdhucab .gt_subtitle {
+#mnhvejtttl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#osmgdhucab .gt_bottom_border {
+#mnhvejtttl .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mnhvejtttl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_col_headings {
+#mnhvejtttl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1098,7 +1157,7 @@ select(1,3,6) |&gt;
   border-right-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_col_heading {
+#mnhvejtttl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1118,7 +1177,7 @@ select(1,3,6) |&gt;
   overflow-x: hidden;
 }
 
-#osmgdhucab .gt_column_spanner_outer {
+#mnhvejtttl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1130,15 +1189,15 @@ select(1,3,6) |&gt;
   padding-right: 4px;
 }
 
-#osmgdhucab .gt_column_spanner_outer:first-child {
+#mnhvejtttl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#osmgdhucab .gt_column_spanner_outer:last-child {
+#mnhvejtttl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#osmgdhucab .gt_column_spanner {
+#mnhvejtttl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1150,7 +1209,11 @@ select(1,3,6) |&gt;
   width: 100%;
 }
 
-#osmgdhucab .gt_group_heading {
+#mnhvejtttl .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mnhvejtttl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1176,7 +1239,7 @@ select(1,3,6) |&gt;
   text-align: left;
 }
 
-#osmgdhucab .gt_empty_group_heading {
+#mnhvejtttl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1191,15 +1254,15 @@ select(1,3,6) |&gt;
   vertical-align: middle;
 }
 
-#osmgdhucab .gt_from_md > :first-child {
+#mnhvejtttl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#osmgdhucab .gt_from_md > :last-child {
+#mnhvejtttl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#osmgdhucab .gt_row {
+#mnhvejtttl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1218,7 +1281,7 @@ select(1,3,6) |&gt;
   overflow-x: hidden;
 }
 
-#osmgdhucab .gt_stub {
+#mnhvejtttl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1231,7 +1294,7 @@ select(1,3,6) |&gt;
   padding-right: 5px;
 }
 
-#osmgdhucab .gt_stub_row_group {
+#mnhvejtttl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1245,11 +1308,15 @@ select(1,3,6) |&gt;
   vertical-align: top;
 }
 
-#osmgdhucab .gt_row_group_first td {
+#mnhvejtttl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#osmgdhucab .gt_summary_row {
+#mnhvejtttl .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mnhvejtttl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1259,16 +1326,16 @@ select(1,3,6) |&gt;
   padding-right: 5px;
 }
 
-#osmgdhucab .gt_first_summary_row {
+#mnhvejtttl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_first_summary_row.thick {
+#mnhvejtttl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#osmgdhucab .gt_last_summary_row {
+#mnhvejtttl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1278,7 +1345,7 @@ select(1,3,6) |&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_grand_summary_row {
+#mnhvejtttl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1288,7 +1355,7 @@ select(1,3,6) |&gt;
   padding-right: 5px;
 }
 
-#osmgdhucab .gt_first_grand_summary_row {
+#mnhvejtttl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1298,11 +1365,21 @@ select(1,3,6) |&gt;
   border-top-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_striped {
+#mnhvejtttl .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mnhvejtttl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#osmgdhucab .gt_table_body {
+#mnhvejtttl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1311,7 +1388,7 @@ select(1,3,6) |&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_footnotes {
+#mnhvejtttl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1325,30 +1402,8 @@ select(1,3,6) |&gt;
   border-right-color: #D3D3D3;
 }
 
-#osmgdhucab .gt_footnote {
+#mnhvejtttl .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#osmgdhucab .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#osmgdhucab .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1356,114 +1411,130 @@ select(1,3,6) |&gt;
   padding-right: 5px;
 }
 
-#osmgdhucab .gt_left {
+#mnhvejtttl .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mnhvejtttl .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mnhvejtttl .gt_left {
   text-align: left;
 }
 
-#osmgdhucab .gt_center {
+#mnhvejtttl .gt_center {
   text-align: center;
 }
 
-#osmgdhucab .gt_right {
+#mnhvejtttl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#osmgdhucab .gt_font_normal {
+#mnhvejtttl .gt_font_normal {
   font-weight: normal;
 }
 
-#osmgdhucab .gt_font_bold {
+#mnhvejtttl .gt_font_bold {
   font-weight: bold;
 }
 
-#osmgdhucab .gt_font_italic {
+#mnhvejtttl .gt_font_italic {
   font-style: italic;
 }
 
-#osmgdhucab .gt_super {
+#mnhvejtttl .gt_super {
   font-size: 65%;
 }
 
-#osmgdhucab .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#mnhvejtttl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#osmgdhucab .gt_asterisk {
+#mnhvejtttl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#osmgdhucab .gt_indent_1 {
+#mnhvejtttl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#osmgdhucab .gt_indent_2 {
+#mnhvejtttl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#osmgdhucab .gt_indent_3 {
+#mnhvejtttl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#osmgdhucab .gt_indent_4 {
+#mnhvejtttl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#osmgdhucab .gt_indent_5 {
+#mnhvejtttl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-<table class="gt_table">
-  <thead class="gt_header">
-    <tr>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
       <td colspan="3" class="gt_heading gt_title gt_font_normal" style>S&amp;P 500</td>
     </tr>
-    <tr>
-      <td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>2022 - Last Day of Each Month</td>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>Last Trading Day of Previous Nine Months</td>
     </tr>
-  </thead>
-  <thead class="gt_col_headings">
-    <tr>
+    <tr class="gt_col_headings">
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Date">Date</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="High">High</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Adjusted">Adjusted</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">Jan 31, 2022</th>
-<td headers="stub_1_1 High" class="gt_row gt_right">$4,516.89</td>
-<td headers="stub_1_1 Adjusted" class="gt_row gt_right">$4,515.55</td></tr>
-    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">Feb 28, 2022</th>
-<td headers="stub_1_2 High" class="gt_row gt_right">$4,388.84</td>
-<td headers="stub_1_2 Adjusted" class="gt_row gt_right">$4,373.94</td></tr>
-    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">Mar 31, 2022</th>
-<td headers="stub_1_3 High" class="gt_row gt_right">$4,603.07</td>
-<td headers="stub_1_3 Adjusted" class="gt_row gt_right">$4,530.41</td></tr>
-    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub">Apr 29, 2022</th>
-<td headers="stub_1_4 High" class="gt_row gt_right">$4,269.68</td>
-<td headers="stub_1_4 Adjusted" class="gt_row gt_right">$4,131.93</td></tr>
-    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub">May 31, 2022</th>
-<td headers="stub_1_5 High" class="gt_row gt_right">$4,168.34</td>
-<td headers="stub_1_5 Adjusted" class="gt_row gt_right">$4,132.15</td></tr>
-    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub">Jun 30, 2022</th>
-<td headers="stub_1_6 High" class="gt_row gt_right">$3,818.99</td>
-<td headers="stub_1_6 Adjusted" class="gt_row gt_right">$3,785.38</td></tr>
-    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub">Jul 29, 2022</th>
-<td headers="stub_1_7 High" class="gt_row gt_right">$4,140.15</td>
-<td headers="stub_1_7 Adjusted" class="gt_row gt_right">$4,130.29</td></tr>
-    <tr><th id="stub_1_8" scope="row" class="gt_row gt_right gt_stub">Aug 31, 2022</th>
-<td headers="stub_1_8 High" class="gt_row gt_right">$4,015.37</td>
-<td headers="stub_1_8 Adjusted" class="gt_row gt_right">$3,955.00</td></tr>
-    <tr><th id="stub_1_9" scope="row" class="gt_row gt_right gt_stub">Sep 30, 2022</th>
-<td headers="stub_1_9 High" class="gt_row gt_right">$3,671.44</td>
-<td headers="stub_1_9 Adjusted" class="gt_row gt_right">$3,585.62</td></tr>
-    <tr><th id="stub_1_10" scope="row" class="gt_row gt_right gt_stub">Oct 31, 2022</th>
-<td headers="stub_1_10 High" class="gt_row gt_right">$3,893.73</td>
-<td headers="stub_1_10 Adjusted" class="gt_row gt_right">$3,871.98</td></tr>
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_right gt_stub">Jul 29, 2022</th>
+<td headers="stub_1_1 High" class="gt_row gt_right">$4,140.15</td>
+<td headers="stub_1_1 Adjusted" class="gt_row gt_right">$4,130.29</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_right gt_stub">Aug 31, 2022</th>
+<td headers="stub_1_2 High" class="gt_row gt_right">$4,015.37</td>
+<td headers="stub_1_2 Adjusted" class="gt_row gt_right">$3,955.00</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_right gt_stub">Sep 30, 2022</th>
+<td headers="stub_1_3 High" class="gt_row gt_right">$3,671.44</td>
+<td headers="stub_1_3 Adjusted" class="gt_row gt_right">$3,585.62</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_right gt_stub">Oct 31, 2022</th>
+<td headers="stub_1_4 High" class="gt_row gt_right">$3,893.73</td>
+<td headers="stub_1_4 Adjusted" class="gt_row gt_right">$3,871.98</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_right gt_stub">Nov 30, 2022</th>
+<td headers="stub_1_5 High" class="gt_row gt_right">$4,080.11</td>
+<td headers="stub_1_5 Adjusted" class="gt_row gt_right">$4,080.11</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_right gt_stub">Dec 30, 2022</th>
+<td headers="stub_1_6 High" class="gt_row gt_right">$3,839.85</td>
+<td headers="stub_1_6 Adjusted" class="gt_row gt_right">$3,839.50</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_right gt_stub">Jan 31, 2023</th>
+<td headers="stub_1_7 High" class="gt_row gt_right">$4,077.16</td>
+<td headers="stub_1_7 Adjusted" class="gt_row gt_right">$4,076.60</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_right gt_stub">Feb 28, 2023</th>
+<td headers="stub_1_8 High" class="gt_row gt_right">$3,997.50</td>
+<td headers="stub_1_8 Adjusted" class="gt_row gt_right">$3,970.15</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_right gt_stub">Mar 31, 2023</th>
+<td headers="stub_1_9 High" class="gt_row gt_right">$4,110.75</td>
+<td headers="stub_1_9 Adjusted" class="gt_row gt_right">$4,109.31</td></tr>
   </tbody>
   
   <tfoot class="gt_footnotes">
@@ -1485,11 +1556,11 @@ select(1,3,6) |&gt;
 
 .pull-left[
 
- - The rest of class time can be used for group projects.
+ - Group presentation days and times will be random assigned and posted by Sunday (4/23)
  
- - Let me know TODAY if you would prefer to present on Tuesday.
+ - More material will be added here depending on questions submitted.
  
- - Group presentation days and times will be random assigned and posted by Friday (12/1)
+ - Otherwise, the rest of Thursday will be an in-class group project work day
 
 
 ]
@@ -1499,6 +1570,9 @@ select(1,3,6) |&gt;
 ![](docs_files/images/beaver.png)
 
 ]
+
+
+
 
 ---
 
@@ -1511,18 +1585,19 @@ background-size: cover
   
 .bg-azure.b--dark_cyan.ba.bw2.br3.shadow-5.ph2[
 
-- **Project Info**
+- **Project Info - 2 Memos**
 
-  - Two Memos - Information, Templates, &amp; Examples provided
+  - Details, Templates, Examples provided
     
 - **Taking advantage of RStudio **
    - R Markdown and Quarto 
      - Data mgmt. and reporting are seamless.
      - Can include R, Python, SQL etc.
 
-- **Github and Rpubs**
-   - For large projects, Github is essential
-   - For BUA 455, Rpubs is ideal
+- **Platforms for Projects**
+   - Github - essential for large projects
+   - Rpubs is ideal for BUA 455
+   - Posit Cloud, Google Colab, and Kaggle
    
 - **Additional Material and links**
     - Dashboard Tips
@@ -1538,7 +1613,7 @@ background-size: cover
   
 .bg-azure.b--dark_cyan.ba.bw2.br3.shadow-5.ph3[
 
-**You may submit an 'Engagement Question or Comment' about Week 13 lectures until Thursday, 12/1, at midnight on Blackboard.**
+You may submit an 'Engagement Question' about each lecture until midnight on the day of the lecture. **A minimum of four submissions are required during the semester.**
 
 ]
   

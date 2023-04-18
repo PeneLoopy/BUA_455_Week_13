@@ -57,9 +57,12 @@ The following text includes in-line code. A linear model is created and saved in
 ```{r cars_model, echo = T}
 cmod <- lm(dist ~ speed, data = cars)
 scmod <- summary(cmod)
+intercept <- round(cmod$coefficients[1],2)
+slope <- round(cmod$coefficients[2],2)
+
 ```
 
-Based on the available data in the base R software (R Core team, 2022), stopping distance in feet for cars in the 1920s was estimated as `r  round(cmod$coefficients[1],2)` + `r round(cmod$coefficients[2],2)` x speed (mpg). and the R^2^ for this linear model is `r round(scmod$r.squared,2)`.
+Based on the available data in the base R software (R Core team, 2022), stopping distance in feet for cars in the 1920s was estimated as `r intercept` + `r slope` x speed (mpg). and the R^2^ for this linear model is `r round(scmod$r.squared,2)`.
 
 <br>
 

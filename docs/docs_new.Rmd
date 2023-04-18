@@ -164,7 +164,7 @@ class: bottom, right
 
 - If your group wants to present on Tue. 4/25, let me know by Thursday.  
 
-  - Otherwise, random order will be posted on Friday.
+  - Otherwise, random order will be posted by Sunday (4/23).
 
 - Attendance required by all
   
@@ -203,6 +203,7 @@ class: bottom, right
       - Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.
       
       - I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.
+      
   
 #### Questions about Project and Templates?
 
@@ -371,6 +372,28 @@ class: bottom, right
 
 ---
 
+### New Ways to Collaborate
+
+**[Posit Cloud]()** is not free but is fantastic for sharing work and collaborating in real time.
+
+- For your purposes, it is $5 per month which you can pause when not working.
+- I may teach using it in MAS 261 to share work with students.
+- You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
+- You can organize work into R Projects the same way we do in class and share them with others.
+
+**[Google Colab]()** is primarily used for Python but can be used with R.
+
+- I have only started exploring this option but it appears to be a free Google collaborative data science space.
+- Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
+  - TLDR: Google Colab is more well developed for Python but useable for R and will eveolve quickly.
+  
+**[Kaggle]()**
+- You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.
+- Here is a [detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report).
+- Here is a [tutorial for using R in Kaggle Notebook](https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/).
+
+---
+
 .pull-left[
 
 ### Evaluations
@@ -383,28 +406,29 @@ class: bottom, right
   
     - netID and password are required
   
-  - I will step out for 5 minutes. 
+  - I will step out for 5 minutes today and again on Thursday. 
   
 <br>
 
 
 ]
 
+
 .pull-right[
 
-![Eval QR Code](docs_files/images/QR-Code_Course-Feedback.png)
+![beaver](docs_files/images/beaver.png)
 
 ]
-  
----
 
-## Material Added on Wednesday 11/30
+---
 
 .pull-left[
 
-### Plan for today
+### Plan for Thursday (4/20)
 
-- Address some submitted questions about Quarto and R Markdown
+- Address submitted questions
+
+  - Quarto and R Markdown
 
 - Tips for a Better Dashboard
 
@@ -420,7 +444,6 @@ class: bottom, right
 
 ![](docs_files/images/owl.png)
 ]
-
 
 ---
 
@@ -511,9 +534,9 @@ First let's look at what can be customized:
 
 ```{r stock import and summary}
 
-getSymbols("^GSPC", from="2022-01-01", to="2022-11-01") 
+getSymbols("^GSPC", from="2022-07-01", to="2023-04-01") 
 
-snp22 <- GSPC |>
+snp9 <- GSPC |>
   fortify.zoo() |> as_tibble(.name_repair = "minimal") |>
   rename("date" = "Index") |>
   mutate(mnth=month(date))|>
@@ -521,8 +544,8 @@ snp22 <- GSPC |>
   filter(date==max(date)) |>  # filtered data to last day of each month
   ungroup() |>
   select(-c(6,8))    # remove volume and month variables
-names(snp22)[2:6] <- c("Open", "High", "Low", "Close", "Adjusted")
-head(snp22,3)
+names(snp9)[2:6] <- c("Open", "High", "Low", "Close", "Adjusted")
+head(snp9,3)
 
 ```
 
@@ -538,10 +561,10 @@ head(snp22,3)
 - As with plots, I am saving this object and then displaying it on the next slide.
 
 ```{r create formatted gt table}
-snp_fmt <- snp22 |>
+snp_fmt <- snp9 |>
   gt(rowname_col = "date") |>
   tab_header(title = "S&P 500",
-             subtitle = "Last Day of Each Month in 2022") |>
+             subtitle = "Last Trading Day of Previous Nine Months") |>
   tab_stubhead(label = "Date") |>
   fmt_date(columns=date, date_style=3) |>  # formats date
   fmt_currency(columns=Open:Adjusted, currency = "USD")|>     # formats values as US$
@@ -573,11 +596,11 @@ snp_fmt         # code to display created table
 - Other variables, e.g. `Open`, `Low`, can be shown in plot
 
 ```{r edited smaller table}
-snp_sm <- snp22 |>
+snp_sm <- snp9 |>
 select(1,3,6) |>
   gt(rowname_col = "date") |>
   tab_header(title = "S&P 500",
-             subtitle = "2022 - Last Day of Each Month") |>
+             subtitle = "Last Trading Day of Previous Nine Months") |>
   tab_stubhead(label = "Date") |>
   fmt_date(columns=date, date_style=6) |>                   
   fmt_currency(columns=High:Adjusted, 
@@ -602,11 +625,11 @@ snp_sm
 
 .pull-left[
 
- - The rest of class time can be used for group projects.
+ - Group presentation days and times will be random assigned and posted by Sunday (4/23)
  
- - Let me know TODAY if you would prefer to present on Tuesday.
+ - More material will be added here depending on questions submitted.
  
- - Group presentation days and times will be random assigned and posted by Friday (12/1)
+ - Otherwise, the rest of Thursday will be an in-class group project work day
 
 
 ]
@@ -616,6 +639,9 @@ snp_sm
 ![](docs_files/images/beaver.png)
 
 ]
+
+
+
 
 ---
 
@@ -628,18 +654,19 @@ background-size: cover
   
 .bg-azure.b--dark_cyan.ba.bw2.br3.shadow-5.ph2[
 
-- **Project Info**
+- **Project Info - 2 Memos**
 
-  - Two Memos - Information, Templates, & Examples provided
+  - Details, Templates, Examples provided
     
 - **Taking advantage of RStudio **
    - R Markdown and Quarto 
      - Data mgmt. and reporting are seamless.
      - Can include R, Python, SQL etc.
 
-- **Github and Rpubs**
-   - For large projects, Github is essential
-   - For BUA 455, Rpubs is ideal
+- **Platforms for Projects**
+   - Github - essential for large projects
+   - Rpubs is ideal for BUA 455
+   - Posit Cloud, Google Colab, and Kaggle
    
 - **Additional Material and links**
     - Dashboard Tips
@@ -655,7 +682,7 @@ background-size: cover
   
 .bg-azure.b--dark_cyan.ba.bw2.br3.shadow-5.ph3[
 
-**You may submit an 'Engagement Question or Comment' about Week 13 lectures until Thursday, 12/1, at midnight on Blackboard.**
+You may submit an 'Engagement Question' about each lecture until midnight on the day of the lecture. **A minimum of four submissions are required during the semester.**
 
 ]
   
