@@ -374,23 +374,24 @@ class: bottom, right
 
 ### New Ways to Collaborate
 
-**[Posit Cloud]()** is not free but is fantastic for sharing work and collaborating in real time.
+**[Posit Cloud](https://posit.cloud/)** is not free but is fantastic for sharing work and collaborating in real time.
 
 - For your purposes, it is $5 per month which you can pause when not working.
 - I may teach using it in MAS 261 to share work with students.
 - You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
 - You can organize work into R Projects the same way we do in class and share them with others.
 
-**[Google Colab]()** is primarily used for Python but can be used with R.
+**[Google Colab](https://colab.research.google.com/)** is primarily used for Python but can be used with R.
 
 - I have only started exploring this option but it appears to be a free Google collaborative data science space.
 - Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
   - TLDR: Google Colab is more well developed for Python but useable for R and will eveolve quickly.
   
-**[Kaggle]()**
+**[Kaggle](https://www.kaggle.com/)**
 - You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.
 - Here is a [detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report).
 - Here is a [tutorial for using R in Kaggle Notebook](https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/).
+
 
 ---
 
@@ -402,7 +403,7 @@ class: bottom, right
 
 * Please take the time to fill out evaluations.
 
-  - [You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)
+  - **[You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)**
   
     - netID and password are required
   
