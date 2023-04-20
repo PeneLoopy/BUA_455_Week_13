@@ -397,34 +397,6 @@ class: bottom, right
 
 .pull-left[
 
-### Evaluations
-
-* Course Evaluations are very important.
-
-* Please take the time to fill out evaluations.
-
-  - **[You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)**
-  
-    - netID and password are required
-  
-  - I will step out for 5 minutes today and again on Thursday. 
-  
-<br>
-
-
-]
-
-
-.pull-right[
-
-![beaver](docs_files/images/beaver.png)
-
-]
-
----
-
-.pull-left[
-
 ### Plan for Thursday (4/20)
 
 - Address submitted questions
@@ -435,7 +407,7 @@ class: bottom, right
 
 - Tables with GT
 
-- Five (more) minutes for evaluations
+- Five minutes for evaluations
 
 - In-class work time
 
@@ -641,10 +613,36 @@ snp_sm
 
 ]
 
+---
+
+.pull-left[
+
+### Evaluations
+
+* Course Evaluations are very important.
+
+* Please take the time to fill out evaluations.
+
+  - **[You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)**
+  
+    - netID and password are required
+  
+  - I will step out for 5 minutes today.
+  
+<br>
 
 
+]
+
+
+.pull-right[
+
+![beaver](docs_files/images/beaver.png)
+
+]
 
 ---
+
 
 background-image: url("docs_files/images/tired_panda_faded.png")
 background-size: cover
