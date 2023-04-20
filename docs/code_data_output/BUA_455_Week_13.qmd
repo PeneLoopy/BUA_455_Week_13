@@ -250,22 +250,6 @@ p_loaded()
 ---
 
 
-### Evaluations
-
-* Course Evaluations are very important.
-
-* Please take the time to fill out evaluations.
-
-  - **[You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)**
-  
-    - netID and password are required
-  
-  - I will step out for 5 minutes today and again on Thursday. 
-
-
----
-
-
 ### Plan for Thursday (4/20)
 
 - Address submitted questions
@@ -468,7 +452,20 @@ snp_sm
  
  - Otherwise, the rest of Thursday will be an in-class group project work day
 
+### Evaluations
 
+* Course Evaluations are very important.
+
+* Please take the time to fill out evaluations.
+
+  - **[You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)**
+  
+    - netID and password are required
+  
+  - I will step out for 5 minutes today and again on Thursday. 
+
+
+---
 
 
 ---
