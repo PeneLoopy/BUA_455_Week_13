@@ -1,6 +1,6 @@
 ---
-title: "Week 13"
-subtitle: "Course Wrap-up, Project Memos, Other Formats, GitHub"  
+title: "Week 13_14"
+subtitle: "Project Memos, Other Formats, GitHub"  
 author: "Penelope Pooler Eisenbies"
 date: '`r Sys.Date()`'
 output:
@@ -142,9 +142,9 @@ background-size: cover
 
 class: bottom, right
 
-## BUA 455 - Week 13
+## BUA 455 - Week 13 and 14
 
-### Course Wrap-up including Project memos, 
+### Project Memos, More about In-line-code
 ### Explaining Skillset, Output formats, GitHub
 
 <br>
@@ -160,11 +160,11 @@ class: bottom, right
 
 ### Final Projects
 
-#### **Presentations are next week, Tue. 4/25 and Thu. 4/27**
+#### **Presentations are on Tuesday, 12/12
 
-- If your group wants to present on Tue. 4/25, let me know by Thursday.  
+- If your group needs to present first or last due to a conflict, let me know ASAP.  
 
-  - Otherwise, random order will be posted by Sunday (4/23).
+  - Otherwise, random order will be posted by Sunday (12/10).
 
 - Attendance required by all
   
@@ -180,7 +180,7 @@ class: bottom, right
     
 - Each student will evaluate other groups and their own group members
 
-* **All project components must be submitted by Tuesday, May 2nd at 5:00 PM**
+* **All project components must be submitted by Friday, December 15th at 5:00 PM**
 
 ---
 
@@ -209,9 +209,27 @@ class: bottom, right
 
 ---
 
+### Talking about Your Skillset
+
+- Explaining your skillset is hard, but it's getting easier.
+
+- As Data Science and Analytics grow in importance, more people understand what this skill set can offer.
+
+- However, you should not assume that interviewers, colleagues, supervisors understand your skills.
+
+- [This White Paper from Data camp (also posted on Blackboard)](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view) is helpful.
+
+  - Starting on Page 9 it lays out different roles people take on when working with data.
+  
+  - Comparing these descriptions to skills you learn in this major should give you a lot of confidence.
+  
+  - Provides validation that you can take on more advanced roles.
+
+---
+
 ### R Markdown (.Rmd) and Quarto (.qmd) formats
 
-- RStudio is currently in transition 
+- RStudio and parent company Posit is currently in transition.
 
 - Documents can be rendered from R Markdown (.Rmd) or [Quarto (.qmd)](https://quarto.org/)
 
@@ -219,8 +237,11 @@ class: bottom, right
 
   - R Markdown will be available for forseeable future
 
-  - flexdashboard not available in Quarto format yet
+  - flexdashboard not available in Quarto format
+  
     - [Options Currently Available in Quarto](https://quarto.org/docs/faq/rmarkdown.html)
+    
+    - [Dashboard options were introduced in August of 2023](https://quarto.org/docs/guide/)
 
 - Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)
 
@@ -268,23 +289,22 @@ class: bottom, right
 ### Resources - Where to go next 
 
 
-<br>
-
 .pull-left[
 
 #### **For all aspects of analytics and R and RStudio**
 
-- Discovered last semester: [Big Book of R - A Curated Website of R Resources](https://www.bigbookofr.com/index.html)
-  - Updated November 2022
+- Discovered last year: [Big Book of R - A Curated Website of R Resources](https://www.bigbookofr.com/index.html)
+  - Updated November 2023
   
-- Doesn't include [text reference for this class](https://rafalab.GitHub.io/dsbook/) which is good.
+- Doesn't include [this book](https://rafalab.GitHub.io/dsbook/) which is excellent for undergraduates.
   
 - Before this Spring, the best resource was Google which often leads to [stack overflow](https://stackoverflow.com/)
   
   - Stack Overflow is helpful but you have to know enough code to be able to understand answers.
   
 - Now, I recommend using and learning with AI such as Chat GPT (not during a test)
-  The AI engine is very good at answering most code questions, but it is not perfect.
+  
+  - The AI engine is very good at answering most code questions, but it is not perfect.
 
 ]
 
@@ -330,11 +350,13 @@ class: bottom, right
 
 - Last week I introduced you to Rpubs which is ideal from sharing a dashboard.
 
+  - For MAS 261, I publish my slides on RPubs
+
 - Alternatively, you may have already come across `GitHub` in searching for files or a package.
 
   - Slides for this course are stored on GitHub
   
-  - Required for files where data, code and text are maintained together as a project, referred to as a **repository** or **repo**.
+  - Prior to Quarto, GitHub was required for files where data, code and text are maintained together as a project, referred to as a **repository** or **repo**.
   
   - Not required for finished dashboard.
 
@@ -353,10 +375,12 @@ class: bottom, right
   - Developers of games, R packages, other software, etc., have huge code files and need to protect them.
 
   - There is a system in place (version control) where people can create a project with multiple code versions and edits.
-    Over time a project develops more and more branches, like a tree, but the trunk.
+    
+    - Over time a project develops more and more branches, like a tree, but the trunk.
   
   - Original code is preserved and changes can be incorporated as they are verified and approved.
   
+---
 
 ### Some GitHub links
   
@@ -374,30 +398,49 @@ class: bottom, right
 
 ### New Ways to Collaborate
 
-**[Posit Cloud](https://posit.cloud/)** is not free but is fantastic for sharing work and collaborating in real time.
+**[Posit Cloud](https://posit.cloud/)** is not free (as you know) but I think it works well for collaborative work.
+   - Note: I think only one person can edit a code file at same time. Is that true?
 
 - For your purposes, it is $5 per month which you can pause when not working.
-- I may teach using it in MAS 261 to share work with students.
+
+- You are my first course to use it for the project.
+
 - You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
+
 - You can organize work into R Projects the same way we do in class and share them with others.
 
 **[Google Colab](https://colab.research.google.com/)** is primarily used for Python but can be used with R.
 
 - I have only started exploring this option but it appears to be a free Google collaborative data science space.
+
 - Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
-  - TLDR: Google Colab is more well developed for Python but useable for R and will eveolve quickly.
+
+  - TLDR: Google Colab is more well developed for Python but useable for R and will evolve quickly.
+  
+---
+
+### More New Ways to Collaborate
   
 **[Kaggle](https://www.kaggle.com/)**
+
 - You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.
+
 - Here is a [detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report).
+
 - Here is a [tutorial for using R in Kaggle Notebook](https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/).
+
+- Kaggle is well known for Data Science competitions.
+
+**[Data World](https://data.world/)**
+
+- Similar to Kaggle in that you can create an account and save projects there.
 
 
 ---
 
 .pull-left[
 
-### Plan for Thursday (4/20)
+### Plan for Tuesday (12/5)
 
 - Address submitted questions
 
@@ -649,7 +692,7 @@ background-size: cover
    
 .pull-left[
   
-### **Key Points from Week 13**
+### **Key Points - Weeks 13 & 14**
   
 .bg-azure.b--dark_cyan.ba.bw2.br3.shadow-5.ph2[
 
@@ -659,8 +702,8 @@ background-size: cover
     
 - **Taking advantage of RStudio **
    - R Markdown and Quarto 
-     - Data mgmt. and reporting are seamless.
-     - Can include R, Python, SQL etc.
+   - Seamless data mgmt. and reporting
+   - Can include R, Python, SQL etc.
 
 - **Platforms for Projects**
    - Github - essential for large projects
@@ -669,8 +712,8 @@ background-size: cover
    
 - **Additional Material and links**
     - Dashboard Tips
-    - `gt` tables for
-    - Many links for learning more**
+    - `gt` tables
+    - Many links for learning more
     - **Data Camp White Paper about Skillset**
     
   ]

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Penelope Pooler Eisenbies">
-<meta name="dcterms.date" content="2023-04-20">
+<meta name="dcterms.date" content="2023-11-30">
 
-<title>BUA 455 - Week 13</title>
+<title>BUA 455 - Week 13 and 14</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,56 +49,26 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="BUA_455_Week_13_files/libs/clipboard/clipboard.min.js"></script>
-<script src="BUA_455_Week_13_files/libs/quarto-html/quarto.js"></script>
-<script src="BUA_455_Week_13_files/libs/quarto-html/popper.min.js"></script>
-<script src="BUA_455_Week_13_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="BUA_455_Week_13_files/libs/quarto-html/anchor.min.js"></script>
-<link href="BUA_455_Week_13_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="BUA_455_Week_13_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="BUA_455_Week_13_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="BUA_455_Week_13_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="BUA_455_Week_13_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="BUA_455_Week_13_14_files/libs/clipboard/clipboard.min.js"></script>
+<script src="BUA_455_Week_13_14_files/libs/quarto-html/quarto.js"></script>
+<script src="BUA_455_Week_13_14_files/libs/quarto-html/popper.min.js"></script>
+<script src="BUA_455_Week_13_14_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="BUA_455_Week_13_14_files/libs/quarto-html/anchor.min.js"></script>
+<link href="BUA_455_Week_13_14_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="BUA_455_Week_13_14_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="BUA_455_Week_13_14_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="BUA_455_Week_13_14_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="BUA_455_Week_13_14_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -113,6 +84,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#final-projects" id="toc-final-projects" class="nav-link active" data-scroll-target="#final-projects">Final Projects</a></li>
   <li><a href="#project-memos" id="toc-project-memos" class="nav-link" data-scroll-target="#project-memos">Project Memos</a></li>
+  <li><a href="#talking-about-your-skillset" id="toc-talking-about-your-skillset" class="nav-link" data-scroll-target="#talking-about-your-skillset">Talking about Your Skillset</a></li>
   <li><a href="#r-markdown-.rmd-and-quarto-.qmd-formats" id="toc-r-markdown-.rmd-and-quarto-.qmd-formats" class="nav-link" data-scroll-target="#r-markdown-.rmd-and-quarto-.qmd-formats">R Markdown (.Rmd) and Quarto (.qmd) formats</a></li>
   <li><a href="#best-way-to-learn-quarto" id="toc-best-way-to-learn-quarto" class="nav-link" data-scroll-target="#best-way-to-learn-quarto">Best way to learn Quarto</a></li>
   <li><a href="#resources---where-to-go-next" id="toc-resources---where-to-go-next" class="nav-link" data-scroll-target="#resources---where-to-go-next">Resources - Where to go next</a></li>
@@ -121,7 +93,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#more-about-github" id="toc-more-about-github" class="nav-link" data-scroll-target="#more-about-github">More about GitHub</a></li>
   <li><a href="#some-github-links" id="toc-some-github-links" class="nav-link" data-scroll-target="#some-github-links">Some GitHub links</a></li>
   <li><a href="#new-ways-to-collaborate" id="toc-new-ways-to-collaborate" class="nav-link" data-scroll-target="#new-ways-to-collaborate">New Ways to Collaborate</a></li>
-  <li><a href="#plan-for-thursday-420" id="toc-plan-for-thursday-420" class="nav-link" data-scroll-target="#plan-for-thursday-420">Plan for Thursday (4/20)</a></li>
+  <li><a href="#more-new-ways-to-collaborate" id="toc-more-new-ways-to-collaborate" class="nav-link" data-scroll-target="#more-new-ways-to-collaborate">More New Ways to Collaborate</a></li>
+  <li><a href="#plan-for-tuesday-125" id="toc-plan-for-tuesday-125" class="nav-link" data-scroll-target="#plan-for-tuesday-125">Plan for Tuesday (12/5)</a></li>
   <li><a href="#tips-for-a-better-dashboard" id="toc-tips-for-a-better-dashboard" class="nav-link" data-scroll-target="#tips-for-a-better-dashboard">Tips for a Better Dashboard</a></li>
   <li><a href="#tips-for-a-better-dashboard-1" id="toc-tips-for-a-better-dashboard-1" class="nav-link" data-scroll-target="#tips-for-a-better-dashboard-1">Tips for a Better Dashboard</a></li>
   <li><a href="#tables-in-dashboards-and-documents" id="toc-tables-in-dashboards-and-documents" class="nav-link" data-scroll-target="#tables-in-dashboards-and-documents">Tables in Dashboards and Documents</a></li>
@@ -131,7 +104,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#editing-a-table-for-a-presentation" id="toc-editing-a-table-for-a-presentation" class="nav-link" data-scroll-target="#editing-a-table-for-a-presentation">Editing a Table for a Presentation</a></li>
   <li><a href="#project-questions" id="toc-project-questions" class="nav-link" data-scroll-target="#project-questions">Project Questions</a></li>
   <li><a href="#evaluations" id="toc-evaluations" class="nav-link" data-scroll-target="#evaluations">Evaluations</a></li>
-  <li><a href="#key-points-from-week-13" id="toc-key-points-from-week-13" class="nav-link" data-scroll-target="#key-points-from-week-13"><strong>Key Points from Week 13</strong></a></li>
+  <li><a href="#key-points---weeks-13-14" id="toc-key-points---weeks-13-14" class="nav-link" data-scroll-target="#key-points---weeks-13-14"><strong>Key Points - Weeks 13 &amp; 14</strong></a></li>
   </ul>
 </nav>
 </div>
@@ -141,7 +114,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">BUA 455 - Week 13</h1>
+<h1 class="title">BUA 455 - Week 13 and 14</h1>
 </div>
 
 
@@ -158,7 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 20, 2023</p>
+      <p class="date">November 30, 2023</p>
     </div>
   </div>
   
@@ -200,12 +173,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <section id="final-projects" class="level3">
 <h3 class="anchored" data-anchor-id="final-projects">Final Projects</h3>
-<section id="presentations-are-next-week-tue.-425-and-thu.-427" class="level4">
-<h4 class="anchored" data-anchor-id="presentations-are-next-week-tue.-425-and-thu.-427"><strong>Presentations are next week, Tue. 4/25 and Thu. 4/27</strong></h4>
+<section id="presentations-are-on-tuesday-1212" class="level4">
+<h4 class="anchored" data-anchor-id="presentations-are-on-tuesday-1212">**Presentations are on Tuesday, 12/12</h4>
 <ul>
-<li><p>If your group wants to present on Tue. 4/25, let me know by Thursday.</p>
+<li><p>If your group needs to present first or last due to a conflict, let me know ASAP.</p>
 <ul>
-<li>Otherwise, random order will be posted by Sunday (4/23).</li>
+<li>Otherwise, random order will be posted by Sunday (12/10).</li>
 </ul></li>
 <li><p>Attendance required by all</p></li>
 <li><p>Dress: Business casual with emphasis on casual</p></li>
@@ -214,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>You will present better if you dress the part (at least a little)</p></li>
 <li><p>All students should be prepared to answer questions about the work presented.</p></li>
 <li><p>Each student will evaluate other groups and their own group members</p></li>
-<li><p><strong>All project components must be submitted by Tuesday, May 2nd at 5:00 PM</strong></p></li>
+<li><p><strong>All project components must be submitted by Friday, December 15th at 5:00 PM</strong></p></li>
 </ul>
 <hr>
 </section>
@@ -246,17 +219,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr>
 </section>
 </section>
+<section id="talking-about-your-skillset" class="level3">
+<h3 class="anchored" data-anchor-id="talking-about-your-skillset">Talking about Your Skillset</h3>
+<ul>
+<li><p>Explaining your skillset is hard, but it’s getting easier.</p></li>
+<li><p>As Data Science and Analytics grow in importance, more people understand what this skill set can offer.</p></li>
+<li><p>However, you should not assume that interviewers, colleagues, supervisors understand your skills.</p></li>
+<li><p><a href="https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view">This White Paper from Data camp (also posted on Blackboard)</a> is helpful.</p>
+<ul>
+<li><p>Starting on Page 9 it lays out different roles people take on when working with data.</p></li>
+<li><p>Comparing these descriptions to skills you learn in this major should give you a lot of confidence.</p></li>
+<li><p>Provides validation that you can take on more advanced roles.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
 <section id="r-markdown-.rmd-and-quarto-.qmd-formats" class="level3">
 <h3 class="anchored" data-anchor-id="r-markdown-.rmd-and-quarto-.qmd-formats">R Markdown (.Rmd) and Quarto (.qmd) formats</h3>
 <ul>
-<li><p>RStudio is currently in transition</p></li>
+<li><p>RStudio and parent company Posit is currently in transition.</p></li>
 <li><p>Documents can be rendered from R Markdown (.Rmd) or <a href="https://quarto.org/">Quarto (.qmd)</a></p>
 <ul>
 <li><p>HTML, Word documents, PDf</p></li>
 <li><p>R Markdown will be available for forseeable future</p></li>
-<li><p>flexdashboard not available in Quarto format yet</p>
+<li><p>flexdashboard not available in Quarto format</p>
 <ul>
-<li><a href="https://quarto.org/docs/faq/rmarkdown.html">Options Currently Available in Quarto</a></li>
+<li><p><a href="https://quarto.org/docs/faq/rmarkdown.html">Options Currently Available in Quarto</a></p></li>
+<li><p><a href="https://quarto.org/docs/guide/">Dashboard options were introduced in August of 2023</a></p></li>
 </ul></li>
 </ul></li>
 <li><p>Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)</p>
@@ -293,16 +282,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="for-all-aspects-of-analytics-and-r-and-rstudio" class="level4">
 <h4 class="anchored" data-anchor-id="for-all-aspects-of-analytics-and-r-and-rstudio"><strong>For all aspects of analytics and R and RStudio</strong></h4>
 <ul>
-<li><p>Discovered last semester: <a href="https://www.bigbookofr.com/index.html">Big Book of R - A Curated Website of R Resources</a></p>
+<li><p>Discovered last year: <a href="https://www.bigbookofr.com/index.html">Big Book of R - A Curated Website of R Resources</a></p>
 <ul>
-<li>Updated November 2022</li>
+<li>Updated November 2023</li>
 </ul></li>
-<li><p>Doesn’t include <a href="https://rafalab.GitHub.io/dsbook/">text reference for this class</a> which is good.</p></li>
+<li><p>Doesn’t include <a href="https://rafalab.GitHub.io/dsbook/">this book</a> which is excellent for undergraduates.</p></li>
 <li><p>Before this Spring, the best resource was Google which often leads to <a href="https://stackoverflow.com/">stack overflow</a></p>
 <ul>
 <li>Stack Overflow is helpful but you have to know enough code to be able to understand answers.</li>
 </ul></li>
-<li><p>Now, I recommend using and learning with AI such as Chat GPT (not during a test) The AI engine is very good at answering most code questions, but it is not perfect.</p></li>
+<li><p>Now, I recommend using and learning with AI such as Chat GPT (not during a test)</p>
+<ul>
+<li>The AI engine is very good at answering most code questions, but it is not perfect.</li>
+</ul></li>
 </ul>
 <hr>
 </section>
@@ -334,11 +326,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="sharing-and-collaborating---github-vs.-rpubs" class="level3">
 <h3 class="anchored" data-anchor-id="sharing-and-collaborating---github-vs.-rpubs">Sharing and Collaborating - GitHub vs.&nbsp;RPubs</h3>
 <ul>
-<li><p>Last week I introduced you to Rpubs which is ideal from sharing a dashboard.</p></li>
+<li><p>Last week I introduced you to Rpubs which is ideal from sharing a dashboard.</p>
+<ul>
+<li>For MAS 261, I publish my slides on RPubs</li>
+</ul></li>
 <li><p>Alternatively, you may have already come across <code>GitHub</code> in searching for files or a package.</p>
 <ul>
 <li><p>Slides for this course are stored on GitHub</p></li>
-<li><p>Required for files where data, code and text are maintained together as a project, referred to as a <strong>repository</strong> or <strong>repo</strong>.</p></li>
+<li><p>Prior to Quarto, GitHub was required for files where data, code and text are maintained together as a project, referred to as a <strong>repository</strong> or <strong>repo</strong>.</p></li>
 <li><p>Not required for finished dashboard.</p></li>
 </ul></li>
 <li><p>GitHub is an online code sharing and code development platform.</p></li>
@@ -353,10 +348,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Collaborative coding is common on GitHub but is a little more complex than working on a shared drive.</p>
 <ul>
 <li><p>Developers of games, R packages, other software, etc., have huge code files and need to protect them.</p></li>
-<li><p>There is a system in place (version control) where people can create a project with multiple code versions and edits. Over time a project develops more and more branches, like a tree, but the trunk.</p></li>
+<li><p>There is a system in place (version control) where people can create a project with multiple code versions and edits.</p>
+<ul>
+<li>Over time a project develops more and more branches, like a tree, but the trunk.</li>
+</ul></li>
 <li><p>Original code is preserved and changes can be incorporated as they are verified and approved.</p></li>
 </ul></li>
 </ul>
+<hr>
 </section>
 <section id="some-github-links" class="level3">
 <h3 class="anchored" data-anchor-id="some-github-links">Some GitHub links</h3>
@@ -373,31 +372,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="new-ways-to-collaborate" class="level3">
 <h3 class="anchored" data-anchor-id="new-ways-to-collaborate">New Ways to Collaborate</h3>
-<p><strong><a href="https://posit.cloud/">Posit Cloud</a></strong> is not free but is fantastic for sharing work and collaborating in real time.</p>
+<p><strong><a href="https://posit.cloud/">Posit Cloud</a></strong> is not free (as you know) but I think it works well for collaborative work. - Note: I think only one person can edit a code file at same time. Is that true?</p>
 <ul>
-<li>For your purposes, it is $5 per month which you can pause when not working.</li>
-<li>I may teach using it in MAS 261 to share work with students.</li>
-<li>You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.</li>
-<li>You can organize work into R Projects the same way we do in class and share them with others.</li>
+<li><p>For your purposes, it is $5 per month which you can pause when not working.</p></li>
+<li><p>You are my first course to use it for the project.</p></li>
+<li><p>You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.</p></li>
+<li><p>You can organize work into R Projects the same way we do in class and share them with others.</p></li>
 </ul>
 <p><strong><a href="https://colab.research.google.com/">Google Colab</a></strong> is primarily used for Python but can be used with R.</p>
 <ul>
-<li>I have only started exploring this option but it appears to be a free Google collaborative data science space.</li>
-<li>Here is a <a href="https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497">Medium article that explains how to use R in Google Colab</a>
+<li><p>I have only started exploring this option but it appears to be a free Google collaborative data science space.</p></li>
+<li><p>Here is a <a href="https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497">Medium article that explains how to use R in Google Colab</a></p>
 <ul>
-<li>TLDR: Google Colab is more well developed for Python but useable for R and will eveolve quickly.</li>
+<li>TLDR: Google Colab is more well developed for Python but useable for R and will evolve quickly.</li>
 </ul></li>
-</ul>
-<p><strong><a href="https://www.kaggle.com/">Kaggle</a></strong></p>
-<ul>
-<li>You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.</li>
-<li>Here is a <a href="https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report">detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook</a>.</li>
-<li>Here is a <a href="https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/">tutorial for using R in Kaggle Notebook</a>.</li>
 </ul>
 <hr>
 </section>
-<section id="plan-for-thursday-420" class="level3">
-<h3 class="anchored" data-anchor-id="plan-for-thursday-420">Plan for Thursday (4/20)</h3>
+<section id="more-new-ways-to-collaborate" class="level3">
+<h3 class="anchored" data-anchor-id="more-new-ways-to-collaborate">More New Ways to Collaborate</h3>
+<p><strong><a href="https://www.kaggle.com/">Kaggle</a></strong></p>
+<ul>
+<li><p>You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.</p></li>
+<li><p>Here is a <a href="https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report">detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook</a>.</p></li>
+<li><p>Here is a <a href="https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/">tutorial for using R in Kaggle Notebook</a>.</p></li>
+<li><p>Kaggle is well known for Data Science competitions.</p></li>
+</ul>
+<p><strong><a href="https://data.world/">Data World</a></strong></p>
+<ul>
+<li>Similar to Kaggle in that you can create an account and save projects there.</li>
+</ul>
+<hr>
+</section>
+<section id="plan-for-tuesday-125" class="level3">
+<h3 class="anchored" data-anchor-id="plan-for-tuesday-125">Plan for Tuesday (12/5)</h3>
 <ul>
 <li><p>Address submitted questions</p>
 <ul>
@@ -405,7 +413,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><p>Tips for a Better Dashboard</p></li>
 <li><p>Tables with GT</p></li>
-<li><p>Five (more) minutes for evaluations</p></li>
+<li><p>Five minutes for evaluations</p></li>
 <li><p>In-class work time</p></li>
 </ul>
 <hr>
@@ -474,9 +482,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="tables-in-dashboards-and-documents-1" class="level3">
 <h3 class="anchored" data-anchor-id="tables-in-dashboards-and-documents-1">Tables in Dashboards and Documents</h3>
 <p>First let’s look at what can be customized:</p>
-<center>
-<p><img src="gt_table.png" class="img-fluid"></p>
-</center>
+<p>.center[<img src="docs_files/images/gt_table.png" width="800">]</p>
 <hr>
 </section>
 <section id="example-importing-summarizing-and-displaying-stock-data" class="level3">
@@ -534,23 +540,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>snp_fmt         <span class="co"># code to display created table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
-<div id="vjuulgjdby" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vjuulgjdby table {
+<div id="xdqhuusfhx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xdqhuusfhx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vjuulgjdby thead, #vjuulgjdby tbody, #vjuulgjdby tfoot, #vjuulgjdby tr, #vjuulgjdby td, #vjuulgjdby th {
+#xdqhuusfhx thead, #xdqhuusfhx tbody, #xdqhuusfhx tfoot, #xdqhuusfhx tr, #xdqhuusfhx td, #xdqhuusfhx th {
   border-style: none;
 }
 
-#vjuulgjdby p {
+#xdqhuusfhx p {
   margin: 0;
   padding: 0;
 }
 
-#vjuulgjdby .gt_table {
+#xdqhuusfhx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -576,12 +582,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_caption {
+#xdqhuusfhx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vjuulgjdby .gt_title {
+#xdqhuusfhx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -593,7 +599,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#vjuulgjdby .gt_subtitle {
+#xdqhuusfhx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -605,7 +611,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#vjuulgjdby .gt_heading {
+#xdqhuusfhx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -617,13 +623,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_bottom_border {
+#xdqhuusfhx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_col_headings {
+#xdqhuusfhx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -638,7 +644,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_col_heading {
+#xdqhuusfhx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -658,7 +664,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#vjuulgjdby .gt_column_spanner_outer {
+#xdqhuusfhx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -670,15 +676,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#vjuulgjdby .gt_column_spanner_outer:first-child {
+#xdqhuusfhx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vjuulgjdby .gt_column_spanner_outer:last-child {
+#xdqhuusfhx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vjuulgjdby .gt_column_spanner {
+#xdqhuusfhx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -690,11 +696,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#vjuulgjdby .gt_spanner_row {
+#xdqhuusfhx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vjuulgjdby .gt_group_heading {
+#xdqhuusfhx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -720,7 +726,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#vjuulgjdby .gt_empty_group_heading {
+#xdqhuusfhx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -735,15 +741,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#vjuulgjdby .gt_from_md > :first-child {
+#xdqhuusfhx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vjuulgjdby .gt_from_md > :last-child {
+#xdqhuusfhx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vjuulgjdby .gt_row {
+#xdqhuusfhx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -762,7 +768,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#vjuulgjdby .gt_stub {
+#xdqhuusfhx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -775,7 +781,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#vjuulgjdby .gt_stub_row_group {
+#xdqhuusfhx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -789,15 +795,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#vjuulgjdby .gt_row_group_first td {
+#xdqhuusfhx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vjuulgjdby .gt_row_group_first th {
+#xdqhuusfhx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vjuulgjdby .gt_summary_row {
+#xdqhuusfhx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -807,16 +813,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#vjuulgjdby .gt_first_summary_row {
+#xdqhuusfhx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_first_summary_row.thick {
+#xdqhuusfhx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vjuulgjdby .gt_last_summary_row {
+#xdqhuusfhx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -826,7 +832,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_grand_summary_row {
+#xdqhuusfhx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -836,7 +842,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#vjuulgjdby .gt_first_grand_summary_row {
+#xdqhuusfhx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -846,7 +852,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_last_grand_summary_row_top {
+#xdqhuusfhx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -856,11 +862,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_striped {
+#xdqhuusfhx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vjuulgjdby .gt_table_body {
+#xdqhuusfhx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -869,7 +875,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_footnotes {
+#xdqhuusfhx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -883,7 +889,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_footnote {
+#xdqhuusfhx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -892,7 +898,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#vjuulgjdby .gt_sourcenotes {
+#xdqhuusfhx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -906,7 +912,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#vjuulgjdby .gt_sourcenote {
+#xdqhuusfhx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -914,63 +920,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#vjuulgjdby .gt_left {
+#xdqhuusfhx .gt_left {
   text-align: left;
 }
 
-#vjuulgjdby .gt_center {
+#xdqhuusfhx .gt_center {
   text-align: center;
 }
 
-#vjuulgjdby .gt_right {
+#xdqhuusfhx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vjuulgjdby .gt_font_normal {
+#xdqhuusfhx .gt_font_normal {
   font-weight: normal;
 }
 
-#vjuulgjdby .gt_font_bold {
+#xdqhuusfhx .gt_font_bold {
   font-weight: bold;
 }
 
-#vjuulgjdby .gt_font_italic {
+#xdqhuusfhx .gt_font_italic {
   font-style: italic;
 }
 
-#vjuulgjdby .gt_super {
+#xdqhuusfhx .gt_super {
   font-size: 65%;
 }
 
-#vjuulgjdby .gt_footnote_marks {
+#xdqhuusfhx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vjuulgjdby .gt_asterisk {
+#xdqhuusfhx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vjuulgjdby .gt_indent_1 {
+#xdqhuusfhx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vjuulgjdby .gt_indent_2 {
+#xdqhuusfhx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vjuulgjdby .gt_indent_3 {
+#xdqhuusfhx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vjuulgjdby .gt_indent_4 {
+#xdqhuusfhx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vjuulgjdby .gt_indent_5 {
+#xdqhuusfhx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1083,27 +1089,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Source: https://finance.yahoo.com"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Symbol: ^GSPC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<hr>
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="ejczzzcocl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ejczzzcocl table {
+<div id="bhqdyxiuip" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bhqdyxiuip table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ejczzzcocl thead, #ejczzzcocl tbody, #ejczzzcocl tfoot, #ejczzzcocl tr, #ejczzzcocl td, #ejczzzcocl th {
+#bhqdyxiuip thead, #bhqdyxiuip tbody, #bhqdyxiuip tfoot, #bhqdyxiuip tr, #bhqdyxiuip td, #bhqdyxiuip th {
   border-style: none;
 }
 
-#ejczzzcocl p {
+#bhqdyxiuip p {
   margin: 0;
   padding: 0;
 }
 
-#ejczzzcocl .gt_table {
+#bhqdyxiuip .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1129,12 +1134,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_caption {
+#bhqdyxiuip .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ejczzzcocl .gt_title {
+#bhqdyxiuip .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1146,7 +1151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#ejczzzcocl .gt_subtitle {
+#bhqdyxiuip .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1158,7 +1163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#ejczzzcocl .gt_heading {
+#bhqdyxiuip .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1170,13 +1175,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_bottom_border {
+#bhqdyxiuip .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_col_headings {
+#bhqdyxiuip .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1191,7 +1196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_col_heading {
+#bhqdyxiuip .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1211,7 +1216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#ejczzzcocl .gt_column_spanner_outer {
+#bhqdyxiuip .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1223,15 +1228,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#ejczzzcocl .gt_column_spanner_outer:first-child {
+#bhqdyxiuip .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ejczzzcocl .gt_column_spanner_outer:last-child {
+#bhqdyxiuip .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ejczzzcocl .gt_column_spanner {
+#bhqdyxiuip .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1243,11 +1248,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#ejczzzcocl .gt_spanner_row {
+#bhqdyxiuip .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ejczzzcocl .gt_group_heading {
+#bhqdyxiuip .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1273,7 +1278,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-#ejczzzcocl .gt_empty_group_heading {
+#bhqdyxiuip .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1288,15 +1293,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#ejczzzcocl .gt_from_md > :first-child {
+#bhqdyxiuip .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ejczzzcocl .gt_from_md > :last-child {
+#bhqdyxiuip .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ejczzzcocl .gt_row {
+#bhqdyxiuip .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1315,7 +1320,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#ejczzzcocl .gt_stub {
+#bhqdyxiuip .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1328,7 +1333,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ejczzzcocl .gt_stub_row_group {
+#bhqdyxiuip .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1342,15 +1347,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#ejczzzcocl .gt_row_group_first td {
+#bhqdyxiuip .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ejczzzcocl .gt_row_group_first th {
+#bhqdyxiuip .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ejczzzcocl .gt_summary_row {
+#bhqdyxiuip .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1360,16 +1365,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ejczzzcocl .gt_first_summary_row {
+#bhqdyxiuip .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_first_summary_row.thick {
+#bhqdyxiuip .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ejczzzcocl .gt_last_summary_row {
+#bhqdyxiuip .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1379,7 +1384,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_grand_summary_row {
+#bhqdyxiuip .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1389,7 +1394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ejczzzcocl .gt_first_grand_summary_row {
+#bhqdyxiuip .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1399,7 +1404,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_last_grand_summary_row_top {
+#bhqdyxiuip .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1409,11 +1414,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_striped {
+#bhqdyxiuip .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ejczzzcocl .gt_table_body {
+#bhqdyxiuip .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1422,7 +1427,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_footnotes {
+#bhqdyxiuip .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1436,7 +1441,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_footnote {
+#bhqdyxiuip .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1445,7 +1450,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ejczzzcocl .gt_sourcenotes {
+#bhqdyxiuip .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1459,7 +1464,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ejczzzcocl .gt_sourcenote {
+#bhqdyxiuip .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1467,63 +1472,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ejczzzcocl .gt_left {
+#bhqdyxiuip .gt_left {
   text-align: left;
 }
 
-#ejczzzcocl .gt_center {
+#bhqdyxiuip .gt_center {
   text-align: center;
 }
 
-#ejczzzcocl .gt_right {
+#bhqdyxiuip .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ejczzzcocl .gt_font_normal {
+#bhqdyxiuip .gt_font_normal {
   font-weight: normal;
 }
 
-#ejczzzcocl .gt_font_bold {
+#bhqdyxiuip .gt_font_bold {
   font-weight: bold;
 }
 
-#ejczzzcocl .gt_font_italic {
+#bhqdyxiuip .gt_font_italic {
   font-style: italic;
 }
 
-#ejczzzcocl .gt_super {
+#bhqdyxiuip .gt_super {
   font-size: 65%;
 }
 
-#ejczzzcocl .gt_footnote_marks {
+#bhqdyxiuip .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ejczzzcocl .gt_asterisk {
+#bhqdyxiuip .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ejczzzcocl .gt_indent_1 {
+#bhqdyxiuip .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ejczzzcocl .gt_indent_2 {
+#bhqdyxiuip .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ejczzzcocl .gt_indent_3 {
+#bhqdyxiuip .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ejczzzcocl .gt_indent_4 {
+#bhqdyxiuip .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ejczzzcocl .gt_indent_5 {
+#bhqdyxiuip .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1592,6 +1597,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>More material will be added here depending on questions submitted.</p></li>
 <li><p>Otherwise, the rest of Thursday will be an in-class group project work day</p></li>
 </ul>
+<hr>
 </section>
 <section id="evaluations" class="level3">
 <h3 class="anchored" data-anchor-id="evaluations">Evaluations</h3>
@@ -1603,14 +1609,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>netID and password are required</li>
 </ul></li>
-<li><p>I will step out for 5 minutes today and again on Thursday.</p></li>
+<li><p>I will step out for 5 minutes today.</p></li>
 </ul></li>
 </ul>
 <hr>
-<hr>
 </section>
-<section id="key-points-from-week-13" class="level3">
-<h3 class="anchored" data-anchor-id="key-points-from-week-13"><strong>Key Points from Week 13</strong></h3>
+<section id="key-points---weeks-13-14" class="level3">
+<h3 class="anchored" data-anchor-id="key-points---weeks-13-14"><strong>Key Points - Weeks 13 &amp; 14</strong></h3>
+<p>.bg-azure.b–dark_cyan.ba.bw2.br3.shadow-5.ph2[</p>
 <ul>
 <li><p><strong>Project Info - 2 Memos</strong></p>
 <ul>
@@ -1618,11 +1624,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><p><strong>Taking advantage of RStudio </strong></p>
 <ul>
-<li>R Markdown and Quarto
-<ul>
-<li>Data mgmt. and reporting are seamless.</li>
+<li>R Markdown and Quarto</li>
+<li>Seamless data mgmt. and reporting</li>
 <li>Can include R, Python, SQL etc.</li>
-</ul></li>
 </ul></li>
 <li><p><strong>Platforms for Projects</strong></p>
 <ul>
@@ -1633,8 +1637,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Additional Material and links</strong></p>
 <ul>
 <li>Dashboard Tips</li>
-<li><code>gt</code> tables for</li>
-<li>Many links for learning more**</li>
+<li><code>gt</code> tables</li>
+<li>Many links for learning more</li>
 <li><strong>Data Camp White Paper about Skillset</strong></li>
 </ul></li>
 </ul>
@@ -1670,9 +1674,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1737,6 +1755,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
