@@ -1,14 +1,12 @@
 ---
 title: "BUA 455 - Week 13 - Part 2"
-author: "Penelope Pooler Eisenbies"
-date: '`r Sys.Date()`'
+author: "Penelope Pooler"
+date: "`r Sys.Date()`"
 format:
   html:
-    toc: true
-    toc-location: left
-    html-math-method: katex
-    css: styles.css
-
+    code-fold: true
+    code-summary: "Show the code"
+editor: visual
 ---
 
 ```{r setup, include=TRUE}
@@ -37,279 +35,269 @@ p_loaded()
 
 #### **Presentations are on Thursday, 4/25.**
 
-- If your group needs to present first or last due to a conflict, let me know ASAP.  
+-   If your group needs to present first or last due to a conflict, let me know ASAP.
 
-  - Otherwise, random order will be posted by Wednesday (4/24).
+    -   Otherwise, random order will be posted by Wednesday (4/24).
 
-- Attendance required by all
-  
-- Dress: Business casual with emphasis on casual
-  
-- Suits, Ties, Dresses, and Jackets are **NOT** required
-  
-- No sweats t-shirts or pjs
-    
-- You will present better if you dress the part (at least a little)
-  
-- All students should be prepared to answer questions about the work presented.
-    
-- Each student will evaluate other groups and their own group members
+-   Attendance required by all
 
-- **All project components must be submitted by Wednesday, May 1st at 5:00 PM**
+-   Dress: Business casual with emphasis on casual
 
----
+-   Suits, Ties, Dresses, and Jackets are **NOT** required
+
+-   No sweats t-shirts or pjs
+
+-   You will present better if you dress the part (at least a little)
+
+-   All students should be prepared to answer questions about the work presented.
+
+-   Each student will evaluate other groups and their own group members
+
+-   **All project components must be submitted by Wednesday, May 1st at 5:00 PM**
+
+------------------------------------------------------------------------
 
 ### Project Memos
 
-- [Project Description - Memos are described on Page 5](https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing)
+-   [Project Description - Memos are described on Page 5](https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing)
 
-- Each group has an R project with Quarto memo templates in their Posit Cloud workspace.
+-   Each group has an R project with Quarto memo templates in their Posit Cloud workspace.
 
-- [There is also a zipped R project that can be downloaded here.](https://drive.google.com/file/d/17flkoHOvRucNQ--LKo1JayrXqyGcsRbz/view?usp=sharing)
+-   [There is also a zipped R project that can be downloaded here.](https://drive.google.com/file/d/17flkoHOvRucNQ--LKo1JayrXqyGcsRbz/view?usp=sharing)
 
-   - Supervisor Memo's Goal: 
-  
-      - Provide your supervisor with what they need 
-      - They will want to be knowledgeable about the data and dashboard, but have very limited time.
-      - Predict questions they (supervisor) might have and questions a client might ask.
+    -   Supervisor Memo's Goal:
 
-   - Colleague Memo's Goal: 
-    
-      - Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.
-      
-      - I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.
-      
-  
+        -   Provide your supervisor with what they need
+        -   They will want to be knowledgeable about the data and dashboard, but have very limited time.
+        -   Predict questions they (supervisor) might have and questions a client might ask.
+
+    -   Colleague Memo's Goal:
+
+        -   Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.
+
+        -   I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.
+
 #### Questions about Project and Templates?
 
----
+------------------------------------------------------------------------
 
 ### Talking about Your Skillset
 
-- Explaining your skillset is hard, but it's getting easier.
+-   Explaining your skillset is hard, but it's getting easier.
 
-- As Data Science and Analytics grow in importance, more people understand what this skill set can offer.
+-   As Data Science and Analytics grow in importance, more people understand what this skill set can offer.
 
-- However, you should not assume that interviewers, colleagues, supervisors understand your skills.
+-   However, you should not assume that interviewers, colleagues, supervisors understand your skills.
 
-- [This White Paper from Data camp (also posted on Blackboard)](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view) is helpful.
+-   [This White Paper from Data camp (also posted on Blackboard)](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view) is helpful.
 
-  - Starting on Page 9 it lays out different roles people take on when working with data.
-  
-  - Comparing these descriptions to skills you learn in this major should give you a lot of confidence.
-  
-  - Provides validation that you can take on more advanced roles.
+    -   Starting on Page 9 it lays out different roles people take on when working with data.
 
----
+    -   Comparing these descriptions to skills you learn in this major should give you a lot of confidence.
+
+    -   Provides validation that you can take on more advanced roles.
+
+------------------------------------------------------------------------
 
 ### R Markdown (.Rmd) and Quarto (.qmd) formats
 
-- RStudio and parent company Posit is currently in transition.
+-   RStudio and parent company Posit is currently in transition.
 
-- Documents can be rendered from R Markdown (.Rmd) or [Quarto (.qmd)](https://quarto.org/)
+-   Documents can be rendered from R Markdown (.Rmd) or [Quarto (.qmd)](https://quarto.org/)
 
-  - HTML, Word documents, PDf
+    -   HTML, Word documents, PDf
 
-  - R Markdown will be available for forseeable future
+    -   R Markdown will be available for forseeable future
 
-  - flexdashboard not available in Quarto format
-  
-    - [Options Currently Available in Quarto](https://quarto.org/docs/faq/rmarkdown.html)
-    
-    - [Dashboard options were introduced in August of 2023](https://quarto.org/docs/guide/)
+    -   flexdashboard not available in Quarto format
 
-- Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)
+        -   [Options Currently Available in Quarto](https://quarto.org/docs/faq/rmarkdown.html)
 
-  - Powerpoint 
-  
-     - better for non-technical talks
-  
-  - Quarto Presentations (RevealJS) will replace Xaringan
-  
-     - These slides are Xaringan
-  
-     - Updated options will make better slides with more options
-  
-     - Xaringan and RevealJS are preferred for including code and output
-    
----
-  
+        -   [Dashboard options were introduced in August of 2023](https://quarto.org/docs/guide/)
+
+-   Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)
+
+    -   Powerpoint
+
+        -   better for non-technical talks
+
+    -   Quarto Presentations (RevealJS) will replace Xaringan
+
+        -   These slides are Xaringan
+
+        -   Updated options will make better slides with more options
+
+        -   Xaringan and RevealJS are preferred for including code and output
+
+------------------------------------------------------------------------
+
 ### Best way to learn Quarto
 
+-   Examine Examples provided in R
 
+-   Examine Examples in [Quarto Gallery](https://quarto.org/docs/gallery/)
 
-- Examine Examples provided in R
+    -   click on code symbol `</>` to see the code used to create the documents or presentations
 
-- Examine Examples in [Quarto Gallery](https://quarto.org/docs/gallery/)
-  
-  - click on code symbol `</>` to see the code used to create the documents or presentations 
-  
-  - Examine and modify code for your document
-  
-  - Also use Google, website documentation, and stack overflow for questions
+    -   Examine and modify code for your document
 
+    -   Also use Google, website documentation, and stack overflow for questions
 
----
-  
-### Resources - Where to go next 
+------------------------------------------------------------------------
 
+### Resources - Where to go next
 
 #### **For all aspects of analytics and R and RStudio**
 
-- Discovered last year: [Big Book of R - A Curated Website of R Resources](https://www.bigbookofr.com/index.html)
-  - Updated November 2023
-  
-- Doesn't include [this book](https://rafalab.GitHub.io/dsbook/) which is excellent for undergraduates.
-  
-- Before this Spring, the best resource was Google which often leads to [stack overflow](https://stackoverflow.com/)
-  
-  - Stack Overflow is helpful but you have to know enough code to be able to understand answers.
-  
-- Now, I recommend using and learning with AI such as Chat GPT (not during a test)
-  
-  - The AI engine is very good at answering most code questions, but it is not perfect.
+-   Discovered last year: [Big Book of R - A Curated Website of R Resources](https://www.bigbookofr.com/index.html)
 
+    -   Updated November 2023
 
----
-    
+-   Doesn't include [this book](https://rafalab.GitHub.io/dsbook/) which is excellent for undergraduates.
+
+-   Before this Spring, the best resource was Google which often leads to [stack overflow](https://stackoverflow.com/)
+
+    -   Stack Overflow is helpful but you have to know enough code to be able to understand answers.
+
+-   Now, I recommend using and learning with AI such as Chat GPT (not during a test)
+
+    -   The AI engine is very good at answering most code questions, but it is not perfect.
+
+------------------------------------------------------------------------
+
 ### Tutorials
-    
-  - Great tutorials in R, Python, SQL
-  
-  - Employers are likely to expect some familiarity with each.
-    
-  - R is versatile and powerful, but employers may prefer Python, SQL, or another language/environment because that is what they know.
-    
-  - NOTE: Python, SQL, others can all be utilized through RStudio.
-    
-  - Different languages can be combined in one R Markdown or Quarto document in separate chunks.
-    
-- [DataCamp](https://www.datacamp.com/) - Not Free, but Excellent.
-  
-  - Provides certificates of completion
-    
-  - Published this excellent [document about data fluency](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view?usp=sharing)
-    - **Download this document and save it for when you have to apply for jobs and answer questions about your skillset.** 
-  
-  - Stay tuned for possible access to DataCamp through [WIRE Initiative](https://whitman.syracuse.edu/experiential-learning/wire-initiative)
-  
-- Other companies are quickly developing tutorial training too (some are good)
 
----
+-   Great tutorials in R, Python, SQL
+
+-   Employers are likely to expect some familiarity with each.
+
+-   R is versatile and powerful, but employers may prefer Python, SQL, or another language/environment because that is what they know.
+
+-   NOTE: Python, SQL, others can all be utilized through RStudio.
+
+-   Different languages can be combined in one R Markdown or Quarto document in separate chunks.
+
+-   [DataCamp](https://www.datacamp.com/) - Not Free, but Excellent.
+
+    -   Provides certificates of completion
+
+    -   Published this excellent [document about data fluency](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view?usp=sharing)
+
+        -   **Download this document and save it for when you have to apply for jobs and answer questions about your skillset.**
+
+    -   Stay tuned for possible access to DataCamp through [WIRE Initiative](https://whitman.syracuse.edu/experiential-learning/wire-initiative)
+
+-   Other companies are quickly developing tutorial training too (some are good)
+
+------------------------------------------------------------------------
 
 ### Sharing and Collaborating - GitHub vs. RPubs
 
-- Last week I introduced you to Rpubs which is ideal from sharing a dashboard.
+-   Last week I introduced you to Rpubs which is ideal from sharing a dashboard.
 
-  - For MAS 261, I publish my slides on RPubs
+    -   For MAS 261, I publish my slides on RPubs
 
-- Alternatively, you may have already come across `GitHub` in searching for files or a package.
+-   Alternatively, you may have already come across `GitHub` in searching for files or a package.
 
-  - Slides for this course are stored on GitHub
-  
-  - Prior to Quarto, GitHub was required for files where data, code and text are maintained together as a project, referred to as a **repository** or **repo**.
-  
-  - Not required for finished dashboard.
+    -   Slides for this course are stored on GitHub
 
-- GitHub is an online code sharing and code development platform.  
+    -   Prior to Quarto, GitHub was required for files where data, code and text are maintained together as a project, referred to as a **repository** or **repo**.
 
-- Many R packages start as development code on GitHub and over time they are refined and published.
+    -   Not required for finished dashboard.
 
----
+-   GitHub is an online code sharing and code development platform.
+
+-   Many R packages start as development code on GitHub and over time they are refined and published.
+
+------------------------------------------------------------------------
 
 ### More about GitHub
 
-- Once you create free account, you can learn more about how it works in this [tutorial](https://docs.GitHub.com/en/get-started/quickstart/hello-world).
+-   Once you create free account, you can learn more about how it works in this [tutorial](https://docs.GitHub.com/en/get-started/quickstart/hello-world).
 
-- Collaborative coding is common on GitHub but is a little more complex than working on a shared drive.
+-   Collaborative coding is common on GitHub but is a little more complex than working on a shared drive.
 
-  - Developers of games, R packages, other software, etc., have huge code files and need to protect them.
+    -   Developers of games, R packages, other software, etc., have huge code files and need to protect them.
 
-  - There is a system in place (version control) where people can create a project with multiple code versions and edits.
-    
-    - Over time a project develops more and more branches, like a tree, but the trunk.
-  
-  - Original code is preserved and changes can be incorporated as they are verified and approved.
-  
----
+    -   There is a system in place (version control) where people can create a project with multiple code versions and edits.
+
+        -   Over time a project develops more and more branches, like a tree, but the trunk.
+
+    -   Original code is preserved and changes can be incorporated as they are verified and approved.
+
+------------------------------------------------------------------------
 
 ### Some GitHub links
-  
-  - Some tutorial links for collaborative coding on GitHub:
-  
-    - [What is Git and GitHub? And how to use GitHub?](https://medium.com/@ravirajsubramanian/what-is-git-and-GitHub-and-how-to-use-GitHub-f49d6be08b25)
-      
-    - [How to use Git and GitHub for collaborative programming?](https://medium.com/@ravirajsubramanian/how-to-use-git-and-GitHub-for-collaborative-programming-955da6876aa9)
-          
-    - [Using Git and Github on Group Projects](https://medium.com/@androidmatheny/using-git-and-GitHub-on-group-projects-d636be2cdd4d)
-      
-    - [Section 33 of Big Book of R](https://www.bigbookofr.com/version-control.html)
 
----
+-   Some tutorial links for collaborative coding on GitHub:
+
+    -   [What is Git and GitHub? And how to use GitHub?](https://medium.com/@ravirajsubramanian/what-is-git-and-GitHub-and-how-to-use-GitHub-f49d6be08b25)
+
+    -   [How to use Git and GitHub for collaborative programming?](https://medium.com/@ravirajsubramanian/how-to-use-git-and-GitHub-for-collaborative-programming-955da6876aa9)
+
+    -   [Using Git and Github on Group Projects](https://medium.com/@androidmatheny/using-git-and-GitHub-on-group-projects-d636be2cdd4d)
+
+    -   [Section 33 of Big Book of R](https://www.bigbookofr.com/version-control.html)
+
+------------------------------------------------------------------------
 
 ### New Ways to Collaborate
 
-**[Posit Cloud](https://posit.cloud/)** is not free (as you know) but I think it works well for collaborative work.
-- Simultaneous code collaboration is currently in beta-testing.
+[**Posit Cloud**](https://posit.cloud/) is not free (as you know) but I think it works well for collaborative work. - Simultaneous code collaboration is currently in beta-testing.
 
-- For your purposes, it is $5 per month which you can pause when not working.
+-   For your purposes, it is \$5 per month which you can pause when not working.
 
-- You are my second semester of students to use it for the BUA 455 project.
+-   You are my second semester of students to use it for the BUA 455 project.
 
-- You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
+-   You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
 
-- You can organize work into R Projects the same way we do in class and share them with others.
+-   You can organize work into R Projects the same way we do in class and share them with others.
 
-**[Google Colab](https://colab.research.google.com/)** is primarily used for Python but can be used with R.
+[**Google Colab**](https://colab.research.google.com/) is primarily used for Python but can be used with R.
 
-- It's a free Google collaborative data science space.
+-   It's a free Google collaborative data science space.
 
-- Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
+-   Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
 
-  - TLDR: Google Colab is more well developed for Python but useable for R and will evolve quickly.
-  
----
+    -   TLDR: Google Colab is more well developed for Python but useable for R and will evolve quickly.
+
+------------------------------------------------------------------------
 
 ### More New Ways to Collaborate
-  
-**[Kaggle](https://www.kaggle.com/)**
 
-- You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.
+[**Kaggle**](https://www.kaggle.com/)
 
-- Here is a [detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report).
+-   You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.
 
-- Here is a [tutorial for using R in Kaggle Notebook](https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/).
+-   Here is a [detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report).
 
-- Kaggle is well known for Data Science competitions.
+-   Here is a [tutorial for using R in Kaggle Notebook](https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/).
 
-**[Data World](https://data.world/)**
+-   Kaggle is well known for Data Science competitions.
 
-- Similar to Kaggle in that you can create an account and save projects there.
+[**Data World**](https://data.world/)
 
+-   Similar to Kaggle in that you can create an account and save projects there.
 
----
-
+------------------------------------------------------------------------
 
 ### Plan for Today and Tuesday (4/23) - Your Choice
 
+-   Address submitted questions
 
-- Address submitted questions
+    -   Quarto and R Markdown
 
-  - Quarto and R Markdown
-  
-- I can cover remaining material today or Tuesday
+-   I can cover remaining material today or Tuesday
 
-  - Tips for a Better Dashboard
+    -   Tips for a Better Dashboard
 
-  - Tables with GT
+    -   Tables with GT
 
-  - Five minutes for evaluations
+    -   Five minutes for evaluations
 
-  - In-class work time
+    -   In-class work time
 
-
-
----
+------------------------------------------------------------------------
 
 ### Tips for a Better Dashboard
 
@@ -317,82 +305,80 @@ A good rule for this project (every project):
 
 ***Edit yourself***
 
-- You may have a lot to say and show, **BUT** always consider:
+-   You may have a lot to say and show, **BUT** always consider:
 
-  - **What can you present WELL in the space an time you have?**
+    -   **What can you present WELL in the space an time you have?**
 
-- An important skill to develop is the ability to filter the data to a representative subset, especially for a visualization.
+-   An important skill to develop is the ability to filter the data to a representative subset, especially for a visualization.
 
-- Think about what data can be presented well and what the audience can digest.  
+-   Think about what data can be presented well and what the audience can digest.
 
-- Don't try to show too much in any one plot or panel.
+-   Don't try to show too much in any one plot or panel.
 
-- You can always show other parts of the data by
+-   You can always show other parts of the data by
 
-  - creating more panels 
-  - creating multi-plot grids to show other part of the data
+    -   creating more panels
+    -   creating multi-plot grids to show other part of the data
 
-
-
----
+------------------------------------------------------------------------
 
 ### Tips for a Better Dashboard
 
 At each stage of the process, take a step back and examine each dashboard panel as if you are seeing it with fresh eyes.
 
-- As you do that, ask yourself these questions:
+-   As you do that, ask yourself these questions:
 
-- Does this panel achieve a specific goal?
+-   Does this panel achieve a specific goal?
 
-- Is the point of this panel clear?
+-   Is the point of this panel clear?
 
-- If not, how can I edit or augment this panel to clarify what it is showing?
+-   If not, how can I edit or augment this panel to clarify what it is showing?
 
-- Are the text and symbols readable from any distance?
+-   Are the text and symbols readable from any distance?
 
-- What can I simplify to make it more clear?
+-   What can I simplify to make it more clear?
 
-  - Are there aspects I think are important that might not be obvious?
-  
-  - If so, how can I modify the panel or dashboard to highlight the key aspects?
-  
-- When in doubt, ask someone like a roommate to look it and ask if they understand what you hope to convey.
+    -   Are there aspects I think are important that might not be obvious?
 
----
+    -   If so, how can I modify the panel or dashboard to highlight the key aspects?
+
+-   When in doubt, ask someone like a roommate to look it and ask if they understand what you hope to convey.
+
+------------------------------------------------------------------------
 
 ### Tables in Dashboards and Documents
 
-- This course focuses mostly on data visualizations, with a few table summaries.
+-   This course focuses mostly on data visualizations, with a few table summaries.
 
-- Creating a more complex table, may be useful to you and could be included as an additional main panel in your dashboard instead of side panel.
+-   Creating a more complex table, may be useful to you and could be included as an additional main panel in your dashboard instead of side panel.
 
-  - Not required, but it may be helpful.  
+    -   Not required, but it may be helpful.
 
-- Even if you don't use `gt` tables in your dashboard, they will definitely be helpful if you use R and RStudio to manage, analyze, and document data in the future.
+-   Even if you don't use `gt` tables in your dashboard, they will definitely be helpful if you use R and RStudio to manage, analyze, and document data in the future.
 
-- If you have not already done so, please rerun the setup for this lecture, which now includes the `gt` package and the package.
+-   If you have not already done so, please rerun the setup for this lecture, which now includes the `gt` package and the package.
 
-- The [`gt` website](https://gt.rstudio.com/index.html) has many examples with detailed step by step instructions.
+-   The [`gt` website](https://gt.rstudio.com/index.html) has many examples with detailed step by step instructions.
 
-- Notes about examples on `gt` website:
+-   Notes about examples on `gt` website:
 
-  - Examples use the older pipe notation `%>%` which is identical in function to `|>`.
-  
-  - Examples also use different commands to complete the same data management tasks covered in BUA 455.
-  
-  - If you are unsure about a command you come across ask me, or google it.  The R help index is also good.
-      - e.g. `?glue` or `?glue::glue` is the glue command in glue package
+    -   Examples use the older pipe notation `%>%` which is identical in function to `|>`.
 
----
+    -   Examples also use different commands to complete the same data management tasks covered in BUA 455.
+
+    -   If you are unsure about a command you come across ask me, or google it. The R help index is also good.
+
+        -   e.g. `?glue` or `?glue::glue` is the glue command in glue package
+
+------------------------------------------------------------------------
 
 ### Tables in Dashboards and Documents
 
 First let's look at what can be customized:
 
-.center[<img src="docs_files/images/gt_table.png" width="800">]
+![](gt_table.png)
 
-
----
+------------------------------------------------------------------------
 
 ### Example: Importing, Summarizing and Displaying Stock Data
 
@@ -413,16 +399,17 @@ head(snp9,3)
 
 ```
 
----
+------------------------------------------------------------------------
 
 ### Example: Importing, Summarizing and Displaying Stock Data
 
-- The code below does not make a new tibble or data frame
-- Instead it create a formatted table object that can be output as a .png file like a plot.
+-   The code below does not make a new tibble or data frame
 
-  - `kable` also creates a formatted table object, but `gt` has more features.
+-   Instead it create a formatted table object that can be output as a .png file like a plot.
 
-- As with plots, I am saving this object and then displaying it on the next slide.
+    -   `kable` also creates a formatted table object, but `gt` has more features.
+
+-   As with plots, I am saving this object and then displaying it on the next slide.
 
 ```{r create formatted gt table}
 snp_fmt <- snp9 |>
@@ -437,7 +424,7 @@ snp_fmt <- snp9 |>
 
 ```
 
----
+------------------------------------------------------------------------
 
 In a dashboard or document, the code would be hidden, but it is shown here:
 
@@ -445,19 +432,17 @@ In a dashboard or document, the code would be hidden, but it is shown here:
 snp_fmt         # code to display created table
 ```
 
----
+------------------------------------------------------------------------
 
 ### Editing a Table for a Presentation
 
+-   A table in dashboard side panel should be small.
 
+-   Previous table would not fit, but we can select variables and shorten the date.
 
-- A table in dashboard side panel should be small.
+-   Limit the table to key variables that highlight important characteristics of your data.
 
-- Previous table would not fit, but we can select variables and shorten the date.
-
-- Limit the table to key variables that highlight important characteristics of your data.
-
-- Other variables, e.g. `Open`, `Low`, can be shown in plot
+-   Other variables, e.g. `Open`, `Low`, can be shown in plot
 
 ```{r edited smaller table}
 snp_sm <- snp9 |>
@@ -473,65 +458,63 @@ select(1,3,6) |>
   tab_footnote("Symbol: ^GSPC")
 ```
 
-
-
 ```{r show snp_sm, echo=F}
 snp_sm
 ```
 
----
+------------------------------------------------------------------------
 
 ### Project Questions
 
+-   Group presentation times will be posted on Wednesday, 4/25
 
- - Group presentation times will be posted on Wednesday, 4/25
- 
- - Sukhad and i are available to help.
- 
- - The rest of Today/Tuesday will be in-class group project work days
- 
- - [This website provides some additional ideas for visualizing data.](https://r-graph-gallery.com/)
+-   Sukhad and i are available to help.
 
----
+-   The rest of Today/Tuesday will be in-class group project work days
+
+-   [This website provides some additional ideas for visualizing data.](https://r-graph-gallery.com/)
+
+------------------------------------------------------------------------
 
 ### Evaluations
 
-* Course Evaluations are very important.
+-   Course Evaluations are very important.
 
-* Please take the time to fill out evaluations.
+-   Please take the time to fill out evaluations.
 
-  - **[You can login to the Course Evaluations website here](http://coursefeedback.syr.edu/)**
-  
-    - netID and password are required
-  
-  - I will step out for 5 minutes today.
-  
----
-  
+    -   [**You can login to the Course Evaluations website here**](http://coursefeedback.syr.edu/)
+
+        -   netID and password are required
+
+    -   I will step out for 5 minutes today.
+
+------------------------------------------------------------------------
+
 ### **Key Points - Week 13 - Part 2**
-  
-- **Project Info - 2 Memos**
 
-  - Details, Templates, Examples provided
-    
-- **Taking advantage of RStudio **
-   - R Markdown and Quarto 
-   - Seamless data mgmt. and reporting
-   - Can include R, Python, SQL etc.
+-   **Project Info - 2 Memos**
 
-- **Platforms for Projects**
-   - Github - essential for large projects
-   - Rpubs is ideal for BUA 455
-   - Posit Cloud, Google Colab, and Kaggle
-   
-- **Additional Material and links**
-    - Dashboard Tips
-    - `gt` tables
-    - Many links for learning more
-    - **Data Camp White Paper about Skillset**
-    
+    -   Details, Templates, Examples provided
 
+-   **Taking advantage of RStudio**
 
-You may submit an 'Engagement Question' about each lecture until midnight on the day of the lecture. **A minimum of four submissions are required during the semester.**
+    -   R Markdown and Quarto
+    -   Seamless data mgmt. and reporting
+    -   Can include R, Python, SQL etc.
 
+-   **Platforms for Projects**
 
+    -   Github - essential for large projects
+    -   Rpubs is ideal for BUA 455
+    -   Posit Cloud, Google Colab, and Kaggle
+
+-   **Additional Material and links**
+
+    -   Dashboard Tips
+    -   `gt` tables
+    -   Many links for learning more
+    -   **Data Camp White Paper about Skillset**
+
+You may submit an 'Engagement Question' about each lecture until midnight on the day of the lecture.
+
+**A minimum of four submissions are required during the semester.**
