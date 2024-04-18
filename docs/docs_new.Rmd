@@ -1,5 +1,5 @@
 ---
-title: "Week 13_14"
+title: "Week 13 - Part 2"
 subtitle: "Project Memos, Other Formats, GitHub"  
 author: "Penelope Pooler Eisenbies"
 date: '`r Sys.Date()`'
@@ -142,7 +142,7 @@ background-size: cover
 
 class: bottom, right
 
-## BUA 455 - Week 13 and 14
+## BUA 455 - Week 13 - Part 2
 
 ### Project Memos, More about In-line-code
 ### Explaining Skillset, Output formats, GitHub
@@ -160,11 +160,11 @@ class: bottom, right
 
 ### Final Projects
 
-#### **Presentations are on Tuesday, 12/12
+#### **Presentations are on Thursday, 4/25.**
 
 - If your group needs to present first or last due to a conflict, let me know ASAP.  
 
-  - Otherwise, random order will be posted by Sunday (12/10).
+  - Otherwise, random order will be posted by Wednesday (4/24).
 
 - Attendance required by all
   
@@ -180,7 +180,7 @@ class: bottom, right
     
 - Each student will evaluate other groups and their own group members
 
-* **All project components must be submitted by Friday, December 15th at 5:00 PM**
+- **All project components must be submitted by Wednesday, May 1st at 5:00 PM**
 
 ---
 
@@ -188,15 +188,15 @@ class: bottom, right
 
 - [Project Description - Memos are described on Page 5](https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing)
 
-- [Template for Memo to Supervisor](https://docs.google.com/document/d/1YG_tuwnx1TqUUDIyCT37dtMTi3cC7tbdjbus9zUEBqc/edit?usp=sharing)
+- Each group has an R project with Quarto memo templates in their Posit Cloud workspace.
+
+- [There is also a zipped R project that can be downloaded here.](https://drive.google.com/file/d/17flkoHOvRucNQ--LKo1JayrXqyGcsRbz/view?usp=sharing)
 
    - Supervisor Memo's Goal: 
   
       - Provide your supervisor with what they need 
       - They will want to be knowledgeable about the data and dashboard, but have very limited time.
       - Predict questions they (supervisor) might have and questions a client might ask.
-
-- [Template for memo to Colleague](https://docs.google.com/document/d/14TceEQ-wr6ZF8WLdHQuFBUKuE8_6UiNsdrXS2O0lAEk/edit?usp=sharing)
 
    - Colleague Memo's Goal: 
     
@@ -327,21 +327,21 @@ class: bottom, right
   
   - Employers are likely to expect some familiarity with each.
     
-  - R is most versatile and powerful
-    
-  - Employers may prefer Python, SQL, or another language/environment because that is what they know.
+  - R is versatile and powerful, but employers may prefer Python, SQL, or another language/environment because that is what they know.
     
   - NOTE: Python, SQL, others can all be utilized through RStudio.
     
-  - Different languages can be combined in one RMarkdown document in separate chunks.
+  - Different languages can be combined in one R Markdown or Quarto document in separate chunks.
     
 - [DataCamp](https://www.datacamp.com/) - Not Free, but Excellent.
   
   - Provides certificates of completion
     
   - Published this excellent [document about data fluency](https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view?usp=sharing)
-     - **Download this document and save it for when you have to apply for jobs and answer questions about your skillset.**  
- 
+    - **Download this document and save it for when you have to apply for jobs and answer questions about your skillset.** 
+  
+  - Stay tuned for possible access to DataCamp through [WIRE Initiative](https://whitman.syracuse.edu/experiential-learning/wire-initiative)
+  
 - Other companies are quickly developing tutorial training too (some are good)
 
 ---
@@ -399,11 +399,11 @@ class: bottom, right
 ### New Ways to Collaborate
 
 **[Posit Cloud](https://posit.cloud/)** is not free (as you know) but I think it works well for collaborative work.
-   - Note: I think only one person can edit a code file at same time. Is that true?
+- Simultaneous code collaboration is currently in beta-testing.
 
 - For your purposes, it is $5 per month which you can pause when not working.
 
-- You are my first course to use it for the project.
+- You are my second semester of students to use it for the BUA 455 project.
 
 - You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.
 
@@ -411,7 +411,7 @@ class: bottom, right
 
 **[Google Colab](https://colab.research.google.com/)** is primarily used for Python but can be used with R.
 
-- I have only started exploring this option but it appears to be a free Google collaborative data science space.
+- It's a free Google collaborative data science space.
 
 - Here is a [Medium article that explains how to use R in Google Colab](https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497)
 
@@ -440,19 +440,21 @@ class: bottom, right
 
 .pull-left[
 
-### Plan for Tuesday (12/5)
+### Plan for Today and Tuesday (4/23) - Your Choice
 
 - Address submitted questions
 
   - Quarto and R Markdown
+  
+- I can cover remaining material today or Tuesday
 
-- Tips for a Better Dashboard
+  - Tips for a Better Dashboard
 
-- Tables with GT
+  - Tables with GT
 
-- Five minutes for evaluations
+  - Five minutes for evaluations
 
-- In-class work time
+  - In-class work time
 
 ]
 
@@ -492,7 +494,7 @@ A good rule for this project (every project):
 
 At each stage of the process, take a step back and examine each dashboard panel as if you are seeing it with fresh eyes.
 
-- As you do that, as yourself these questions:
+- As you do that, ask yourself these questions:
 
 - Does this panel achieve a specific goal?
 
@@ -550,7 +552,7 @@ First let's look at what can be customized:
 
 ```{r stock import and summary}
 
-getSymbols("^GSPC", from="2022-07-01", to="2023-04-01") 
+getSymbols("^GSPC", from="2023-07-01", to="2024-04-01") 
 
 snp9 <- GSPC |>
   fortify.zoo() |> as_tibble(.name_repair = "minimal") |>
@@ -641,11 +643,13 @@ snp_sm
 
 .pull-left[
 
- - Group presentation days and times will be random assigned and posted by Sunday (4/23)
+ - Group presentation times will be posted on Wednesday, 4/25
  
- - More material will be added here depending on questions submitted.
+ - Sukhad and i are available to help.
  
- - Otherwise, the rest of Thursday will be an in-class group project work day
+ - The rest of Today/Tuesday will be in-class group project work days
+ 
+ - [This website provides some additional ideas for visualizing data.](https://r-graph-gallery.com/)
 
 
 ]
@@ -692,7 +696,7 @@ background-size: cover
    
 .pull-left[
   
-### **Key Points - Weeks 13 & 14**
+### **Key Points - Week 13 - Part 2**
   
 .bg-azure.b--dark_cyan.ba.bw2.br3.shadow-5.ph2[
 

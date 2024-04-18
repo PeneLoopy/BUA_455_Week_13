@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.551">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Penelope Pooler Eisenbies">
+<meta name="dcterms.date" content="2024-04-18">
+
+<title>BUA 455 - Week 13 - Part 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="BUA_455_Week_13_Pt2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="BUA_455_Week_13_Pt2_files/libs/quarto-html/quarto.js"></script>
+<script src="BUA_455_Week_13_Pt2_files/libs/quarto-html/popper.min.js"></script>
+<script src="BUA_455_Week_13_Pt2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="BUA_455_Week_13_Pt2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="BUA_455_Week_13_Pt2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="BUA_455_Week_13_Pt2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="BUA_455_Week_13_Pt2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="BUA_455_Week_13_Pt2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="BUA_455_Week_13_Pt2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#final-projects" id="toc-final-projects" class="nav-link active" data-scroll-target="#final-projects">Final Projects</a></li>
+  <li><a href="#project-memos" id="toc-project-memos" class="nav-link" data-scroll-target="#project-memos">Project Memos</a></li>
+  <li><a href="#talking-about-your-skillset" id="toc-talking-about-your-skillset" class="nav-link" data-scroll-target="#talking-about-your-skillset">Talking about Your Skillset</a></li>
+  <li><a href="#r-markdown-.rmd-and-quarto-.qmd-formats" id="toc-r-markdown-.rmd-and-quarto-.qmd-formats" class="nav-link" data-scroll-target="#r-markdown-.rmd-and-quarto-.qmd-formats">R Markdown (.Rmd) and Quarto (.qmd) formats</a></li>
+  <li><a href="#best-way-to-learn-quarto" id="toc-best-way-to-learn-quarto" class="nav-link" data-scroll-target="#best-way-to-learn-quarto">Best way to learn Quarto</a></li>
+  <li><a href="#resources---where-to-go-next" id="toc-resources---where-to-go-next" class="nav-link" data-scroll-target="#resources---where-to-go-next">Resources - Where to go next</a></li>
+  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials">Tutorials</a></li>
+  <li><a href="#sharing-and-collaborating---github-vs.-rpubs" id="toc-sharing-and-collaborating---github-vs.-rpubs" class="nav-link" data-scroll-target="#sharing-and-collaborating---github-vs.-rpubs">Sharing and Collaborating - GitHub vs.&nbsp;RPubs</a></li>
+  <li><a href="#more-about-github" id="toc-more-about-github" class="nav-link" data-scroll-target="#more-about-github">More about GitHub</a></li>
+  <li><a href="#some-github-links" id="toc-some-github-links" class="nav-link" data-scroll-target="#some-github-links">Some GitHub links</a></li>
+  <li><a href="#new-ways-to-collaborate" id="toc-new-ways-to-collaborate" class="nav-link" data-scroll-target="#new-ways-to-collaborate">New Ways to Collaborate</a></li>
+  <li><a href="#more-new-ways-to-collaborate" id="toc-more-new-ways-to-collaborate" class="nav-link" data-scroll-target="#more-new-ways-to-collaborate">More New Ways to Collaborate</a></li>
+  <li><a href="#plan-for-today-and-tuesday-423---your-choice" id="toc-plan-for-today-and-tuesday-423---your-choice" class="nav-link" data-scroll-target="#plan-for-today-and-tuesday-423---your-choice">Plan for Today and Tuesday (4/23) - Your Choice</a></li>
+  <li><a href="#tips-for-a-better-dashboard" id="toc-tips-for-a-better-dashboard" class="nav-link" data-scroll-target="#tips-for-a-better-dashboard">Tips for a Better Dashboard</a></li>
+  <li><a href="#tips-for-a-better-dashboard-1" id="toc-tips-for-a-better-dashboard-1" class="nav-link" data-scroll-target="#tips-for-a-better-dashboard-1">Tips for a Better Dashboard</a></li>
+  <li><a href="#tables-in-dashboards-and-documents" id="toc-tables-in-dashboards-and-documents" class="nav-link" data-scroll-target="#tables-in-dashboards-and-documents">Tables in Dashboards and Documents</a></li>
+  <li><a href="#tables-in-dashboards-and-documents-1" id="toc-tables-in-dashboards-and-documents-1" class="nav-link" data-scroll-target="#tables-in-dashboards-and-documents-1">Tables in Dashboards and Documents</a></li>
+  <li><a href="#example-importing-summarizing-and-displaying-stock-data" id="toc-example-importing-summarizing-and-displaying-stock-data" class="nav-link" data-scroll-target="#example-importing-summarizing-and-displaying-stock-data">Example: Importing, Summarizing and Displaying Stock Data</a></li>
+  <li><a href="#example-importing-summarizing-and-displaying-stock-data-1" id="toc-example-importing-summarizing-and-displaying-stock-data-1" class="nav-link" data-scroll-target="#example-importing-summarizing-and-displaying-stock-data-1">Example: Importing, Summarizing and Displaying Stock Data</a></li>
+  <li><a href="#editing-a-table-for-a-presentation" id="toc-editing-a-table-for-a-presentation" class="nav-link" data-scroll-target="#editing-a-table-for-a-presentation">Editing a Table for a Presentation</a></li>
+  <li><a href="#project-questions" id="toc-project-questions" class="nav-link" data-scroll-target="#project-questions">Project Questions</a></li>
+  <li><a href="#evaluations" id="toc-evaluations" class="nav-link" data-scroll-target="#evaluations">Evaluations</a></li>
+  <li><a href="#key-points---week-13---part-2" id="toc-key-points---week-13---part-2" class="nav-link" data-scroll-target="#key-points---week-13---part-2"><strong>Key Points - Week 13 - Part 2</strong></a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">BUA 455 - Week 13 - Part 2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Penelope Pooler Eisenbies </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 18, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this line specifies options for default options for all R Chunks</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo=</span>T, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">highlight=</span>T)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># suppress scientific notation</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">100</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">getSymbols.warning4.0 =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># install helper package (pacman), if needed</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>, <span class="at">repos =</span> <span class="st">"http://lib.stat.cmu.edu/R/CRAN/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: pacman</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install and load required packages</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pacman should be first package in parentheses and then list others</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(pacman,tidyverse, knitr, gt, tidyquant)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># verify packages (comment out in finished documents)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">p_loaded</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "tidyquant"            "quantmod"             "TTR"                 
+ [4] "PerformanceAnalytics" "xts"                  "zoo"                 
+ [7] "gt"                   "knitr"                "lubridate"           
+[10] "forcats"              "stringr"              "dplyr"               
+[13] "purrr"                "readr"                "tidyr"               
+[16] "tibble"               "ggplot2"              "tidyverse"           
+[19] "pacman"              </code></pre>
+</div>
+</div>
+<section id="final-projects" class="level3">
+<h3 class="anchored" data-anchor-id="final-projects">Final Projects</h3>
+<section id="presentations-are-on-thursday-425." class="level4">
+<h4 class="anchored" data-anchor-id="presentations-are-on-thursday-425.">**Presentations are on Thursday, 4/25.</h4>
+<ul>
+<li><p>If your group needs to present first or last due to a conflict, let me know ASAP.</p>
+<ul>
+<li>Otherwise, random order will be posted by Wednesday (4/24).</li>
+</ul></li>
+<li><p>Attendance required by all</p></li>
+<li><p>Dress: Business casual with emphasis on casual</p></li>
+<li><p>Suits, Ties, Dresses, and Jackets are <strong>NOT</strong> required</p></li>
+<li><p>No sweats t-shirts or pjs</p></li>
+<li><p>You will present better if you dress the part (at least a little)</p></li>
+<li><p>All students should be prepared to answer questions about the work presented.</p></li>
+<li><p>Each student will evaluate other groups and their own group members</p></li>
+<li><p><strong>All project components must be submitted by Wednesday, May 1st at 5:00 PM</strong></p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="project-memos" class="level3">
+<h3 class="anchored" data-anchor-id="project-memos">Project Memos</h3>
+<ul>
+<li><p><a href="https://docs.google.com/document/d/1U-DJ3yeHPpxcg1o12Cg2qc2Besb6Jw6UiyAo6gR4S2I/edit?usp=sharing">Project Description - Memos are described on Page 5</a></p></li>
+<li><p>Each group has an R project with Quarto memo templates in their Posit Cloud workspace.</p></li>
+<li><p><a href="https://drive.google.com/file/d/17flkoHOvRucNQ--LKo1JayrXqyGcsRbz/view?usp=sharing">There is also a zipped R project that can be downloaded here.</a></p>
+<ul>
+<li><p>Supervisor Memo’s Goal:</p>
+<ul>
+<li>Provide your supervisor with what they need</li>
+<li>They will want to be knowledgeable about the data and dashboard, but have very limited time.</li>
+<li>Predict questions they (supervisor) might have and questions a client might ask.</li>
+</ul></li>
+<li><p>Colleague Memo’s Goal:</p>
+<ul>
+<li><p>Colleague should be able to follow memo to update dashboard quickly and seamlessly when new data are available.</p></li>
+<li><p>I (or TAs) will follow memo and verify that instructions are clear, links are functional, and I can update dashboard based on this memo. when new data are available.</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="questions-about-project-and-templates" class="level4">
+<h4 class="anchored" data-anchor-id="questions-about-project-and-templates">Questions about Project and Templates?</h4>
+<hr>
+</section>
+</section>
+<section id="talking-about-your-skillset" class="level3">
+<h3 class="anchored" data-anchor-id="talking-about-your-skillset">Talking about Your Skillset</h3>
+<ul>
+<li><p>Explaining your skillset is hard, but it’s getting easier.</p></li>
+<li><p>As Data Science and Analytics grow in importance, more people understand what this skill set can offer.</p></li>
+<li><p>However, you should not assume that interviewers, colleagues, supervisors understand your skills.</p></li>
+<li><p><a href="https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view">This White Paper from Data camp (also posted on Blackboard)</a> is helpful.</p>
+<ul>
+<li><p>Starting on Page 9 it lays out different roles people take on when working with data.</p></li>
+<li><p>Comparing these descriptions to skills you learn in this major should give you a lot of confidence.</p></li>
+<li><p>Provides validation that you can take on more advanced roles.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="r-markdown-.rmd-and-quarto-.qmd-formats" class="level3">
+<h3 class="anchored" data-anchor-id="r-markdown-.rmd-and-quarto-.qmd-formats">R Markdown (.Rmd) and Quarto (.qmd) formats</h3>
+<ul>
+<li><p>RStudio and parent company Posit is currently in transition.</p></li>
+<li><p>Documents can be rendered from R Markdown (.Rmd) or <a href="https://quarto.org/">Quarto (.qmd)</a></p>
+<ul>
+<li><p>HTML, Word documents, PDf</p></li>
+<li><p>R Markdown will be available for forseeable future</p></li>
+<li><p>flexdashboard not available in Quarto format</p>
+<ul>
+<li><p><a href="https://quarto.org/docs/faq/rmarkdown.html">Options Currently Available in Quarto</a></p></li>
+<li><p><a href="https://quarto.org/docs/guide/">Dashboard options were introduced in August of 2023</a></p></li>
+</ul></li>
+</ul></li>
+<li><p>Presentations can be rendered from R Markdown (.Rmd) or Quart (.qmd)</p>
+<ul>
+<li><p>Powerpoint</p>
+<ul>
+<li>better for non-technical talks</li>
+</ul></li>
+<li><p>Quarto Presentations (RevealJS) will replace Xaringan</p>
+<ul>
+<li><p>These slides are Xaringan</p></li>
+<li><p>Updated options will make better slides with more options</p></li>
+<li><p>Xaringan and RevealJS are preferred for including code and output</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="best-way-to-learn-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="best-way-to-learn-quarto">Best way to learn Quarto</h3>
+<ul>
+<li><p>Examine Examples provided in R</p></li>
+<li><p>Examine Examples in <a href="https://quarto.org/docs/gallery/">Quarto Gallery</a></p>
+<ul>
+<li><p>click on code symbol <code>&lt;/&gt;</code> to see the code used to create the documents or presentations</p></li>
+<li><p>Examine and modify code for your document</p></li>
+<li><p>Also use Google, website documentation, and stack overflow for questions</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="resources---where-to-go-next" class="level3">
+<h3 class="anchored" data-anchor-id="resources---where-to-go-next">Resources - Where to go next</h3>
+<section id="for-all-aspects-of-analytics-and-r-and-rstudio" class="level4">
+<h4 class="anchored" data-anchor-id="for-all-aspects-of-analytics-and-r-and-rstudio"><strong>For all aspects of analytics and R and RStudio</strong></h4>
+<ul>
+<li><p>Discovered last year: <a href="https://www.bigbookofr.com/index.html">Big Book of R - A Curated Website of R Resources</a></p>
+<ul>
+<li>Updated November 2023</li>
+</ul></li>
+<li><p>Doesn’t include <a href="https://rafalab.GitHub.io/dsbook/">this book</a> which is excellent for undergraduates.</p></li>
+<li><p>Before this Spring, the best resource was Google which often leads to <a href="https://stackoverflow.com/">stack overflow</a></p>
+<ul>
+<li>Stack Overflow is helpful but you have to know enough code to be able to understand answers.</li>
+</ul></li>
+<li><p>Now, I recommend using and learning with AI such as Chat GPT (not during a test)</p>
+<ul>
+<li>The AI engine is very good at answering most code questions, but it is not perfect.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="tutorials">Tutorials</h3>
+<ul>
+<li><p>As SU Students you also have free access to <a href="https://linkedinlearning.syr.edu/">Linkedin Learning</a></p>
+<ul>
+<li><p>Great tutorials in R, Python, SQL</p></li>
+<li><p>Employers are likely to expect some familiarity with each.</p></li>
+<li><p>R is versatile and powerful, but employers may prefer Python, SQL, or another language/environment because that is what they know.</p></li>
+<li><p>NOTE: Python, SQL, others can all be utilized through RStudio.</p></li>
+<li><p>Different languages can be combined in one R Markdown or Quarto document in separate chunks.</p></li>
+</ul></li>
+<li><p><a href="https://www.datacamp.com/">DataCamp</a> - Not Free, but Excellent.</p>
+<ul>
+<li><p>Provides certificates of completion</p></li>
+<li><p>Published this excellent <a href="https://drive.google.com/file/d/1_VoM3D6tPftjZpXCnTL8SKYBlOM_4KjG/view?usp=sharing">document about data fluency</a></p></li>
+<li><p>Stay tuned for possible access to DataCamp through <a href="https://whitman.syracuse.edu/experiential-learning/wire-initiative">WIRE Initiative</a></p>
+<ul>
+<li><strong>Download this document and save it for when you have to apply for jobs and answer questions about your skillset.</strong></li>
+</ul></li>
+</ul></li>
+<li><p>Other companies are quickly developing tutorial training too (some are good)</p></li>
+</ul>
+<hr>
+</section>
+<section id="sharing-and-collaborating---github-vs.-rpubs" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-and-collaborating---github-vs.-rpubs">Sharing and Collaborating - GitHub vs.&nbsp;RPubs</h3>
+<ul>
+<li><p>Last week I introduced you to Rpubs which is ideal from sharing a dashboard.</p>
+<ul>
+<li>For MAS 261, I publish my slides on RPubs</li>
+</ul></li>
+<li><p>Alternatively, you may have already come across <code>GitHub</code> in searching for files or a package.</p>
+<ul>
+<li><p>Slides for this course are stored on GitHub</p></li>
+<li><p>Prior to Quarto, GitHub was required for files where data, code and text are maintained together as a project, referred to as a <strong>repository</strong> or <strong>repo</strong>.</p></li>
+<li><p>Not required for finished dashboard.</p></li>
+</ul></li>
+<li><p>GitHub is an online code sharing and code development platform.</p></li>
+<li><p>Many R packages start as development code on GitHub and over time they are refined and published.</p></li>
+</ul>
+<hr>
+</section>
+<section id="more-about-github" class="level3">
+<h3 class="anchored" data-anchor-id="more-about-github">More about GitHub</h3>
+<ul>
+<li><p>Once you create free account, you can learn more about how it works in this <a href="https://docs.GitHub.com/en/get-started/quickstart/hello-world">tutorial</a>.</p></li>
+<li><p>Collaborative coding is common on GitHub but is a little more complex than working on a shared drive.</p>
+<ul>
+<li><p>Developers of games, R packages, other software, etc., have huge code files and need to protect them.</p></li>
+<li><p>There is a system in place (version control) where people can create a project with multiple code versions and edits.</p>
+<ul>
+<li>Over time a project develops more and more branches, like a tree, but the trunk.</li>
+</ul></li>
+<li><p>Original code is preserved and changes can be incorporated as they are verified and approved.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="some-github-links" class="level3">
+<h3 class="anchored" data-anchor-id="some-github-links">Some GitHub links</h3>
+<ul>
+<li><p>Some tutorial links for collaborative coding on GitHub:</p>
+<ul>
+<li><p><a href="https://medium.com/@ravirajsubramanian/what-is-git-and-GitHub-and-how-to-use-GitHub-f49d6be08b25">What is Git and GitHub? And how to use GitHub?</a></p></li>
+<li><p><a href="https://medium.com/@ravirajsubramanian/how-to-use-git-and-GitHub-for-collaborative-programming-955da6876aa9">How to use Git and GitHub for collaborative programming?</a></p></li>
+<li><p><a href="https://medium.com/@androidmatheny/using-git-and-GitHub-on-group-projects-d636be2cdd4d">Using Git and Github on Group Projects</a></p></li>
+<li><p><a href="https://www.bigbookofr.com/version-control.html">Section 33 of Big Book of R</a></p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="new-ways-to-collaborate" class="level3">
+<h3 class="anchored" data-anchor-id="new-ways-to-collaborate">New Ways to Collaborate</h3>
+<p><strong><a href="https://posit.cloud/">Posit Cloud</a></strong> is not free (as you know) but I think it works well for collaborative work. - Simultaneous code collaboration is currently in beta-testing.</p>
+<ul>
+<li><p>For your purposes, it is $5 per month which you can pause when not working.</p></li>
+<li><p>You are my second semester of students to use it for the BUA 455 project.</p></li>
+<li><p>You can choose which version of R and RStudio you want to work in and R packages always install and load without issue.</p></li>
+<li><p>You can organize work into R Projects the same way we do in class and share them with others.</p></li>
+</ul>
+<p><strong><a href="https://colab.research.google.com/">Google Colab</a></strong> is primarily used for Python but can be used with R.</p>
+<ul>
+<li><p>It’s a free Google collaborative data science space.</p></li>
+<li><p>Here is a <a href="https://towardsdatascience.com/how-to-use-r-in-google-colab-b6e02d736497">Medium article that explains how to use R in Google Colab</a></p>
+<ul>
+<li>TLDR: Google Colab is more well developed for Python but useable for R and will evolve quickly.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="more-new-ways-to-collaborate" class="level3">
+<h3 class="anchored" data-anchor-id="more-new-ways-to-collaborate">More New Ways to Collaborate</h3>
+<p><strong><a href="https://www.kaggle.com/">Kaggle</a></strong></p>
+<ul>
+<li><p>You can create an account in Kaggle and save work in Notebooks and use a combination of R and Python in your work.</p></li>
+<li><p>Here is a <a href="https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic/report">detailed example of an analysis and report using the Titanic Data done with R in a Kaggle Notbook</a>.</p></li>
+<li><p>Here is a <a href="https://www.geeksforgeeks.org/run-r-markdown-in-kaggle/">tutorial for using R in Kaggle Notebook</a>.</p></li>
+<li><p>Kaggle is well known for Data Science competitions.</p></li>
+</ul>
+<p><strong><a href="https://data.world/">Data World</a></strong></p>
+<ul>
+<li>Similar to Kaggle in that you can create an account and save projects there.</li>
+</ul>
+<hr>
+</section>
+<section id="plan-for-today-and-tuesday-423---your-choice" class="level3">
+<h3 class="anchored" data-anchor-id="plan-for-today-and-tuesday-423---your-choice">Plan for Today and Tuesday (4/23) - Your Choice</h3>
+<ul>
+<li><p>Address submitted questions</p>
+<ul>
+<li>Quarto and R Markdown</li>
+</ul></li>
+<li><p>I can cover remaining material today or Tuesday</p>
+<ul>
+<li><p>Tips for a Better Dashboard</p></li>
+<li><p>Tables with GT</p></li>
+<li><p>Five minutes for evaluations</p></li>
+<li><p>In-class work time</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="tips-for-a-better-dashboard" class="level3">
+<h3 class="anchored" data-anchor-id="tips-for-a-better-dashboard">Tips for a Better Dashboard</h3>
+<p>A good rule for this project (every project):</p>
+<p><strong><em>Edit yourself</em></strong></p>
+<ul>
+<li><p>You may have a lot to say and show, <strong>BUT</strong> always consider:</p>
+<ul>
+<li><strong>What can you present WELL in the space an time you have?</strong></li>
+</ul></li>
+<li><p>An important skill to develop is the ability to filter the data to a representative subset, especially for a visualization.</p></li>
+<li><p>Think about what data can be presented well and what the audience can digest.</p></li>
+<li><p>Don’t try to show too much in any one plot or panel.</p></li>
+<li><p>You can always show other parts of the data by</p>
+<ul>
+<li>creating more panels</li>
+<li>creating multi-plot grids to show other part of the data</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="tips-for-a-better-dashboard-1" class="level3">
+<h3 class="anchored" data-anchor-id="tips-for-a-better-dashboard-1">Tips for a Better Dashboard</h3>
+<p>At each stage of the process, take a step back and examine each dashboard panel as if you are seeing it with fresh eyes.</p>
+<ul>
+<li><p>As you do that, ask yourself these questions:</p></li>
+<li><p>Does this panel achieve a specific goal?</p></li>
+<li><p>Is the point of this panel clear?</p></li>
+<li><p>If not, how can I edit or augment this panel to clarify what it is showing?</p></li>
+<li><p>Are the text and symbols readable from any distance?</p></li>
+<li><p>What can I simplify to make it more clear?</p>
+<ul>
+<li><p>Are there aspects I think are important that might not be obvious?</p></li>
+<li><p>If so, how can I modify the panel or dashboard to highlight the key aspects?</p></li>
+</ul></li>
+<li><p>When in doubt, ask someone like a roommate to look it and ask if they understand what you hope to convey.</p></li>
+</ul>
+<hr>
+</section>
+<section id="tables-in-dashboards-and-documents" class="level3">
+<h3 class="anchored" data-anchor-id="tables-in-dashboards-and-documents">Tables in Dashboards and Documents</h3>
+<ul>
+<li><p>This course focuses mostly on data visualizations, with a few table summaries.</p></li>
+<li><p>Creating a more complex table, may be useful to you and could be included as an additional main panel in your dashboard instead of side panel.</p>
+<ul>
+<li>Not required, but it may be helpful.</li>
+</ul></li>
+<li><p>Even if you don’t use <code>gt</code> tables in your dashboard, they will definitely be helpful if you use R and RStudio to manage, analyze, and document data in the future.</p></li>
+<li><p>If you have not already done so, please rerun the setup for this lecture, which now includes the <code>gt</code> package and the package.</p></li>
+<li><p>The <a href="https://gt.rstudio.com/index.html"><code>gt</code> website</a> has many examples with detailed step by step instructions.</p></li>
+<li><p>Notes about examples on <code>gt</code> website:</p>
+<ul>
+<li><p>Examples use the older pipe notation <code>%&gt;%</code> which is identical in function to <code>|&gt;</code>.</p></li>
+<li><p>Examples also use different commands to complete the same data management tasks covered in BUA 455.</p></li>
+<li><p>If you are unsure about a command you come across ask me, or google it. The R help index is also good.</p>
+<ul>
+<li>e.g.&nbsp;<code>?glue</code> or <code>?glue::glue</code> is the glue command in glue package</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="tables-in-dashboards-and-documents-1" class="level3">
+<h3 class="anchored" data-anchor-id="tables-in-dashboards-and-documents-1">Tables in Dashboards and Documents</h3>
+<p>First let’s look at what can be customized:</p>
+<p>.center[<img src="docs_files/images/gt_table.png" width="800">]</p>
+<hr>
+</section>
+<section id="example-importing-summarizing-and-displaying-stock-data" class="level3">
+<h3 class="anchored" data-anchor-id="example-importing-summarizing-and-displaying-stock-data">Example: Importing, Summarizing and Displaying Stock Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getSymbols</span>(<span class="st">"^GSPC"</span>, <span class="at">from=</span><span class="st">"2023-07-01"</span>, <span class="at">to=</span><span class="st">"2024-04-01"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "GSPC"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>snp9 <span class="ot">&lt;-</span> GSPC <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fortify.zoo</span>() <span class="sc">|&gt;</span> <span class="fu">as_tibble</span>(<span class="at">.name_repair =</span> <span class="st">"minimal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"date"</span> <span class="ot">=</span> <span class="st">"Index"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mnth=</span><span class="fu">month</span>(date))<span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(mnth) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(date<span class="sc">==</span><span class="fu">max</span>(date)) <span class="sc">|&gt;</span>  <span class="co"># filtered data to last day of each month</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">8</span>))    <span class="co"># remove volume and month variables</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(snp9)[<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Open"</span>, <span class="st">"High"</span>, <span class="st">"Low"</span>, <span class="st">"Close"</span>, <span class="st">"Adjusted"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(snp9,<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 6
+  date        Open  High   Low Close Adjusted
+  &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+1 2023-07-31 4585. 4594. 4573. 4589.    4589.
+2 2023-08-31 4517. 4532. 4507. 4508.    4508.
+3 2023-09-29 4328. 4333. 4275. 4288.    4288.</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="example-importing-summarizing-and-displaying-stock-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-importing-summarizing-and-displaying-stock-data-1">Example: Importing, Summarizing and Displaying Stock Data</h3>
+<ul>
+<li><p>The code below does not make a new tibble or data frame</p></li>
+<li><p>Instead it create a formatted table object that can be output as a .png file like a plot.</p>
+<ul>
+<li><code>kable</code> also creates a formatted table object, but <code>gt</code> has more features.</li>
+</ul></li>
+<li><p>As with plots, I am saving this object and then displaying it on the next slide.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>snp_fmt <span class="ot">&lt;-</span> snp9 <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"S&amp;P 500"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Last Trading Day of Previous Nine Months"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="st">"Date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_date</span>(<span class="at">columns=</span>date, <span class="at">date_style=</span><span class="dv">3</span>) <span class="sc">|&gt;</span>  <span class="co"># formats date</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_currency</span>(<span class="at">columns=</span>Open<span class="sc">:</span>Adjusted, <span class="at">currency =</span> <span class="st">"USD"</span>)<span class="sc">|&gt;</span>     <span class="co"># formats values as US$</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Data Source: https://finance.yahoo.com"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Symbol: ^GSPC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p>In a dashboard or document, the code would be hidden, but it is shown here:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>snp_fmt         <span class="co"># code to display created table</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<div id="hnmiimopdh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hnmiimopdh table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hnmiimopdh thead, #hnmiimopdh tbody, #hnmiimopdh tfoot, #hnmiimopdh tr, #hnmiimopdh td, #hnmiimopdh th {
+  border-style: none;
+}
+
+#hnmiimopdh p {
+  margin: 0;
+  padding: 0;
+}
+
+#hnmiimopdh .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hnmiimopdh .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hnmiimopdh .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hnmiimopdh .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hnmiimopdh .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hnmiimopdh .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hnmiimopdh .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hnmiimopdh .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hnmiimopdh .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hnmiimopdh .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hnmiimopdh .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hnmiimopdh .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hnmiimopdh .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hnmiimopdh .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hnmiimopdh .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hnmiimopdh .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hnmiimopdh .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hnmiimopdh .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hnmiimopdh .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hnmiimopdh .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hnmiimopdh .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hnmiimopdh .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hnmiimopdh .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hnmiimopdh .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hnmiimopdh .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hnmiimopdh .gt_left {
+  text-align: left;
+}
+
+#hnmiimopdh .gt_center {
+  text-align: center;
+}
+
+#hnmiimopdh .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hnmiimopdh .gt_font_normal {
+  font-weight: normal;
+}
+
+#hnmiimopdh .gt_font_bold {
+  font-weight: bold;
+}
+
+#hnmiimopdh .gt_font_italic {
+  font-style: italic;
+}
+
+#hnmiimopdh .gt_super {
+  font-size: 65%;
+}
+
+#hnmiimopdh .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hnmiimopdh .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hnmiimopdh .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hnmiimopdh .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hnmiimopdh .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hnmiimopdh .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hnmiimopdh .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="6" class="gt_heading gt_title gt_font_normal">S&amp;P 500</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Last Trading Day of Previous Nine Months</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Date</th>
+<th id="Open" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Open</th>
+<th id="High" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">High</th>
+<th id="Low" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Low</th>
+<th id="Close" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Close</th>
+<th id="Adjusted" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Adjusted</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Mon, Jul 31, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_1 Open">$4,584.82</td>
+<td class="gt_row gt_right" headers="stub_1_1 High">$4,594.22</td>
+<td class="gt_row gt_right" headers="stub_1_1 Low">$4,573.14</td>
+<td class="gt_row gt_right" headers="stub_1_1 Close">$4,588.96</td>
+<td class="gt_row gt_right" headers="stub_1_1 Adjusted">$4,588.96</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Thu, Aug 31, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_2 Open">$4,517.01</td>
+<td class="gt_row gt_right" headers="stub_1_2 High">$4,532.26</td>
+<td class="gt_row gt_right" headers="stub_1_2 Low">$4,507.39</td>
+<td class="gt_row gt_right" headers="stub_1_2 Close">$4,507.66</td>
+<td class="gt_row gt_right" headers="stub_1_2 Adjusted">$4,507.66</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Fri, Sep 29, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_3 Open">$4,328.18</td>
+<td class="gt_row gt_right" headers="stub_1_3 High">$4,333.15</td>
+<td class="gt_row gt_right" headers="stub_1_3 Low">$4,274.86</td>
+<td class="gt_row gt_right" headers="stub_1_3 Close">$4,288.05</td>
+<td class="gt_row gt_right" headers="stub_1_3 Adjusted">$4,288.05</td>
+</tr>
+<tr class="even">
+<td id="stub_1_4" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Tue, Oct 31, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_4 Open">$4,171.33</td>
+<td class="gt_row gt_right" headers="stub_1_4 High">$4,195.55</td>
+<td class="gt_row gt_right" headers="stub_1_4 Low">$4,153.12</td>
+<td class="gt_row gt_right" headers="stub_1_4 Close">$4,193.80</td>
+<td class="gt_row gt_right" headers="stub_1_4 Adjusted">$4,193.80</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_5" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Thu, Nov 30, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_5 Open">$4,554.87</td>
+<td class="gt_row gt_right" headers="stub_1_5 High">$4,569.89</td>
+<td class="gt_row gt_right" headers="stub_1_5 Low">$4,537.24</td>
+<td class="gt_row gt_right" headers="stub_1_5 Close">$4,567.80</td>
+<td class="gt_row gt_right" headers="stub_1_5 Adjusted">$4,567.80</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Fri, Dec 29, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_6 Open">$4,782.88</td>
+<td class="gt_row gt_right" headers="stub_1_6 High">$4,788.43</td>
+<td class="gt_row gt_right" headers="stub_1_6 Low">$4,751.99</td>
+<td class="gt_row gt_right" headers="stub_1_6 Close">$4,769.83</td>
+<td class="gt_row gt_right" headers="stub_1_6 Adjusted">$4,769.83</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Wed, Jan 31, 2024</td>
+<td class="gt_row gt_right" headers="stub_1_7 Open">$4,899.19</td>
+<td class="gt_row gt_right" headers="stub_1_7 High">$4,906.75</td>
+<td class="gt_row gt_right" headers="stub_1_7 Low">$4,845.15</td>
+<td class="gt_row gt_right" headers="stub_1_7 Close">$4,845.65</td>
+<td class="gt_row gt_right" headers="stub_1_7 Adjusted">$4,845.65</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Thu, Feb 29, 2024</td>
+<td class="gt_row gt_right" headers="stub_1_8 Open">$5,085.36</td>
+<td class="gt_row gt_right" headers="stub_1_8 High">$5,104.99</td>
+<td class="gt_row gt_right" headers="stub_1_8 Low">$5,061.89</td>
+<td class="gt_row gt_right" headers="stub_1_8 Close">$5,096.27</td>
+<td class="gt_row gt_right" headers="stub_1_8 Adjusted">$5,096.27</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_9" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Thu, Mar 28, 2024</td>
+<td class="gt_row gt_right" headers="stub_1_9 Open">$5,248.03</td>
+<td class="gt_row gt_right" headers="stub_1_9 High">$5,264.85</td>
+<td class="gt_row gt_right" headers="stub_1_9 Low">$5,245.82</td>
+<td class="gt_row gt_right" headers="stub_1_9 Close">$5,254.35</td>
+<td class="gt_row gt_right" headers="stub_1_9 Adjusted">$5,254.35</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="6" class="gt_footnote">Data Source: https://finance.yahoo.com</td>
+</tr>
+<tr class="odd">
+<td colspan="6" class="gt_footnote">Symbol: ^GSPC</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="editing-a-table-for-a-presentation" class="level3">
+<h3 class="anchored" data-anchor-id="editing-a-table-for-a-presentation">Editing a Table for a Presentation</h3>
+<ul>
+<li><p>A table in dashboard side panel should be small.</p></li>
+<li><p>Previous table would not fit, but we can select variables and shorten the date.</p></li>
+<li><p>Limit the table to key variables that highlight important characteristics of your data.</p></li>
+<li><p>Other variables, e.g.&nbsp;<code>Open</code>, <code>Low</code>, can be shown in plot</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>snp_sm <span class="ot">&lt;-</span> snp9 <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">rowname_col =</span> <span class="st">"date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"S&amp;P 500"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">subtitle =</span> <span class="st">"Last Trading Day of Previous Nine Months"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stubhead</span>(<span class="at">label =</span> <span class="st">"Date"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_date</span>(<span class="at">columns=</span>date, <span class="at">date_style=</span><span class="dv">6</span>) <span class="sc">|&gt;</span>                   </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_currency</span>(<span class="at">columns=</span>High<span class="sc">:</span>Adjusted, </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">currency =</span> <span class="st">"USD"</span>)<span class="sc">|&gt;</span>     </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Source: https://finance.yahoo.com"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_footnote</span>(<span class="st">"Symbol: ^GSPC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div id="jqmcbdxeao" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jqmcbdxeao table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jqmcbdxeao thead, #jqmcbdxeao tbody, #jqmcbdxeao tfoot, #jqmcbdxeao tr, #jqmcbdxeao td, #jqmcbdxeao th {
+  border-style: none;
+}
+
+#jqmcbdxeao p {
+  margin: 0;
+  padding: 0;
+}
+
+#jqmcbdxeao .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jqmcbdxeao .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jqmcbdxeao .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jqmcbdxeao .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jqmcbdxeao .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jqmcbdxeao .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jqmcbdxeao .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jqmcbdxeao .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jqmcbdxeao .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jqmcbdxeao .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jqmcbdxeao .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jqmcbdxeao .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jqmcbdxeao .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jqmcbdxeao .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jqmcbdxeao .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jqmcbdxeao .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jqmcbdxeao .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jqmcbdxeao .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jqmcbdxeao .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jqmcbdxeao .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jqmcbdxeao .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jqmcbdxeao .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jqmcbdxeao .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jqmcbdxeao .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jqmcbdxeao .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jqmcbdxeao .gt_left {
+  text-align: left;
+}
+
+#jqmcbdxeao .gt_center {
+  text-align: center;
+}
+
+#jqmcbdxeao .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jqmcbdxeao .gt_font_normal {
+  font-weight: normal;
+}
+
+#jqmcbdxeao .gt_font_bold {
+  font-weight: bold;
+}
+
+#jqmcbdxeao .gt_font_italic {
+  font-style: italic;
+}
+
+#jqmcbdxeao .gt_super {
+  font-size: 65%;
+}
+
+#jqmcbdxeao .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jqmcbdxeao .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jqmcbdxeao .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jqmcbdxeao .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jqmcbdxeao .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jqmcbdxeao .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jqmcbdxeao .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="header gt_heading">
+<th colspan="3" class="gt_heading gt_title gt_font_normal">S&amp;P 500</th>
+</tr>
+<tr class="odd gt_heading">
+<th colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">Last Trading Day of Previous Nine Months</th>
+</tr>
+<tr class="header gt_col_headings">
+<th id="Date" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Date</th>
+<th id="High" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">High</th>
+<th id="Adjusted" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Adjusted</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td id="stub_1_1" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Jul 31, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_1 High">$4,594.22</td>
+<td class="gt_row gt_right" headers="stub_1_1 Adjusted">$4,588.96</td>
+</tr>
+<tr class="even">
+<td id="stub_1_2" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Aug 31, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_2 High">$4,532.26</td>
+<td class="gt_row gt_right" headers="stub_1_2 Adjusted">$4,507.66</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_3" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Sep 29, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_3 High">$4,333.15</td>
+<td class="gt_row gt_right" headers="stub_1_3 Adjusted">$4,288.05</td>
+</tr>
+<tr class="even">
+<td id="stub_1_4" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Oct 31, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_4 High">$4,195.55</td>
+<td class="gt_row gt_right" headers="stub_1_4 Adjusted">$4,193.80</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_5" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Nov 30, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_5 High">$4,569.89</td>
+<td class="gt_row gt_right" headers="stub_1_5 Adjusted">$4,567.80</td>
+</tr>
+<tr class="even">
+<td id="stub_1_6" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Dec 29, 2023</td>
+<td class="gt_row gt_right" headers="stub_1_6 High">$4,788.43</td>
+<td class="gt_row gt_right" headers="stub_1_6 Adjusted">$4,769.83</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_7" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Jan 31, 2024</td>
+<td class="gt_row gt_right" headers="stub_1_7 High">$4,906.75</td>
+<td class="gt_row gt_right" headers="stub_1_7 Adjusted">$4,845.65</td>
+</tr>
+<tr class="even">
+<td id="stub_1_8" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Feb 29, 2024</td>
+<td class="gt_row gt_right" headers="stub_1_8 High">$5,104.99</td>
+<td class="gt_row gt_right" headers="stub_1_8 Adjusted">$5,096.27</td>
+</tr>
+<tr class="odd">
+<td id="stub_1_9" class="gt_row gt_right gt_stub" data-quarto-table-cell-role="th" scope="row">Mar 28, 2024</td>
+<td class="gt_row gt_right" headers="stub_1_9 High">$5,264.85</td>
+<td class="gt_row gt_right" headers="stub_1_9 Adjusted">$5,254.35</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="even">
+<td colspan="3" class="gt_footnote">Source: https://finance.yahoo.com</td>
+</tr>
+<tr class="odd">
+<td colspan="3" class="gt_footnote">Symbol: ^GSPC</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="project-questions" class="level3">
+<h3 class="anchored" data-anchor-id="project-questions">Project Questions</h3>
+<ul>
+<li><p>Group presentation times will be posted on Wednesday, 4/25</p></li>
+<li><p>Sukhad and i are available to help.</p></li>
+<li><p>The rest of Today/Tuesday will be in-class group project work days</p></li>
+<li><p><a href="https://r-graph-gallery.com/">This website provides some additional ideas for visualizing data.</a></p></li>
+</ul>
+<hr>
+</section>
+<section id="evaluations" class="level3">
+<h3 class="anchored" data-anchor-id="evaluations">Evaluations</h3>
+<ul>
+<li><p>Course Evaluations are very important.</p></li>
+<li><p>Please take the time to fill out evaluations.</p>
+<ul>
+<li><p><strong><a href="http://coursefeedback.syr.edu/">You can login to the Course Evaluations website here</a></strong></p>
+<ul>
+<li>netID and password are required</li>
+</ul></li>
+<li><p>I will step out for 5 minutes today.</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="key-points---week-13---part-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-points---week-13---part-2"><strong>Key Points - Week 13 - Part 2</strong></h3>
+<ul>
+<li><p><strong>Project Info - 2 Memos</strong></p>
+<ul>
+<li>Details, Templates, Examples provided</li>
+</ul></li>
+<li><p><strong>Taking advantage of RStudio </strong></p>
+<ul>
+<li>R Markdown and Quarto</li>
+<li>Seamless data mgmt. and reporting</li>
+<li>Can include R, Python, SQL etc.</li>
+</ul></li>
+<li><p><strong>Platforms for Projects</strong></p>
+<ul>
+<li>Github - essential for large projects</li>
+<li>Rpubs is ideal for BUA 455</li>
+<li>Posit Cloud, Google Colab, and Kaggle</li>
+</ul></li>
+<li><p><strong>Additional Material and links</strong></p>
+<ul>
+<li>Dashboard Tips</li>
+<li><code>gt</code> tables</li>
+<li>Many links for learning more</li>
+<li><strong>Data Camp White Paper about Skillset</strong></li>
+</ul></li>
+</ul>
+<p>You may submit an ‘Engagement Question’ about each lecture until midnight on the day of the lecture. <strong>A minimum of four submissions are required during the semester.</strong></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
